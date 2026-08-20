@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI HOT 晚报 · 2026-08-09</title>
+<style>
+:root{--bg:#0f0a07;--surface:#1a1210;--card:#221a15;--card-hover:#2d2118;--border:#4d3e32;--text:#f5ebe0;--text-dim:#ffffff;--accent:#ff6b35;--accent2:#d4380d;--gradient:linear-gradient(135deg,#ff6b35 0%,#d4380d 50%,#a8071a 100%);--gradient-soft:linear-gradient(135deg,rgba(255,107,53,.15),rgba(212,56,13,.1));--font:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+.hero{background:var(--gradient);padding:56px 32px 44px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(255,255,255,.1) 0%,transparent 60%);pointer-events:none}
+.hero-date{font-size:14px;opacity:.9;letter-spacing:2px}
+.hero-title{font-size:40px;font-weight:800;margin:12px 0;letter-spacing:-1px}
+.hero-sub{font-size:16px;opacity:.85;margin-bottom:28px;font-weight:300}
+.hero-stats{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.hero-stat{background:rgba(0,0,0,.25);backdrop-filter:blur(10px);border-radius:10px;padding:10px 18px;display:flex;flex-direction:column;align-items:center;border:1px solid rgba(255,255,255,.1);min-width:100px}
+.hero-stat-num{font-size:26px;font-weight:800}
+.hero-stat-label{font-size:11px;opacity:.7;margin-top:2px}
+.nav{position:sticky;top:0;z-index:100;background:rgba(15,10,7,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:14px 24px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.nav-pill{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;border-radius:20px;background:var(--surface);border:1px solid var(--border);color:var(--text-dim);text-decoration:none;font-size:13px;transition:all .2s;white-space:nowrap}
+.nav-pill:hover,.nav-pill:focus{background:var(--card);color:var(--text);border-color:var(--accent)}
+.pill-count{background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:1px 7px;border-radius:10px;min-width:20px;text-align:center}
+.main{max-width:1200px;margin:0 auto;padding:40px 24px 80px}
+.section{margin-bottom:48px}
+.section-title{font-size:22px;font-weight:700;padding-bottom:12px;border-bottom:2px solid var(--border);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.section-badge{background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:2px 10px;border-radius:10px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;transition:all .25s ease}
+.card.visible{opacity:1;transform:translateY(0)}
+.card:hover{background:var(--card-hover);border-color:var(--accent);box-shadow:0 4px 24px rgba(255,107,53,.08);transform:translateY(-2px)}
+.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.card-idx{font-size:13px;font-weight:800;color:var(--accent);background:var(--gradient-soft);padding:2px 10px;border-radius:6px}
+.card-source{font-size:12px;color:var(--text-dim);background:rgba(255,255,255,.08);padding:2px 8px;border-radius:4px;max-width:60%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-title{font-size:16px;font-weight:700;line-height:1.4;margin-bottom:8px}
+.card-summary{font-size:14px;color:var(--text-dim);line-height:1.5;flex:1;margin-bottom:14px}
+.card-footer{display:flex;gap:8px;align-items:center}
+.card-link{font-size:13px;font-weight:600;color:var(--accent);text-decoration:none;padding:6px 14px;border-radius:6px;border:1px solid var(--accent);transition:all .2s;white-space:nowrap;display:inline-block;min-height:32px;line-height:1.4}
+.card-link:hover{background:var(--accent);color:#fff}
+.card-permalink{color:var(--text-dim);border-color:var(--border);font-weight:400}
+.card-permalink:hover{background:var(--card);color:var(--text);border-color:var(--text-dim)}
+.footer{text-align:center;padding:40px 20px;color:var(--text-dim);font-size:13px;border-top:1px solid var(--border)}
+.footer a{color:var(--accent);text-decoration:none}
+/* ── 平板 (768px~1024px) ── */
+@media(max-width:1024px){.hero{padding:44px 24px 36px}.hero-title{font-size:34px}.card-grid{grid-template-columns:repeat(2,1fr);gap:14px}.main{padding:32px 16px 60px}}
+/* ── 手机 (<768px) ── */
+@media(max-width:767px){.hero{padding:32px 16px 24px}.hero-title{font-size:26px;letter-spacing:0}.hero-sub{font-size:14px;margin-bottom:20px}.hero-stats{gap:6px}.hero-stat{padding:6px 10px;min-width:68px}.hero-stat-num{font-size:20px}.hero-stat-label{font-size:10px}.card-grid{grid-template-columns:1fr;gap:12px}.card{padding:16px;border-radius:10px}.card-title{font-size:15px}.card-summary{font-size:13px;line-height:1.6;margin-bottom:12px}.card-footer{flex-wrap:wrap}.card-link{font-size:12px;padding:5px 12px;min-height:36px}.nav{padding:10px 12px;gap:5px}.nav-pill{font-size:12px;padding:4px 10px;gap:3px}.pill-count{font-size:10px;padding:1px 5px}.section-title{font-size:18px}.section{margin-bottom:32px}.main{padding:24px 12px 48px}.footer{padding:28px 16px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.card{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="hero-date">周日 · 2026-08-09</div><h1 class="hero-title">AI HOT 晚报</h1><p class="hero-sub">实时 AI 行业资讯 · 一屏尽览</p><div class="hero-stats"><div class="hero-stat"><span class="hero-stat-num" style="color:var(--accent)">6</span><span class="hero-stat-label">总条数</span></div><div class="hero-stat"><span class="hero-stat-num">0</span><span class="hero-stat-label">🧠模型发布</span></div><div class="hero-stat"><span class="hero-stat-num">4</span><span class="hero-stat-label">📦产品发布</span></div><div class="hero-stat"><span class="hero-stat-num">2</span><span class="hero-stat-label">📰行业动态</span></div><div class="hero-stat"><span class="hero-stat-num">0</span><span class="hero-stat-label">📄论文研究</span></div><div class="hero-stat"><span class="hero-stat-num">0</span><span class="hero-stat-label">💡技巧与观</span></div></div></header>
+<nav class="nav"><a href="#ai-models" class="nav-pill">🧠 模型发布/更新 <span class="pill-count">0</span></a>
+<a href="#ai-products" class="nav-pill">📦 产品发布/更新 <span class="pill-count">4</span></a>
+<a href="#industry" class="nav-pill">📰 行业动态 <span class="pill-count">2</span></a>
+<a href="#paper" class="nav-pill">📄 论文研究 <span class="pill-count">0</span></a>
+<a href="#tip" class="nav-pill">💡 技巧与观点 <span class="pill-count">0</span></a>
+</nav>
+<main class="main"><section id="ai-models" class="section"><h2 class="section-title">🧠 模型发布/更新<span class="section-badge">0</span></h2><div class="card-grid">
+</div></section>
+<section id="ai-products" class="section"><h2 class="section-title">📦 产品发布/更新<span class="section-badge">4</span></h2><div class="card-grid">
+<div class="card" data-section="ai-products"><div class="card-header"><span class="card-idx">#1</span><span class="card-source">IT之家（RSS）</span></div><h3 class="card-title">苹果 Mac 简体中文支持文档更新，“Apple 智能”阿里千问扩展现身</h3><p class="card-summary">苹果官网 Mac 简体中文使用手册新增《在 Mac 上配合 Apple 智能使用千问》支持文档，明确 Apple …</p><div class="card-footer"><a href="https://www.ithome.com/0/987/366.htm" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a><a href="https://aihot.virxact.com/items/cmsk5m3kq0ahqro4bn4nh1r6r" target="_blank" rel="noopener noreferrer" class="card-link card-permalink">AI HOT ↗</a></div></div>
+<div class="card" data-section="ai-products"><div class="card-header"><span class="card-idx">#2</span><span class="card-source">IT之家（RSS）</span></div><h3 class="card-title">OpenAI 桌面端 ChatGPT 上线语音交互功能，可语音操控电脑执行多步骤任务</h3><p class="card-summary">OpenAI 更新 ChatGPT 桌面应用，新增对 ChatGPT Voice 的支持，用户可直接通过语音对话控…</p><div class="card-footer"><a href="https://www.ithome.com/0/987/452.htm" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a><a href="https://aihot.virxact.com/items/cmskzmhrs03rwrowg146pdv9j" target="_blank" rel="noopener noreferrer" class="card-link card-permalink">AI HOT ↗</a></div></div>
+<div class="card" data-section="ai-products"><div class="card-header"><span class="card-idx">#3</span><span class="card-source">X：Elon Musk (@elonmusk, xAI)</span></div><h3 class="card-title">Grok Imagine 图像编辑迎来重大升级</h3><p class="card-summary">Grok Imagine 图像编辑功能重大升级 [引用 @XFreeze]：你可以直接悬停在 Grok Imagi…</p><div class="card-footer"><a href="https://x.com/elonmusk/status/2086127247077843282" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a><a href="https://aihot.virxact.com/items/cmsklqt1907v8royz2pbppkk1" target="_blank" rel="noopener noreferrer" class="card-link card-permalink">AI HOT ↗</a></div></div>
+<div class="card" data-section="ai-products"><div class="card-header"><span class="card-idx">#4</span><span class="card-source">Claude Code：GitHub Releases（RSS）</span></div><h3 class="card-title">Claude Code v2.1.225 发布：新增网关支出限额支持与工作区信任提示</h3><p class="card-summary">Claude Code v2.1.225 为用量警告新增网关支出限额支持，达到限额时提示将显示上限、重置时间及操作…</p><div class="card-footer"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.225" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a><a href="https://aihot.virxact.com/items/cmsjpzjuu0h0wroo54ok9y37u" target="_blank" rel="noopener noreferrer" class="card-link card-permalink">AI HOT ↗</a></div></div>
+</div></section>
+<section id="industry" class="section"><h2 class="section-title">📰 行业动态<span class="section-badge">2</span></h2><div class="card-grid">
+<div class="card" data-section="industry"><div class="card-header"><span class="card-idx">#5</span><span class="card-source">IT之家（RSS）</span></div><h3 class="card-title">Cloudflare：AI 机器人流量已超越人类，预计五年后人机流量比达 1:1000 近乎“误差”</h3><p class="card-summary">Cloudflare 在 2026 年第二季度财报电话会议上披露，AI 机器人等非人类流量已于 2026 年 5 …</p><div class="card-footer"><a href="https://www.ithome.com/0/987/438.htm" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a><a href="https://aihot.virxact.com/items/cmskgc07i06srrobyr1cvm25v" target="_blank" rel="noopener noreferrer" class="card-link card-permalink">AI HOT ↗</a></div></div>
+<div class="card" data-section="industry"><div class="card-header"><span class="card-idx">#6</span><span class="card-source">NVIDIA Blog（RSS）</span></div><h3 class="card-title">Firebird 在亚美尼亚启动独联体地区最大 AI 工厂</h3><p class="card-summary">Firebird 在亚美尼亚启动独联体地区最大 AI 工厂，由 NVIDIA 加速计算和 Dell Technol…</p><div class="card-footer"><a href="https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a><a href="https://aihot.virxact.com/items/cmsk9zc64047irow9ugoumccd" target="_blank" rel="noopener noreferrer" class="card-link card-permalink">AI HOT ↗</a></div></div>
+</div></section>
+<section id="paper" class="section"><h2 class="section-title">📄 论文研究<span class="section-badge">0</span></h2><div class="card-grid">
+</div></section>
+<section id="tip" class="section"><h2 class="section-title">💡 技巧与观点<span class="section-badge">0</span></h2><div class="card-grid">
+</div></section>
+</main>
+<footer class="footer"><p>共 6 条资讯 · 数据源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 2026-08-09</p></footer>
+<script>
+document.querySelectorAll('.nav-pill').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(this.getAttribute('href'));if(t){var n=document.querySelector('.nav').offsetHeight;window.scrollTo({top:t.offsetTop-n-12,behavior:'smooth'})}})});
+</script>
+</body>
+</html>
