@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<title>GitHub周榜汇总 · 第30~32周 补发（完整版）</title>
+<title>GitHub 周榜汇总 · 第30~32周 补发（v3 中文优先版）</title>
 <style>
 :root { --bg:#0d1117; --bg2:#161b22; --border:#30363d; --text:#c9d1d9; --dim:#8b949e; --accent:#58a6ff; --orange:#f0883e; --yellow:#f39c12; }
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -12,123 +12,66 @@ body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Mi
 .container { max-width:760px; margin:0 auto; }
 h1 { color:#fff; font-size:22px; text-align:center; margin:18px 0 8px; }
 .sub { text-align:center; color:var(--dim); font-size:14px; margin-bottom:18px; }
-.banner { background:#0a1f2a; border:1px solid #1f6feb; border-radius:8px; padding:10px 14px; font-size:12px; color:#79b8ff; margin-bottom:20px; }
-.sec-title { font-size:16px; color:#fff; padding-left:10px; border-left:3px solid var(--accent); margin:18px 0 12px; }
+.banner { background:#0a1f2a; border:1px solid #1f6feb; border-radius:8px; padding:10px 14px; font-size:12px; color:#79b8ff; margin-bottom:20px; line-height:1.7; }
+.sec-title { font-size:16px; color:#fff; padding-left:10px; border-left:3px solid var(--accent); margin:22px 0 12px; }
 .card { background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:16px 18px; margin-bottom:12px; }
 .card .head { display:flex; align-items:center; gap:10px; margin-bottom:8px; flex-wrap:wrap; }
 .card .rank { background:var(--orange); color:#fff; font-weight:700; padding:2px 8px; border-radius:6px; font-size:13px; min-width:48px; text-align:center; }
 .card .head strong { color:#fff; font-size:16px; flex:1; min-width:200px; }
 .card .stats { font-size:12px; color:var(--dim); }
 .card p { margin:8px 0; font-size:14px; color:var(--text); }
-.card code { background:#1c2128; padding:2px 6px; border-radius:4px; font-size:12px; color:var(--accent); }
 .card .use { font-size:13px; color:var(--text); margin:6px 0; padding:6px 10px; background:#0a0e14; border-radius:6px; }
 .card .use b { color:var(--orange); }
 .card .topics { margin:8px 0; }
 .card .tag { display:inline-block; background:#1c2128; border:1px solid var(--border); border-radius:4px; padding:2px 7px; font-size:11px; color:var(--accent); margin-right:4px; }
 .card .lang { font-size:12px; color:var(--dim); margin-top:6px; }
-.card .lang a { color:var(--accent); text-decoration:none; }
+.card .lang a { color:var(--accent); text-decoration:none; margin-right:8px; }
 .footer { text-align:center; color:#555; font-size:12px; margin-top:30px; padding-bottom:20px; }
 </style>
 </head>
 <body>
 <div class="container">
-<h1>📊 GitHub 周榜 · 补发汇总（完整版）</h1>
-<p class="sub">覆盖 2026年第30~32周（7/26 ~ 8/10）· 2026-08-20 20:41 CST</p>
+<h1>📊 GitHub 周榜 · 补发汇总</h1>
+<p class="sub">覆盖 2026年第30~32周（7/26 ~ 8/10）· 2026-08-20 21:09 CST</p>
 <div class="banner">
-  ⚠️ 这是 3 期缺勤周榜的补发汇总（v2 完整版）。<br>
-  原因：同 TOP5，cron 模型 404（codex-auto-review）。<br>
-  数据源：OSSInsight past_week + GitHub Trending weekly + GitHub API 实时校验。<br>
-  <strong>本次升级</strong>：每个项目补齐「中文项目名 + 一句话简介 + 用途 + GitHub/官网链接 + 元数据」，与日报 TOP5 卡片风格统一。
+  ⚠️ 这是 3 期缺勤周榜的补发汇总（<b>v3 中文优先版</b>）。<br>
+  <b>说明</b>：项目描述、用途段以中文为主；产品名与 AI 核心技术词（如 Agent、Skill、Harness、Codex、RAG 等）保留英文（已是中文 AI 圈通用术语）。<br>
+  数据源：OSSInsight past_week + GitHub API 实时校验。<br>
+  <b>本次升级</b>：① 项目名中文化 ② 描述/用途纯中文 ③ 按主题分组 ④ 链接用中文标签。
 </div>
-<div class="sec-title">📊 本周热门 TOP 20（OSSInsight past_week + Trending + API 校验）</div>
-
+<div class="sec-title">🤖 智能体与编排（7 项）</div>
 <div class="card">
   <div class="head">
     <span class="rank">🥇</span>
     <strong>DeepSeek Harness 桌面端</strong>
     <span class="stats">⭐ 16,168 · 本周 +59 · 更新 2026-08-20 · TypeScript</span>
   </div>
-  <p><code>anywhere-labs/deepseek-harness-desktop</code> — DeepSeek Harness (DSH) 插件生态的现代化桌面端：万物皆插件，桌面本身也是插件。</p>
-  <div class="use"><b>用途</b>：开发者直接拿到一个适配 macOS / Windows 的 DSH 桌面工作台，开箱即用、自带插件化扩展，省去自己搭 Electron + 适配官方 Harness 的重复劳动。</div>
+  <p>DeepSeek Harness (DSH) 插件生态的桌面端：万物皆插件，桌面本身也是插件。</p>
+  <div class="use"><b>用途</b>：开发者直接拿到适配 macOS / Windows 的桌面工作台，开箱即用、自带插件化扩展，省去自己搭图形壳、适配官方 Harness 的重复劳动。</div>
   <div class="topics"><span class="tag">#cordis</span> <span class="tag">#cordis-plugin</span> <span class="tag">#deepseek</span> <span class="tag">#deepseek-harness</span></div>
-  <div class="lang">🔗 <a href="https://github.com/anywhere-labs/deepseek-harness-desktop" target="_blank" rel="noopener">GitHub</a> · <a href="https://dshdesktop.cn" target="_blank">官网</a></div>
-</div>
-<div class="card">
-  <div class="head">
-    <span class="rank">🥈</span>
-    <strong>Claude Code 图表模板</strong>
-    <span class="stats">⭐ 23,951 · 本周 +57 · 更新 2026-08-20 · HTML</span>
-  </div>
-  <p><code>cathrynlavery/diagram-design</code> — 为 Claude Code / Codex / Pi 等 Agent 提供 38 种编辑级图表模板：自包含 HTML+SVG，无 Mermaid 冗余。</p>
-  <div class="use"><b>用途</b>：Agent 写文档、画架构、产出技术插图时直接调用这套设计模板，出来的图比 Mermaid 默认产物更专业、更可控，适合做产品文档、技术博客、PR 配图。</div>
-  <div class="topics"><span class="tag">#agent-skills</span> <span class="tag">#claude-code</span> <span class="tag">#codex</span> <span class="tag">#data-visualization</span></div>
-  <div class="lang">🔗 <a href="https://github.com/cathrynlavery/diagram-design" target="_blank" rel="noopener">GitHub</a> · <a href="https://cathrynlavery.github.io/diagram-design/" target="_blank">官网</a></div>
-</div>
-<div class="card">
-  <div class="head">
-    <span class="rank">🥉</span>
-    <strong>AI 水印清除器</strong>
-    <span class="stats">⭐ 15,722 · 本周 +42 · 更新 2026-08-19 · Python</span>
-  </div>
-  <p><code>guillaumemeyer/watermarks-remover</code> — 移除多源 AI 生成水印：Unicode 文本水印、统计学隐写标记一站清理。</p>
-  <div class="use"><b>用途</b>：研究 AI 检测/水印机制的工具人必备：批量清洗 Unicode 不可见字符、统计特征，让生成内容绕过常见 AI 检测器——同时也用于水印机制的对抗研究。</div>
-  <div class="topics"><span class="tag">#agent-skill</span> <span class="tag">#ai</span> <span class="tag">#c2pa</span> <span class="tag">#claude</span></div>
-  <div class="lang">🔗 <a href="https://github.com/guillaumemeyer/watermarks-remover" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/guillaumemeyer/watermarks-remover" target="_blank">官网</a></div>
+  <div class="lang">🔗 <a href="https://github.com/anywhere-labs/deepseek-harness-desktop" target="_blank" rel="noopener">查看项目主页</a> · <a href="https://dshdesktop.cn" target="_blank">访问官网</a></div>
 </div>
 <div class="card">
   <div class="head">
     <span class="rank">#4</span>
-    <strong>Orca 多 Agent 编排</strong>
+    <strong>Orca 多智能体编排</strong>
     <span class="stats">⭐ 49,683 · 本周 +23 · 更新 2026-08-20 · TypeScript</span>
   </div>
-  <p><code>stablyai/orca</code> — 并行 Agent 集群的 ADE（Agent 开发环境）：一键起一支 Agent 队伍，分工跑任务。</p>
-  <div class="use"><b>用途</b>：想做&quot;多 Agent 协作&quot;的团队直接 fork：Orca 帮你同时调度多路 Agent、分配任务、合并结果，省去自己写调度器、消息总线、状态同步的工程量。</div>
+  <p>并行智能体集群的开发环境（ADE）：一键起一支智能体队伍，分工跑任务。</p>
+  <div class="use"><b>用途</b>：想做&quot;多智能体协作&quot;的团队直接复刻：Orca 帮你同时调度多路智能体、分配任务、合并结果，省去自己写调度器、消息总线、状态同步的工程量。</div>
   <div class="topics"><span class="tag">#ade</span> <span class="tag">#agent-ide</span> <span class="tag">#ai-agents</span> <span class="tag">#claude-code</span></div>
-  <div class="lang">🔗 <a href="https://github.com/stablyai/orca" target="_blank" rel="noopener">GitHub</a> · <a href="https://onOrca.dev" target="_blank">官网</a></div>
+  <div class="lang">🔗 <a href="https://github.com/stablyai/orca" target="_blank" rel="noopener">查看项目主页</a> · <a href="https://onOrca.dev" target="_blank">访问官网</a></div>
 </div>
 <div class="card">
   <div class="head">
     <span class="rank">#5</span>
-    <strong>HolaOS Agent 工作台</strong>
+    <strong>HolaOS 智能体工作台</strong>
     <span class="stats">⭐ 10,344 · 本周 +18 · 更新 2026-08-19 · TypeScript</span>
   </div>
-  <p><code>holaboss-ai/holaOS</code> — 开源的全能 AI Agent 工作台：Claude Code / Codex 等主流 Agent 都能一键接入。</p>
-  <div class="use"><b>用途</b>：想自己搭一个统一操作多个 Agent 的桌面控制台（类似 Raycast + Agent）就用这个，避免每个 Agent 各起一个 WebUI 切来切去。</div>
+  <p>开源的全能智能体工作台：Claude Code / Codex 等主流智能体都能一键接入。</p>
+  <div class="use"><b>用途</b>：想自己搭一个统一操作多个智能体的桌面控制台（类似启动器 + 智能体）就用这个，避免每个智能体各起一个网页面板切来切去。</div>
   <div class="topics"><span class="tag">#agent</span> <span class="tag">#agent-harness</span> <span class="tag">#agent-os</span> <span class="tag">#agentic</span></div>
-  <div class="lang">🔗 <a href="https://github.com/holaboss-ai/holaOS" target="_blank" rel="noopener">GitHub</a> · <a href="https://holaos.ai" target="_blank">官网</a></div>
-</div>
-<div class="card">
-  <div class="head">
-    <span class="rank">#6</span>
-    <strong>Needle 端侧 14MB 模型</strong>
-    <span class="stats">⭐ 8,011 · 本周 +17 · 更新 2026-08-20 · Python</span>
-  </div>
-  <p><code>cactus-compute/needle</code> — 14MB 基础模型：手机、可穿戴、智能家居端侧可跑的轻量大模型。</p>
-  <div class="use"><b>用途</b>：做端侧 AI（手机输入法、智能家居语音、可穿戴）的工程师直接用：14MB 跑通基础对话/分类，离线无网也能用，不烧 GPU。</div>
-  <div class="topics"><span class="tag">#cactus</span> <span class="tag">#gemini</span> <span class="tag">#gemma</span> <span class="tag">#llm</span></div>
-  <div class="lang">🔗 <a href="https://github.com/cactus-compute/needle" target="_blank" rel="noopener">GitHub</a> · <a href="https://cactuscompute.com" target="_blank">官网</a></div>
-</div>
-<div class="card">
-  <div class="head">
-    <span class="rank">#7</span>
-    <strong>J-Space 认知增强 V3.6</strong>
-    <span class="stats">⭐ 2,985 · 本周 +16 · 更新 2026-08-19 · Python</span>
-  </div>
-  <p><code>Tiger3807861189/J-Space-Cognition-Suite-V3.6</code> — J-Space 认知增强套件 V3.6：基于 Agent 的认知增强技能集。</p>
-  <div class="use"><b>用途</b>：用 Agent 给自己做&quot;思维外挂&quot;——把笔记、记忆、推理、检查清单打包成可调用的 Skill，提升个人/团队的日常认知带宽。</div>
-  <div class="topics"><span class="tag">#agent-skills</span> <span class="tag">#ai</span> <span class="tag">#ai-agent</span> <span class="tag">#ai-agents</span></div>
-  <div class="lang">🔗 <a href="https://github.com/Tiger3807861189/J-Space-Cognition-Suite-V3.6" target="_blank" rel="noopener">GitHub</a></div>
-</div>
-<div class="card">
-  <div class="head">
-    <span class="rank">#8</span>
-    <strong>数字生命 Skill</strong>
-    <span class="stats">⭐ 23,618 · 本周 +16 · 更新 2026-08-19 · Python</span>
-  </div>
-  <p><code>titanwings/colleague-skill</code> — 把&quot;冰冷的离别&quot;化为温暖的数字生命 Skill：把逝去同事/朋友的人格留在本地可对话。</p>
-  <div class="use"><b>用途</b>：情感/数字遗产方向的实验性项目：用 Skill 把一个人的记忆、说话方式、风格留给后人；偏向个人/家庭场景，不是企业级方案。</div>
-  <div class="topics"><span class="tag">#agent-skills</span> <span class="tag">#agentic-ai</span> <span class="tag">#ai-agent</span> <span class="tag">#ai-persona</span></div>
-  <div class="lang">🔗 <a href="https://github.com/titanwings/colleague-skill" target="_blank" rel="noopener">GitHub</a></div>
+  <div class="lang">🔗 <a href="https://github.com/holaboss-ai/holaOS" target="_blank" rel="noopener">查看项目主页</a> · <a href="https://holaos.ai" target="_blank">访问官网</a></div>
 </div>
 <div class="card">
   <div class="head">
@@ -136,21 +79,21 @@ h1 { color:#fff; font-size:22px; text-align:center; margin:18px 0 8px; }
     <strong>OpenViking 上下文数据库</strong>
     <span class="stats">⭐ 30,767 · 本周 +15 · 更新 2026-08-20 · Python</span>
   </div>
-  <p><code>volcengine/OpenViking</code> — 自演进 Agent 上下文数据库：统一管理 Agent 记忆、知识、上下文。</p>
-  <div class="use"><b>用途</b>：给生产级 Agent 加&quot;长期记忆&quot;基础设施——直接接 OpenViking，跨会话保留上下文/经验/用户偏好，省去自己写 RAG + 记忆层。</div>
+  <p>自演进智能体上下文数据库：统一管理智能体记忆、知识、上下文。</p>
+  <div class="use"><b>用途</b>：给生产级智能体加&quot;长期记忆&quot;基础设施——直接接入，跨会话保留上下文/经验/用户偏好，省去自己搭检索增强生成 + 记忆层。</div>
   <div class="topics"><span class="tag">#agent-memory</span> <span class="tag">#agent-plugins</span> <span class="tag">#agentic-rag</span> <span class="tag">#context-database</span></div>
-  <div class="lang">🔗 <a href="https://github.com/volcengine/OpenViking" target="_blank" rel="noopener">GitHub</a> · <a href="https://openviking.ai/" target="_blank">官网</a></div>
+  <div class="lang">🔗 <a href="https://github.com/volcengine/OpenViking" target="_blank" rel="noopener">查看项目主页</a> · <a href="https://openviking.ai/" target="_blank">访问官网</a></div>
 </div>
 <div class="card">
   <div class="head">
     <span class="rank">#10</span>
-    <strong>Prime-Agent 自改进 Agent</strong>
+    <strong>Prime 智能体</strong>
     <span class="stats">⭐ 17,455 · 本周 +15 · 更新 2026-08-20 · TypeScript</span>
   </div>
-  <p><code>PrimeIntellect-ai/prime-agent</code> — 自改进 RLM Agent：跑长程编码工作流 + 自主迭代。</p>
-  <div class="use"><b>用途</b>：需要 Agent &quot;越用越聪明&quot;时用 prime-agent：它会从历史任务里学，迭代改进自己的 prompt/工具调用策略，适合需要长期打磨的复杂编码任务。</div>
+  <p>自改进智能体：跑长程编码工作流 + 自主迭代。</p>
+  <div class="use"><b>用途</b>：需要智能体&quot;越用越聪明&quot;时用它：它会从历史任务里学，迭代改进自己的指令策略和工具调用方式，适合需要长期打磨的复杂编码任务。</div>
   
-  <div class="lang">🔗 <a href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank" rel="noopener">GitHub</a></div>
+  <div class="lang">🔗 <a href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank" rel="noopener">查看项目主页</a></div>
 </div>
 <div class="card">
   <div class="head">
@@ -158,43 +101,43 @@ h1 { color:#fff; font-size:22px; text-align:center; margin:18px 0 8px; }
     <strong>DSH 启动标准预设</strong>
     <span class="stats">⭐ 3,667 · 本周 +15 · 更新 2026-08-17 · JavaScript</span>
   </div>
-  <p><code>xiaobright/dsh-anchored-standard</code> — DeepSeek Harness 的&quot;两阶段启动&quot;标准预设：先最小对齐 bootstrap，再全量跑。</p>
-  <div class="use"><b>用途</b>：DSH 用户必备的工程实践模板：保证 Harness 启动过程的稳定性和可复现性，避免冷启动炸服务。</div>
+  <p>DeepSeek Harness 的&quot;两阶段启动&quot;标准预设：先最小对齐引导，再全量跑。</p>
+  <div class="use"><b>用途</b>：DSH 用户必备的工程实践模板：保证启动过程的稳定性和可复现性，避免冷启动炸服务。</div>
   <div class="topics"><span class="tag">#deepseek</span> <span class="tag">#deepseek-harness</span> <span class="tag">#dsh-plugin</span> <span class="tag">#llm-agent</span></div>
-  <div class="lang">🔗 <a href="https://github.com/xiaobright/dsh-anchored-standard" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/xiaobright/modeltest" target="_blank">官网</a></div>
+  <div class="lang">🔗 <a href="https://github.com/xiaobright/dsh-anchored-standard" target="_blank" rel="noopener">查看项目主页</a> · <a href="https://github.com/xiaobright/modeltest" target="_blank">访问官网</a></div>
 </div>
 <div class="card">
   <div class="head">
-    <span class="rank">#12</span>
-    <strong>深入理解 AI Agent（开源书）</strong>
-    <span class="stats">⭐ 40,070 · 本周 +14 · 更新 2026-08-20 · Python</span>
+    <span class="rank">#18</span>
+    <strong>iFixAi 智能体审计</strong>
+    <span class="stats">⭐ 11,058 · 本周 +12 · 更新 2026-08-17 · Python</span>
   </div>
-  <p><code>bojieli/ai-agent-book</code> — 《深入理解 AI Agent：设计原理与工程实践》开源主仓库（李博杰 著）：全书正文 + PDF + 配套代码。</p>
-  <div class="use"><b>用途</b>：想系统学 Agent 工程化（不是用 LangChain 调 API 那么浅）就啃这本书：覆盖设计原理、生产级架构、常见陷阱，是中文圈最系统的 Agent 教材之一。</div>
-  <div class="topics"><span class="tag">#agent</span> <span class="tag">#agent-memory</span> <span class="tag">#ai-agent</span> <span class="tag">#book</span></div>
-  <div class="lang">🔗 <a href="https://github.com/bojieli/ai-agent-book" target="_blank" rel="noopener">GitHub</a></div>
+  <p>智能体独立审计平台：人或智能体都能跑审计。</p>
+  <div class="use"><b>用途</b>：上线智能体前用它做独立审计：跑一套&quot;黑盒测试 + 行为审计 + 红队&quot;流程，发现智能体的安全/合规/可靠性问题，避免裸上生产。</div>
+  <div class="topics"><span class="tag">#agent-evaluation</span> <span class="tag">#ai</span> <span class="tag">#ai-alignment</span> <span class="tag">#ai-evaluation</span></div>
+  <div class="lang">🔗 <a href="https://github.com/ifixai-ai/iFixAi" target="_blank" rel="noopener">查看项目主页</a> · <a href="https://www.ifixai.ai" target="_blank">访问官网</a></div>
+</div><div class="sec-title">🛠️ 开发者工具与效率（5 项）</div>
+<div class="card">
+  <div class="head">
+    <span class="rank">🥈</span>
+    <strong>智能体图表模板</strong>
+    <span class="stats">⭐ 23,951 · 本周 +57 · 更新 2026-08-20 · HTML</span>
+  </div>
+  <p>为 Claude Code / Codex / Pi 等智能体提供 38 种编辑级图表模板：自包含网页文件 + 矢量图，无 Mermaid 冗余。</p>
+  <div class="use"><b>用途</b>：智能体写文档、画架构、产出技术插图时直接调用这套模板，出来的图比 Mermaid 默认产物更专业、更可控，适合做产品文档、技术博客、PR 配图。</div>
+  <div class="topics"><span class="tag">#agent-skills</span> <span class="tag">#claude-code</span> <span class="tag">#codex</span> <span class="tag">#data-visualization</span></div>
+  <div class="lang">🔗 <a href="https://github.com/cathrynlavery/diagram-design" target="_blank" rel="noopener">查看项目主页</a> · <a href="https://cathrynlavery.github.io/diagram-design/" target="_blank">访问官网</a></div>
 </div>
 <div class="card">
   <div class="head">
-    <span class="rank">#13</span>
-    <strong>Book-to-Skill 转换器</strong>
-    <span class="stats">⭐ 23,289 · 本周 +14 · 更新 2026-08-19 · Python</span>
+    <span class="rank">🥉</span>
+    <strong>AI 水印清除器</strong>
+    <span class="stats">⭐ 15,722 · 本周 +42 · 更新 2026-08-19 · Python</span>
   </div>
-  <p><code>virgiliojr94/book-to-skill</code> — 把任意技术书 PDF 转成 Claude Code 可学习的 Skill。</p>
-  <div class="use"><b>用途</b>：想&quot;读完一本书 + 让 Agent 也会这本书的知识&quot;就用：丢 PDF 进去，自动产出 Skill + 学习计划，适合自学/培训/知识库构建。</div>
-  <div class="topics"><span class="tag">#agent-skills</span> <span class="tag">#ai-agents</span> <span class="tag">#book-to-skill</span> <span class="tag">#context-engineering</span></div>
-  <div class="lang">🔗 <a href="https://github.com/virgiliojr94/book-to-skill" target="_blank" rel="noopener">GitHub</a></div>
-</div>
-<div class="card">
-  <div class="head">
-    <span class="rank">#14</span>
-    <strong>网络安全 Skill 集（817 个）</strong>
-    <span class="stats">⭐ 30,205 · 本周 +13 · 更新 2026-08-08 · Python</span>
-  </div>
-  <p><code>mukul975/Anthropic-Cybersecurity-Skills</code> — 817 个结构化网络安全 Skill：映射到 6 个主流安全框架。</p>
-  <div class="use"><b>用途</b>：安全工程师/红队用 Agent 做渗透/审计时直接调用这 817 个 Skill：覆盖 OWASP/NIST 等框架，省去从零写安全检查清单。</div>
-  <div class="topics"><span class="tag">#ai-agents</span> <span class="tag">#claude-code</span> <span class="tag">#cloud-security</span> <span class="tag">#cybersecurity</span></div>
-  <div class="lang">🔗 <a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank" rel="noopener">GitHub</a> · <a href="https://mahipal.engineer/Anthropic-Cybersecurity-Skills/" target="_blank">官网</a></div>
+  <p>移除多源 AI 生成水印：文本不可见字符、统计学隐写标记一站清理。</p>
+  <div class="use"><b>用途</b>：研究 AI 检测/水印机制的工具人必备：批量清洗文本不可见字符、统计特征，让生成内容绕过常见 AI 检测器——同时也用于水印机制的对抗研究。</div>
+  <div class="topics"><span class="tag">#agent-skill</span> <span class="tag">#ai</span> <span class="tag">#c2pa</span> <span class="tag">#claude</span></div>
+  <div class="lang">🔗 <a href="https://github.com/guillaumemeyer/watermarks-remover" target="_blank" rel="noopener">查看项目主页</a> · <a href="https://github.com/guillaumemeyer/watermarks-remover" target="_blank">访问官网</a></div>
 </div>
 <div class="card">
   <div class="head">
@@ -202,10 +145,10 @@ h1 { color:#fff; font-size:22px; text-align:center; margin:18px 0 8px; }
     <strong>RVG 代理管理面板</strong>
     <span class="stats">⭐ 2,997 · 本周 +12 · 更新 2026-08-19 · Python</span>
   </div>
-  <p><code>arvin341az-glitch/RVG</code> — Python + FastAPI 的多协议代理管理面板。</p>
-  <div class="use"><b>用途</b>：需要统一管一堆代理（HTTP/SOCKS/SSR/V2Ray…）时直接用 RVG 当控制台：可视化、批量管理、状态监控齐全，省去自己写代理池 UI。</div>
+  <p>Python + FastAPI 的多协议代理管理面板。</p>
+  <div class="use"><b>用途</b>：需要统一管一堆代理（HTTP/SOCKS/SSR/V2Ray…）时直接用它当控制台：可视化、批量管理、状态监控齐全，省去自己写代理池界面。</div>
   <div class="topics"><span class="tag">#fastapi</span> <span class="tag">#gateway</span> <span class="tag">#proxy</span> <span class="tag">#python</span></div>
-  <div class="lang">🔗 <a href="https://github.com/arvin341az-glitch/RVG" target="_blank" rel="noopener">GitHub</a></div>
+  <div class="lang">🔗 <a href="https://github.com/arvin341az-glitch/RVG" target="_blank" rel="noopener">查看项目主页</a></div>
 </div>
 <div class="card">
   <div class="head">
@@ -213,10 +156,10 @@ h1 { color:#fff; font-size:22px; text-align:center; margin:18px 0 8px; }
     <strong>OpenLogi 设备配置</strong>
     <span class="stats">⭐ 11,108 · 本周 +12 · 更新 2026-08-20 · Rust</span>
   </div>
-  <p><code>AprilNEA/OpenLogi</code> — 本地优先的 Logitech Options+ 开源替代品：用 Rust 写的轻量设备配置工具。</p>
+  <p>本地优先的 Logitech Options+ 开源替代品：用 Rust 写的轻量设备配置工具。</p>
   <div class="use"><b>用途</b>：不想装 Logitech 官方驱动（闭源、臃肿、隐私问题）就用这个：纯本地、支持自定义按键映射、设备配置文件开源可审计。</div>
   <div class="topics"><span class="tag">#dpi</span> <span class="tag">#gpui</span> <span class="tag">#hid</span> <span class="tag">#hidpp</span></div>
-  <div class="lang">🔗 <a href="https://github.com/AprilNEA/OpenLogi" target="_blank" rel="noopener">GitHub</a> · <a href="https://openlogi.org" target="_blank">官网</a></div>
+  <div class="lang">🔗 <a href="https://github.com/AprilNEA/OpenLogi" target="_blank" rel="noopener">查看项目主页</a> · <a href="https://openlogi.org" target="_blank">访问官网</a></div>
 </div>
 <div class="card">
   <div class="head">
@@ -224,21 +167,76 @@ h1 { color:#fff; font-size:22px; text-align:center; margin:18px 0 8px; }
     <strong>Buzz 蜂巢沟通平台</strong>
     <span class="stats">⭐ 28,797 · 本周 +12 · 更新 2026-08-20 · Rust</span>
   </div>
-  <p><code>block/buzz</code> — 蜂巢式思维沟通平台：多人共享&quot;心智模型&quot;。</p>
-  <div class="use"><b>用途</b>：团队/小群体协作场景：把想法/决策/上下文像蜂巢一样共享，避免 IM 群聊的碎片化，适合产品决策/学习小组/远程团队。</div>
+  <p>蜂巢式思维沟通平台：多人共享&quot;心智模型&quot;。</p>
+  <div class="use"><b>用途</b>：团队/小群体协作场景：把想法/决策/上下文像蜂巢一样共享，避免即时通讯群聊的碎片化，适合产品决策/学习小组/远程团队。</div>
   
-  <div class="lang">🔗 <a href="https://github.com/block/buzz" target="_blank" rel="noopener">GitHub</a></div>
+  <div class="lang">🔗 <a href="https://github.com/block/buzz" target="_blank" rel="noopener">查看项目主页</a></div>
+</div><div class="sec-title">🧠 模型与认知（3 项）</div>
+<div class="card">
+  <div class="head">
+    <span class="rank">#6</span>
+    <strong>Needle 端侧 14MB 模型</strong>
+    <span class="stats">⭐ 8,011 · 本周 +17 · 更新 2026-08-20 · Python</span>
+  </div>
+  <p>14MB 基础模型：手机、可穿戴、智能家居端侧可跑的轻量大模型。</p>
+  <div class="use"><b>用途</b>：做端侧 AI（手机输入法、智能家居语音、可穿戴）的工程师直接用：14MB 跑通基础对话/分类，离线无网也能用，不烧显卡。</div>
+  <div class="topics"><span class="tag">#cactus</span> <span class="tag">#gemini</span> <span class="tag">#gemma</span> <span class="tag">#llm</span></div>
+  <div class="lang">🔗 <a href="https://github.com/cactus-compute/needle" target="_blank" rel="noopener">查看项目主页</a> · <a href="https://cactuscompute.com" target="_blank">访问官网</a></div>
 </div>
 <div class="card">
   <div class="head">
-    <span class="rank">#18</span>
-    <strong>iFixAi Agent 审计平台</strong>
-    <span class="stats">⭐ 11,058 · 本周 +12 · 更新 2026-08-17 · Python</span>
+    <span class="rank">#7</span>
+    <strong>J-Space 认知增强 V3.6</strong>
+    <span class="stats">⭐ 2,985 · 本周 +16 · 更新 2026-08-19 · Python</span>
   </div>
-  <p><code>ifixai-ai/iFixAi</code> — AI Agent 独立审计平台：人或 Agent 都能跑审计。</p>
-  <div class="use"><b>用途</b>：上线 Agent 前用它做独立审计：跑一套&quot;黑盒测试 + 行为审计 + 红队&quot;流程，发现 Agent 的安全/合规/可靠性问题，避免裸上生产。</div>
-  <div class="topics"><span class="tag">#agent-evaluation</span> <span class="tag">#ai</span> <span class="tag">#ai-alignment</span> <span class="tag">#ai-evaluation</span></div>
-  <div class="lang">🔗 <a href="https://github.com/ifixai-ai/iFixAi" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.ifixai.ai" target="_blank">官网</a></div>
+  <p>J-Space 认知增强套件 V3.6：基于智能体的认知增强技能集。</p>
+  <div class="use"><b>用途</b>：用智能体给自己做&quot;思维外挂&quot;——把笔记、记忆、推理、检查清单打包成可调用的技能，提升个人/团队的日常认知带宽。</div>
+  <div class="topics"><span class="tag">#agent-skills</span> <span class="tag">#ai</span> <span class="tag">#ai-agent</span> <span class="tag">#ai-agents</span></div>
+  <div class="lang">🔗 <a href="https://github.com/Tiger3807861189/J-Space-Cognition-Suite-V3.6" target="_blank" rel="noopener">查看项目主页</a></div>
+</div>
+<div class="card">
+  <div class="head">
+    <span class="rank">#8</span>
+    <strong>数字生命技能</strong>
+    <span class="stats">⭐ 23,618 · 本周 +16 · 更新 2026-08-19 · Python</span>
+  </div>
+  <p>把&quot;冰冷的离别&quot;化为温暖的数字生命技能：把逝去同事/朋友的人格留在本地可对话。</p>
+  <div class="use"><b>用途</b>：情感/数字遗产方向的实验性项目：用技能把一个人的记忆、说话方式、风格留给后人；偏向个人/家庭场景，不是企业级方案。</div>
+  <div class="topics"><span class="tag">#agent-skills</span> <span class="tag">#agentic-ai</span> <span class="tag">#ai-agent</span> <span class="tag">#ai-persona</span></div>
+  <div class="lang">🔗 <a href="https://github.com/titanwings/colleague-skill" target="_blank" rel="noopener">查看项目主页</a></div>
+</div><div class="sec-title">📚 知识与技能（5 项）</div>
+<div class="card">
+  <div class="head">
+    <span class="rank">#12</span>
+    <strong>深入理解 AI 智能体（开源书）</strong>
+    <span class="stats">⭐ 40,070 · 本周 +14 · 更新 2026-08-20 · Python</span>
+  </div>
+  <p>《深入理解 AI 智能体：设计原理与工程实践》开源主仓库（李博杰 著）：全书正文 + 编译版 PDF + 按章配套代码。</p>
+  <div class="use"><b>用途</b>：想系统学智能体工程化（不是用 LangChain 调 API 那么浅）就啃这本书：覆盖设计原理、生产级架构、常见陷阱，是中文圈最系统的智能体教材之一。</div>
+  <div class="topics"><span class="tag">#agent</span> <span class="tag">#agent-memory</span> <span class="tag">#ai-agent</span> <span class="tag">#book</span></div>
+  <div class="lang">🔗 <a href="https://github.com/bojieli/ai-agent-book" target="_blank" rel="noopener">查看项目主页</a></div>
+</div>
+<div class="card">
+  <div class="head">
+    <span class="rank">#13</span>
+    <strong>Book-to-Skill 转换器</strong>
+    <span class="stats">⭐ 23,289 · 本周 +14 · 更新 2026-08-19 · Python</span>
+  </div>
+  <p>把任意技术书 PDF 转成 Claude Code 可学习的技能。</p>
+  <div class="use"><b>用途</b>：想&quot;读完一本书 + 让智能体也会这本书的知识&quot;就用：丢 PDF 进去，自动产出技能 + 学习计划，适合自学/培训/知识库构建。</div>
+  <div class="topics"><span class="tag">#agent-skills</span> <span class="tag">#ai-agents</span> <span class="tag">#book-to-skill</span> <span class="tag">#context-engineering</span></div>
+  <div class="lang">🔗 <a href="https://github.com/virgiliojr94/book-to-skill" target="_blank" rel="noopener">查看项目主页</a></div>
+</div>
+<div class="card">
+  <div class="head">
+    <span class="rank">#14</span>
+    <strong>网络安全技能集（817 个）</strong>
+    <span class="stats">⭐ 30,205 · 本周 +13 · 更新 2026-08-08 · Python</span>
+  </div>
+  <p>817 个结构化网络安全技能：映射到 6 个主流安全框架。</p>
+  <div class="use"><b>用途</b>：安全工程师/红队用智能体做渗透/审计时直接调用这 817 个技能：覆盖 OWASP/NIST 等框架，省去从零写安全检查清单。</div>
+  <div class="topics"><span class="tag">#ai-agents</span> <span class="tag">#claude-code</span> <span class="tag">#cloud-security</span> <span class="tag">#cybersecurity</span></div>
+  <div class="lang">🔗 <a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank" rel="noopener">查看项目主页</a> · <a href="https://mahipal.engineer/Anthropic-Cybersecurity-Skills/" target="_blank">访问官网</a></div>
 </div>
 <div class="card">
   <div class="head">
@@ -246,23 +244,23 @@ h1 { color:#fff; font-size:22px; text-align:center; margin:18px 0 8px; }
     <strong>Harness Engineering 教程</strong>
     <span class="stats">⭐ 13,011 · 本周 +12 · 更新 2026-08-19 · TypeScript</span>
   </div>
-  <p><code>walkinglabs/learn-harness-engineering</code> — Harness Engineering 从 0 到 1 入门教程。</p>
-  <div class="use"><b>用途</b>：腾讯技术工程那篇《驾驭 AI Coding》太抽象？这个仓库配套实战教程：手把手带你搭一套 Harness，从最小可用到生产可用。</div>
+  <p>Harness Engineering 从 0 到 1 入门教程。</p>
+  <div class="use"><b>用途</b>：腾讯技术工程那篇《驾驭 AI 编程》太抽象？这个仓库配套实战教程：手把手带你搭一套 Harness，从最小可用到生产可用。</div>
   <div class="topics"><span class="tag">#agent</span> <span class="tag">#agentic</span> <span class="tag">#agentic-ai</span> <span class="tag">#ai</span></div>
-  <div class="lang">🔗 <a href="https://github.com/walkinglabs/learn-harness-engineering" target="_blank" rel="noopener">GitHub</a> · <a href="https://walkinglabs.github.io/learn-harness-engineering/" target="_blank">官网</a></div>
+  <div class="lang">🔗 <a href="https://github.com/walkinglabs/learn-harness-engineering" target="_blank" rel="noopener">查看项目主页</a> · <a href="https://walkinglabs.github.io/learn-harness-engineering/" target="_blank">访问官网</a></div>
 </div>
 <div class="card">
   <div class="head">
     <span class="rank">#20</span>
-    <strong>Internet Court Agent 信任层</strong>
+    <strong>Internet Court 信任层</strong>
     <span class="stats">⭐ 4,239 · 本周 +12 · 更新 2026-08-19 · TypeScript</span>
   </div>
-  <p><code>internet-court/internet-court-skill</code> — Agent 间商业交易的信任层：自然语言授权 + 仲裁。</p>
-  <div class="use"><b>用途</b>：Agent 之间要&quot;签合同&quot;、做交易、解决纠纷时用 internet-court：提供自然语言写契约、自动执行 + 第三方仲裁，是 Agent 经济的基础设施之一。</div>
+  <p>智能体间商业交易的信任层：自然语言授权 + 仲裁。</p>
+  <div class="use"><b>用途</b>：智能体之间要&quot;签合同&quot;、做交易、解决纠纷时用它：提供自然语言写契约、自动执行 + 第三方仲裁，是智能体经济的基础设施之一。</div>
   <div class="topics"><span class="tag">#a2a</span> <span class="tag">#adjudication</span> <span class="tag">#agent-payments</span> <span class="tag">#agent-skills</span></div>
-  <div class="lang">🔗 <a href="https://github.com/internet-court/internet-court-skill" target="_blank" rel="noopener">GitHub</a></div>
+  <div class="lang">🔗 <a href="https://github.com/internet-court/internet-court-skill" target="_blank" rel="noopener">查看项目主页</a></div>
 </div>
-<div class="footer">由AI自动生成 · 补发汇总 v2（完整项目说明） · 2026-08-20 20:41 CST</div>
+<div class="footer">由AI自动生成 · 补发汇总 v3 · 中文优先 · 2026-08-20 21:09 CST</div>
 </div>
 </body>
 </html>
