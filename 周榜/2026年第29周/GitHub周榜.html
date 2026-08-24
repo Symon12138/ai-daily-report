@@ -337,6 +337,113 @@ h1{text-shadow:none;}
     animation:hermesBeam 6s linear infinite;opacity:.8;
   }
 }
+}
+
+/* ===== hermes-neon-v4 组件/布局精修 · Linear 设计语言 ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+body{font-family:'Inter',system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;font-feature-settings:'cv01','ss03';}
+
+/* --- 排版：负字距标题层级 --- */
+h1{letter-spacing:-.8px !important;font-weight:600;}
+.theme{font-size:24px !important;letter-spacing:-.6px !important;font-weight:600;}
+.hero-title{letter-spacing:-1px !important;}
+.sub{font-size:14px !important;letter-spacing:-.16px;}
+.name,.project-name a{letter-spacing:-.2px;font-weight:600;}
+.desc,.project-usage{letter-spacing:-.11px;line-height:1.65;}
+
+/* --- 卡片：半透明亮度分层（Linear elevation model）--- */
+.card,.project{
+  background:rgba(255,255,255,.028) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:12px !important;
+  box-shadow:none !important;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.card:hover,.project:hover{
+  background:rgba(255,255,255,.05) !important;
+  border-color:rgba(255,255,255,.14) !important;
+  transform:translateY(-2px);
+  box-shadow:0 8px 28px rgba(0,0,0,.35) !important;
+}
+.card,.project{padding:18px 20px;}
+
+/* --- 徽章/星数：药丸组件 --- */
+.stars,.project-stars{
+  background:transparent !important;
+  border:1px solid rgba(255,200,87,.35) !important;
+  border-radius:9999px !important;
+  font-size:12px !important;font-weight:500;
+  padding:3px 10px !important;white-space:nowrap;
+  text-shadow:none !important;
+}
+.badge{
+  background:transparent !important;border:1px solid rgba(122,92,255,.5) !important;
+  border-radius:9999px !important;font-size:11px !important;font-weight:500;
+  letter-spacing:.02em;padding:3px 11px !important;
+}
+.card-idx,.section-badge{border-radius:9999px !important;font-weight:500;}
+
+/* --- 用途说明块：内凹面板（inset sunken）--- */
+.why,.project-usage{
+  background:rgba(0,0,0,.25) !important;
+  box-shadow:rgba(0,0,0,.2) 0 0 12px 0 inset !important;
+  border-left:none !important;border-radius:8px !important;
+  padding:10px 12px !important;font-size:13px !important;
+}
+.why b{color:#ffc857 !important;}
+
+/* --- 周榜分组标题：药丸头 --- */
+.domain-title{
+  display:inline-block;background:rgba(122,92,255,.12) !important;
+  border:1px solid rgba(122,92,255,.3);border-radius:9999px !important;
+  font-size:13px !important;font-weight:600;letter-spacing:-.1px;
+  padding:6px 16px !important;margin-bottom:14px !important;
+  text-shadow:none !important;
+}
+.domain{margin-bottom:28px;}
+
+/* --- 导航栏：Linear 精修 --- */
+.hermes-nav{
+  background:rgba(10,11,22,.82) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+}
+.hermes-nav::before{display:none;}
+.hermes-nav a{
+  background:rgba(255,255,255,.04) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:6px !important;font-weight:500;color:#d0d6e0 !important;
+}
+.hermes-nav a:hover{color:#f7f8f8 !important;background:rgba(255,255,255,.08) !important;}
+.hermes-nav .nav-home{
+  background:linear-gradient(135deg,rgba(94,106,210,.85),rgba(113,112,255,.85)) !important;
+  border-color:transparent !important;color:#fff !important;
+}
+.hermes-nav .nav-mid{
+  background:transparent !important;border:none !important;
+  color:#8a8f98 !important;font-weight:500;
+}
+
+/* --- TOP5 页面布局节奏 --- */
+.rank{margin-bottom:10px;}
+.repo{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important;font-size:11.5px !important;}
+.meta{font-size:11px;letter-spacing:-.05px;}
+
+/* --- 链接交互 --- */
+.project-name a:hover{color:#828fff !important;text-shadow:none !important;}
+.repo a:hover{color:#828fff !important;}
+
+/* --- insight 汇总块 --- */
+.insight{
+  background:rgba(255,255,255,.03) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:12px !important;backdrop-filter:blur(6px);
+}
+
+@media (max-width:480px){
+  .card,.project{padding:15px 16px;}
+  h1{letter-spacing:-.5px !important;}
+}
 </style></head><body>
 <div class="hermes-bg"><div class="hb-orb hb-o1"></div><div class="hb-orb hb-o2"></div><div class="hb-orb hb-o3"></div><div class="hb-grid"></div><div class="hb-stars"></div><div class="hb-scan"></div></div><div class="container">
 <!--hermes-nav-start--><nav class="hermes-nav" aria-label="页面导航"><div class="nav-side"><a class="nav-home" href="../../首页.html">🏠 首页</a></div><div class="nav-mid">2026年第29周 · 周榜</div><div class="nav-side"><a href="../2026年第28周/GitHub周榜.html">← 上篇</a><a href="../2026年第33周/GitHub周榜.html">下篇 →</a></div></nav><!--hermes-nav-end-->
