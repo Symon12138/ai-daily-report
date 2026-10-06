@@ -550,7 +550,7 @@ h1{letter-spacing:-.8px !important;font-weight:600;}
 }
 
 
-/* ===== hermes-neon-v5.2 晚报归一化 · 与日报/周榜同骨架 ===== */
+/* ===== hermes-neon-v5.4 晚报归一化 · 与日报/周榜同骨架 ===== */
 
 /* 1) 隐藏晚报自带的第二条药丸导航（hermes-nav 已提供导航） */
 body > nav.nav, nav.nav:not(.hermes-nav){display:none !important;}
@@ -585,30 +585,29 @@ header.hero, .hero{
 /* 3) 容器宽度 1200 → 860（与日报 .wrap 对齐） */
 .main{max-width:860px !important;margin:0 auto !important;padding:8px 0 40px !important;}
 
-/* 4) 卡片网格 双列 → 单列（与日报一致） */
-.card-grid{grid-template-columns:1fr !important;gap:14px !important;}
+/* 4) 卡片网格 双列 → 单列（与日报一致）—— 作用域限定晚报（.main 内） */
+.main .card-grid{grid-template-columns:1fr !important;gap:14px !important;}
 
-/* 5) 分区标题节奏对齐日报 */
-.section{margin-bottom:34px !important;}
-.section-title{
+/* 5) 分区标题节奏对齐日报 —— 仅晚报 */
+.main .section{margin-bottom:34px !important;}
+.main .section-title{
   font-size:17px !important;font-weight:700 !important;
   padding-bottom:10px !important;margin-bottom:16px !important;
   border-bottom:1px solid rgba(150,170,255,.18) !important;
 }
 
-/* 6) 卡片内边距/圆角统一 */
-.card{padding:18px 20px !important;border-radius:16px !important;}
+/* 6) 卡片内边距统一 —— 仅晚报（圆角不覆盖：晚报自身 --radius:12px 与日报一致） */
+.main .card{padding:18px 20px !important;}
 
-/* 7) 字体栈与外壳内边距统一（对齐日报） */
-body{
+/* 7) 字体栈对齐日报 —— 仅晚报外壳（不写 body，避免波及日报） */
+.hero, .main{
   font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif !important;
-  padding:0 12px 28px !important;
 }
 
 @media (max-width:480px){
   .hero-title{font-size:21px !important;}
   .main{padding:4px 0 28px !important;}
-  .card{padding:15px 16px !important;}
+  .main .card{padding:15px 16px !important;}
 }
 </style></head>
 <body>
