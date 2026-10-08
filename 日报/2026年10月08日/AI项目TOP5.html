@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>AI项目TOP5 · 2026年10月08日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.65;padding:16px}
+.wrap{max-width:720px;margin:0 auto}
+.badge{display:inline-block;font-size:12px;color:#58a6ff;border:1px solid #1f6feb;border-radius:12px;padding:2px 10px;margin-bottom:8px}
+h1{font-size:22px;margin-bottom:4px}
+.sub{color:#8b949e;font-size:13px;margin-bottom:18px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:16px 18px;margin-bottom:14px}
+.rank{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.medal{font-size:20px}
+.name{font-size:17px;font-weight:700;color:#f0f6fc}
+.stars{color:#e3b341;font-size:13px;margin-left:auto;white-space:nowrap}
+.repo{font-size:12px;color:#58a6ff;font-family:monospace;margin-bottom:8px;word-break:break-all}
+.repo a{color:#58a6ff;text-decoration:none}
+.desc{font-size:14px;color:#c9d1d9;margin-bottom:8px}
+.why{background:#0d1117;border-radius:8px;padding:8px 10px;font-size:13px;color:#8b949e}
+.why b{color:#79c0ff}
+.meta{font-size:11px;color:#6e7681;margin-top:8px}
+.footer{text-align:center;color:#484f58;font-size:11px;margin-top:20px;padding-top:14px;border-top:1px solid #21262d}
+.nav{display:flex;gap:8px;margin:14px 0 4px;flex-wrap:wrap}
+.nav a{color:#58a6ff;text-decoration:none;font-size:13px;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:6px 12px}
+
+/* hermes-nav */
+.hermes-nav{
+  position:sticky; top:0; z-index:100;
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px;
+  margin:0 0 16px; padding:10px 12px;
+  border-radius:16px;
+  border:1px solid rgba(150,170,255,.28);
+  background:linear-gradient(135deg, rgba(20,24,52,.95), rgba(36,22,64,.93));
+  backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+  box-shadow:0 12px 32px rgba(0,0,0,.32), 0 0 0 1px rgba(255,255,255,.03) inset;
+}
+.hermes-nav::before{
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(110deg, transparent 30%, rgba(255,255,255,.08) 48%, transparent 65%);
+  transform:translateX(-120%); animation:hermesNavShine 5.5s ease-in-out infinite;
+}
+@keyframes hermesNavShine{0%,60%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.hermes-nav{ position:sticky; overflow:hidden; }
+.hermes-nav a{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:36px; padding:8px 12px; border-radius:11px;
+  color:#e5eeff; text-decoration:none; font-size:13px; font-weight:800;
+  border:1px solid rgba(130,160,255,.22);
+  background:rgba(90,140,255,.12);
+  box-shadow:0 0 0 rgba(0,240,255,0);
+  transition: transform .12s ease, box-shadow .15s ease, background .15s ease;
+}
+.hermes-nav a:active{ background:rgba(90,168,255,.24); transform:scale(.97); }
+.hermes-nav .nav-home{
+  background:linear-gradient(135deg, rgba(0,240,255,.20), rgba(122,92,255,.22));
+  border-color:rgba(0,240,255,.35); color:#f2ffff;
+  box-shadow:0 0 16px rgba(0,240,255,.18);
+}
+.hermes-nav .nav-mid{
+  flex:1 1 auto; text-align:center;
+  font-size:12px; font-weight:800; color:#c3d0f5;
+  padding:6px 10px; border-radius:999px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(150,170,255,.16);
+}
+.hermes-nav .nav-side{ display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+.hermes-nav .disabled{
+  color:#667089; font-size:13px; font-weight:700; padding:8px 10px; pointer-events:none;
+}
+
+/* hermes-detail-theme + effects */
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  position:relative;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  padding-bottom:calc(28px + env(safe-area-inset-bottom)) !important;
+  line-height:1.65;
+}
+body::before{
+  content:""; pointer-events:none; position:fixed; inset:0; z-index:0; opacity:.55;
+  background:
+    radial-gradient(700px 360px at 12% -8%, rgba(109,92,255,.22), transparent 60%),
+    radial-gradient(560px 300px at 100% 0%, rgba(0,229,255,.14), transparent 55%),
+    radial-gradient(520px 280px at 70% 100%, rgba(255,78,205,.10), transparent 50%);
+}
+body > *{ position:relative; z-index:1; }
+img,video{ max-width:100%; height:auto; }
+a{ word-break:break-word; }
+.container, .main, .wrap{ max-width:860px; margin-left:auto; margin-right:auto; }
+
+/* cards / common */
+.project-card, .card, .project{
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, filter .16s ease;
+}
+.project-card, .card, .project{
+  border-radius:14px !important;
+  box-shadow:0 12px 30px rgba(0,0,0,.20);
+}
+.project-card:hover, .card:hover, .project:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 36px rgba(0,0,0,.26), 0 0 0 1px rgba(120,160,255,.14);
+}
+.project-card:active, .card:active, .project:active{ transform:translateY(0); }
+.theme-box, .banner, .insight{
+  border-radius:14px !important;
+  box-shadow:0 10px 26px rgba(0,0,0,.16);
+}
+.theme-box{
+  position:relative; overflow:hidden;
+}
+.theme-box::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(110deg, transparent 35%, rgba(255,255,255,.08) 50%, transparent 65%);
+  transform:translateX(-130%); animation:hermesSweep 6s ease-in-out infinite;
+}
+@keyframes hermesSweep{0%,55%{transform:translateX(-130%)}100%{transform:translateX(130%)}}
+.card-name, .card-title, .project-name, .theme, h1, h2{ letter-spacing:.2px; }
+.card-links a, .card-link, .project-name a{
+  border-radius:10px; padding:6px 10px; display:inline-block;
+  transition: background .15s ease, color .15s ease, box-shadow .15s ease;
+}
+.card-links a:hover, .card-link:hover{ box-shadow:0 0 14px rgba(90,168,255,.2); }
+
+/* 晚报 */
+.hero{
+  border-radius:0 0 22px 22px;
+  box-shadow:0 18px 44px rgba(0,0,0,.28);
+  position:relative; overflow:hidden;
+}
+.hero::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(500px 220px at 70% 0%, rgba(255,255,255,.14), transparent 60%);
+}
+.nav{ gap:8px !important; }
+.nav-pill{
+  min-height:34px !important; border-radius:999px !important;
+  transition: transform .12s ease, border-color .15s ease, background .15s ease;
+}
+.nav-pill:hover{ transform:translateY(-1px); }
+.card-grid{ gap:14px !important; }
+.card{ border-radius:14px !important; }
+.card-link{ min-height:34px !important; border-radius:10px !important; }
+
+/* 周榜 */
+.domain-title{
+  border-radius:0 10px 10px 0;
+  padding:6px 10px !important;
+  background:linear-gradient(90deg, rgba(108,92,231,.16), rgba(108,92,231,.04));
+  box-shadow:0 0 18px rgba(108,92,231,.08);
+}
+.project{
+  border:1px solid rgba(255,255,255,.07);
+  background:linear-gradient(180deg, rgba(255,255,255,.02), transparent);
+}
+.project-header{ gap:12px; }
+.project-stars{
+  background:rgba(243,156,18,.12);
+  border:1px solid rgba(243,156,18,.28);
+  border-radius:999px;
+  padding:4px 10px;
+  box-shadow:0 0 12px rgba(243,156,18,.12);
+}
+
+/* rank pulse */
+.card-rank, .card-idx, .rank-num{
+  text-shadow:0 0 12px rgba(255,180,80,.25);
+}
+
+@media (max-width:480px){
+  .hermes-nav{ padding:8px 10px; border-radius:14px; }
+  .hermes-nav a{ min-height:34px; padding:7px 10px; font-size:12px; }
+  .hermes-nav .nav-mid{ font-size:11px; width:100%; order:3; }
+  .card-grid{ grid-template-columns:1fr !important; }
+  .hero-title{ font-size:28px !important; }
+  body{ font-size:15px; }
+}
+@media (prefers-reduced-motion:reduce){
+  .hermes-nav::before, .theme-box::after{ animation:none !important; }
+  .project-card, .card, .project, .nav-pill{ transition:none !important; }
+}
+
+
+/* ===== hermes-neon-v3 全站统一主题 · 霓虹深空 ===== */
+body{background:#05060f !important;}
+body::before{
+  opacity:.85;
+  background:
+    radial-gradient(900px 480px at 8% -10%, rgba(122,92,255,.20), transparent 60%),
+    radial-gradient(700px 420px at 105% 5%, rgba(0,240,255,.14), transparent 55%),
+    radial-gradient(640px 380px at 50% 110%, rgba(255,60,172,.12), transparent 55%) !important;
+}
+
+/* 标题渐变字 */
+h1,.hero-title,.theme{
+  background:linear-gradient(92deg,#9db4ff 0%,#7af7ff 45%,#ff8fe0 100%);
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent !important;-webkit-text-fill-color:transparent;
+  letter-spacing:.3px;
+}
+h1{text-shadow:none;}
+
+/* ---- TOP5 页 ---- */
+.badge{
+  background:rgba(122,92,255,.15)!important;border:1px solid rgba(122,92,255,.45)!important;
+  color:#c3b2ff!important;border-radius:999px!important;padding:3px 12px!important;
+  box-shadow:0 0 12px rgba(122,92,255,.25);
+}
+.card{
+  background:linear-gradient(165deg,rgba(24,20,56,.94),rgba(10,12,30,.98))!important;
+  border:1px solid rgba(150,170,255,.16)!important;border-radius:18px!important;
+  box-shadow:0 14px 34px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04)!important;
+}
+.card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(122,180,255,.4)!important;
+  box-shadow:0 20px 44px rgba(0,0,0,.5), 0 0 24px rgba(90,140,255,.18)!important;
+}
+.name{color:#f2f5ff!important;text-shadow:0 0 14px rgba(140,170,255,.25);}
+.stars{
+  color:#ffc857!important;background:rgba(255,200,87,.08);
+  border:1px solid rgba(255,200,87,.3);border-radius:999px;padding:3px 10px;
+  text-shadow:0 0 10px rgba(255,200,87,.3);
+}
+.repo a{color:#7af7ff!important;}
+.desc{color:#c9d2f2!important;}
+.why{
+  background:rgba(10,14,34,.8)!important;border-left:3px solid #00e5ff!important;
+  border-radius:4px 12px 12px 4px!important;color:#aeb9e2!important;
+}
+.why b{color:#ffc857!important;}
+.medal{filter:drop-shadow(0 0 8px rgba(255,200,87,.5));}
+.sub,.meta,.date,.footer,.upd,.tip{color:#7d88ad!important;}
+.footer{border-top:none!important;}
+.nav a{
+  background:rgba(122,92,255,.12)!important;border:1px solid rgba(122,92,255,.35)!important;
+  color:#c3d0f5!important;border-radius:999px!important;
+}
+.nav a:hover{box-shadow:0 0 14px rgba(122,92,255,.35);}
+
+/* ---- 周榜页 ---- */
+.banner{
+  background:rgba(14,18,44,.8)!important;border:1px solid rgba(0,229,255,.28)!important;
+  color:#aebadf!important;box-shadow:inset 0 0 24px rgba(0,229,255,.05)!important;
+}
+.domain-title{
+  background:linear-gradient(90deg,rgba(122,92,255,.22),rgba(0,240,255,.06))!important;
+  border-left:3px solid #00e5ff!important;color:#fff!important;
+  text-shadow:0 0 14px rgba(0,229,255,.35);
+}
+.project{
+  background:linear-gradient(165deg,rgba(22,20,52,.95),rgba(10,12,30,.98))!important;
+  border:1px solid rgba(150,170,255,.15)!important;border-radius:16px!important;
+}
+.project:hover{
+  transform:translateY(-3px);
+  border-color:rgba(122,180,255,.38)!important;
+  box-shadow:0 20px 44px rgba(0,0,0,.5), 0 0 24px rgba(90,140,255,.16)!important;
+}
+.project-name a{color:#f2f5ff!important;}
+.project-name a:hover{text-shadow:0 0 10px rgba(122,247,255,.5);}
+.project-stars{
+  background:rgba(255,200,87,.1)!important;border:1px solid rgba(255,200,87,.32)!important;
+  color:#ffc857!important;text-shadow:0 0 10px rgba(255,200,87,.3);
+}
+.project-usage{color:#c2cbec!important;}
+.project-meta{color:#7d88ad!important;}
+.insight{
+  background:linear-gradient(165deg,rgba(24,20,56,.94),rgba(10,12,30,.98))!important;
+  border:1px solid rgba(122,92,255,.3)!important;color:#c2cbec!important;
+}
+
+/* ---- 晚报页：CSS 变量整体换肤为全站霓虹色 ---- */
+:root{
+  --bg:#06081a;--surface:#0f1330;--card:#141940;--card-hover:#1a2150;
+  --border:#2a3468;--text:#eef1ff;--text-dim:#aab4dd;
+  --accent:#00e5ff;--accent2:#7a5cff;
+  --gradient:linear-gradient(135deg,#7a5cff 0%,#00c8ff 60%,#00e5ff 100%);
+  --gradient-soft:linear-gradient(135deg,rgba(122,92,255,.18),rgba(0,229,255,.1));
+}
+.nav{background:rgba(6,8,26,.92)!important;}
+.section-badge{box-shadow:0 0 12px rgba(0,229,255,.35);}
+
+/* ---- 全站动态背景层（首页同款深空特效）---- */
+.hermes-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.hb-orb{position:absolute;border-radius:50%;filter:blur(46px);opacity:.55;will-change:transform;}
+.hb-o1{width:380px;height:380px;left:-100px;top:-80px;background:radial-gradient(circle,rgba(122,92,255,.85),transparent 70%);}
+.hb-o2{width:320px;height:320px;right:-90px;top:8%;background:radial-gradient(circle,rgba(0,240,255,.5),transparent 70%);}
+.hb-o3{width:300px;height:300px;left:15%;bottom:-100px;background:radial-gradient(circle,rgba(255,60,172,.4),transparent 70%);}
+.hb-grid{
+  position:absolute;inset:0;opacity:.18;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:34px 34px;
+  -webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 20%,transparent 72%);
+  mask-image:radial-gradient(ellipse at 50% 0%,#000 20%,transparent 72%);
+}
+.hb-stars{
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 10% 20%,rgba(255,255,255,.7),transparent),
+    radial-gradient(1.5px 1.5px at 30% 70%,rgba(255,255,255,.45),transparent),
+    radial-gradient(1px 1px at 70% 40%,rgba(255,255,255,.55),transparent),
+    radial-gradient(1.5px 1.5px at 85% 15%,rgba(255,255,255,.5),transparent),
+    radial-gradient(1px 1px at 55% 80%,rgba(255,255,255,.4),transparent),
+    radial-gradient(1.2px 1.2px at 42% 32%,rgba(160,220,255,.6),transparent),
+    radial-gradient(1px 1px at 22% 52%,rgba(255,200,240,.5),transparent);
+}
+.hb-scan{
+  position:absolute;left:0;right:0;height:140px;top:-140px;
+  background:linear-gradient(180deg,transparent,rgba(0,240,255,.09),transparent);
+}
+@media (prefers-reduced-motion:no-preference){
+  .hb-orb{animation:hbFloat 14s ease-in-out infinite;}
+  .hb-o2{animation-duration:17s;animation-delay:-4s;}
+  .hb-o3{animation-duration:19s;animation-delay:-7s;}
+  @keyframes hbFloat{
+    0%,100%{transform:translate(0,0) scale(1)}
+    33%{transform:translate(40px,-30px) scale(1.08)}
+    66%{transform:translate(-30px,25px) scale(.95)}
+  }
+  .hb-stars{animation:hbTwinkle 4s ease-in-out infinite alternate;}
+  @keyframes hbTwinkle{from{opacity:.45}to{opacity:1}}
+  .hb-scan{animation:hbScan 7.5s linear infinite;}
+  @keyframes hbScan{from{transform:translateY(0)}to{transform:translateY(calc(100vh + 280px))}}
+
+  /* 入场动画 + 顶部流光 */
+  @keyframes hermesFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .card,.project{animation:hermesFadeUp .55s ease backwards;}
+  .card:nth-child(1),.project:nth-child(1){animation-delay:.03s}
+  .card:nth-child(2),.project:nth-child(2){animation-delay:.08s}
+  .card:nth-child(3),.project:nth-child(3){animation-delay:.13s}
+  .card:nth-child(4),.project:nth-child(4){animation-delay:.18s}
+  .card:nth-child(5),.project:nth-child(5){animation-delay:.23s}
+  .card:nth-child(6),.project:nth-child(n+6){animation-delay:.28s}
+  @keyframes hermesBeam{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+  body::after{
+    content:"";position:fixed;top:0;left:0;right:0;height:2px;z-index:999;pointer-events:none;
+    background:linear-gradient(90deg,transparent,#00e5ff,#7a5cff,#ff3cac,transparent);
+    animation:hermesBeam 6s linear infinite;opacity:.8;
+  }
+}
+}
+
+/* ===== hermes-neon-v4 组件/布局精修 · Linear 设计语言 ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+body{font-family:'Inter',system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;font-feature-settings:'cv01','ss03';}
+
+/* --- 排版：负字距标题层级 --- */
+h1{letter-spacing:-.8px !important;font-weight:600;}
+.theme{font-size:24px !important;letter-spacing:-.6px !important;font-weight:600;}
+.hero-title{letter-spacing:-1px !important;}
+.sub{font-size:14px !important;letter-spacing:-.16px;}
+.name,.project-name a{letter-spacing:-.2px;font-weight:600;}
+.desc,.project-usage{letter-spacing:-.11px;line-height:1.65;}
+
+/* --- 卡片：半透明亮度分层（Linear elevation model）--- */
+.card,.project{
+  background:rgba(255,255,255,.028) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:12px !important;
+  box-shadow:none !important;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.card:hover,.project:hover{
+  background:rgba(255,255,255,.05) !important;
+  border-color:rgba(255,255,255,.14) !important;
+  transform:translateY(-2px);
+  box-shadow:0 8px 28px rgba(0,0,0,.35) !important;
+}
+.card,.project{padding:18px 20px;}
+
+/* --- 徽章/星数：药丸组件 --- */
+.stars,.project-stars{
+  background:transparent !important;
+  border:1px solid rgba(255,200,87,.35) !important;
+  border-radius:9999px !important;
+  font-size:12px !important;font-weight:500;
+  padding:3px 10px !important;white-space:nowrap;
+  text-shadow:none !important;
+}
+.badge{
+  background:transparent !important;border:1px solid rgba(122,92,255,.5) !important;
+  border-radius:9999px !important;font-size:11px !important;font-weight:500;
+  letter-spacing:.02em;padding:3px 11px !important;
+}
+.card-idx,.section-badge{border-radius:9999px !important;font-weight:500;}
+
+/* --- 用途说明块：内凹面板（inset sunken）--- */
+.why,.project-usage{
+  background:rgba(0,0,0,.25) !important;
+  box-shadow:rgba(0,0,0,.2) 0 0 12px 0 inset !important;
+  border-left:none !important;border-radius:8px !important;
+  padding:10px 12px !important;font-size:13px !important;
+}
+.why b{color:#ffc857 !important;}
+
+/* --- 周榜分组标题：药丸头 --- */
+.domain-title{
+  display:inline-block;background:rgba(122,92,255,.12) !important;
+  border:1px solid rgba(122,92,255,.3);border-radius:9999px !important;
+  font-size:13px !important;font-weight:600;letter-spacing:-.1px;
+  padding:6px 16px !important;margin-bottom:14px !important;
+  text-shadow:none !important;
+}
+.domain{margin-bottom:28px;}
+
+/* --- 导航栏：Linear 精修 --- */
+.hermes-nav{
+  background:rgba(10,11,22,.82) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+}
+.hermes-nav::before{display:none;}
+.hermes-nav a{
+  background:rgba(255,255,255,.04) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:6px !important;font-weight:500;color:#d0d6e0 !important;
+}
+.hermes-nav a:hover{color:#f7f8f8 !important;background:rgba(255,255,255,.08) !important;}
+.hermes-nav .nav-home{
+  background:linear-gradient(135deg,rgba(94,106,210,.85),rgba(113,112,255,.85)) !important;
+  border-color:transparent !important;color:#fff !important;
+}
+.hermes-nav .nav-mid{
+  background:transparent !important;border:none !important;
+  color:#8a8f98 !important;font-weight:500;
+}
+
+/* --- TOP5 页面布局节奏 --- */
+.rank{margin-bottom:10px;}
+.repo{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important;font-size:11.5px !important;}
+.meta{font-size:11px;letter-spacing:-.05px;}
+
+/* --- 链接交互 --- */
+.project-name a:hover{color:#828fff !important;text-shadow:none !important;}
+.repo a:hover{color:#828fff !important;}
+
+/* --- insight 汇总块 --- */
+.insight{
+  background:rgba(255,255,255,.03) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:12px !important;backdrop-filter:blur(6px);
+}
+
+@media (max-width:480px){
+  .card,.project{padding:15px 16px;}
+  h1{letter-spacing:-.5px !important;}
+}
+
+
+/* ===== hermes-neon-v5.4 晚报归一化 · 与日报/周榜同骨架 ===== */
+
+/* 1) 隐藏晚报自带的第二条药丸导航（hermes-nav 已提供导航） */
+body > nav.nav, nav.nav:not(.hermes-nav){display:none !important;}
+
+/* 2) 全宽渐变大 hero → V3 紧凑左对齐头部 */
+header.hero, .hero{
+  background:transparent !important;
+  background-image:none !important;
+  padding:6px 0 14px !important;
+  text-align:left !important;
+  border:0 !important;
+  overflow:visible !important;
+}
+.hero::before{display:none !important;content:none !important;}
+.hero-date{font-size:12.5px !important;opacity:.7 !important;letter-spacing:.06em !important;}
+.hero-title{
+  font-size:22px !important;font-weight:600 !important;letter-spacing:-.8px !important;
+  margin:6px 0 6px !important;
+}
+.hero-sub{font-size:13.5px !important;opacity:.6 !important;margin:0 0 12px !important;font-weight:400 !important;}
+.hero-stats{justify-content:flex-start !important;gap:8px !important;}
+.hero-stat{
+  background:rgba(255,255,255,.028) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:12px !important;
+  min-width:0 !important;padding:7px 12px !important;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.hero-stat-num{font-size:17px !important;font-weight:800 !important;}
+.hero-stat-label{font-size:10.5px !important;opacity:.65 !important;}
+
+/* 3) 容器宽度 1200 → 860（与日报 .wrap 对齐） */
+.main{max-width:860px !important;margin:0 auto !important;padding:8px 0 40px !important;}
+
+/* 4) 卡片网格 双列 → 单列（与日报一致）—— 作用域限定晚报（.main 内） */
+.main .card-grid{grid-template-columns:1fr !important;gap:14px !important;}
+
+/* 5) 分区标题节奏对齐日报 —— 仅晚报 */
+.main .section{margin-bottom:34px !important;}
+.main .section-title{
+  font-size:17px !important;font-weight:700 !important;
+  padding-bottom:10px !important;margin-bottom:16px !important;
+  border-bottom:1px solid rgba(150,170,255,.18) !important;
+}
+
+/* 6) 卡片内边距统一 —— 仅晚报（圆角不覆盖：晚报自身 --radius:12px 与日报一致） */
+.main .card{padding:18px 20px !important;}
+
+/* 7) 字体栈对齐日报 —— 仅晚报外壳（不写 body，避免波及日报） */
+.hero, .main{
+  font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif !important;
+}
+
+@media (max-width:480px){
+  .hero-title{font-size:21px !important;}
+  .main{padding:4px 0 28px !important;}
+  .main .card{padding:15px 16px !important;}
+}
+</style>
+</head>
+<body>
+<!--hermes-nav-start--><nav class="hermes-nav" aria-label="页面导航"><div class="nav-side"><a class="nav-home" href="../../首页.html">🏠 首页</a></div><div class="nav-mid">2026年10月8日 · TOP5</div><div class="nav-side"><a href="../2026年10月07日/AI项目TOP5.html">← 上篇</a><span class="disabled">下篇 →</span></div></nav><!--hermes-nav-end-->
+
+<div class="hermes-bg"><div class="hb-orb hb-o1"></div><div class="hb-orb hb-o2"></div><div class="hb-orb hb-o3"></div><div class="hb-grid"></div><div class="hb-stars"></div><div class="hb-scan"></div></div>
+
+<div class="wrap">
+<div class="badge">🤖 GitHub API 实时抓取 · 每日更新 08:00</div>
+<h1>🔥 AI实用项目TOP5</h1>
+<p class="sub">2026年10月08日（周四）· 今日主题：自己的 AI 自己跑（本地优先 · 数据不出门 · 自托管替代云订阅） · 按实用性排序 · 近一周有重大更新优先</p>
+
+<div class="card">
+  <div class="rank"><span class="medal">🥇</span><span class="name">AnythingLLM — 把私有 ChatGPT 搬回自己电脑的一站式应用</span><span class="stars">⭐ 66,798</span></div>
+  <div class="repo"><a href="https://github.com/Mintplex-Labs/anything-llm">Mintplex-Labs/anything-llm</a></div>
+  <p class="desc">下载桌面版（Mac/Windows/Linux）或起 Docker 服务端，接上本地模型（Ollama、LM Studio、本地推理引擎）或云端模型，把 PDF、Word、表格、网页、邮件丢进工作区就能问答，默认就在本地跑、几乎不用配置。开箱自带 RAG 向量库、能浏览网页与调用工具的 AI Agent、多用户与权限管理、可嵌到网站的聊天挂件。四项特色能力值得单拎：动态模型路由（按你定的规则把每轮对话自动分给最合适的模型与厂商）、自动与手动记忆（让模型记住关于你和这个工作区的重要信息）、定时任务（用 cron 让 Agent 按周期自动跑提示词与整条工具链）、智能技能选择（工具数量不设上限，单次查询 token 用量最多降 80%）。另有无代码 Agent 构建器、MCP 兼容、多模态与可嵌入挂件。</p>
+  <div class="why"><b>用途：</b>给个人或小团队搭一个数据不出门的 ChatGPT——公司文档、合同、会议记录、笔记全丢进去提问；不想折腾环境就直接用桌面版，想要多人协作和权限就上 Docker 版 · <b>亮点：</b>10月1日发布 v1.17.0（修电子表格日期被读成序列号、纯 HTML 邮件被整封跳过、文本上传按写入编码读取、Weaviate 与 Astra 的相似度打分口径、在 AWS Bedrock 上跑 OpenAI 模型等），本周提交 25 次以上，集中在文档采集器与定时任务 · <b>适合：</b>想要一个能立刻用起来的私有 AI 应用、又不想自己拼装向量库和 RAG 管线的人</div>
+  <p class="meta">最近推送：2026-10-07 · 最新版 v1.17.0 · GitHub API 当日实测</p>
+</div>
+<div class="card">
+  <div class="rank"><span class="medal">🥈</span><span class="name">LocalAI — 一个本地地址跑通所有模型的 AI 引擎</span><span class="stars">⭐ 49,424</span></div>
+  <div class="repo"><a href="https://github.com/mudler/LocalAI">mudler/LocalAI</a></div>
+  <p class="desc">它不是「又一个模型运行器」，而是一台自托管的 AI 引擎：LLM、视觉、语音、图像、视频全部收在同一个 API 后面，硬件要求也低——NVIDIA、AMD、Intel、Apple 芯片、Vulkan 甚至纯 CPU 都能跑，官方明确写着不需要显卡。架构上坚持「小核心」：每个后端（llama.cpp、vLLM、whisper.cpp、stable-diffusion、MLX、kokoro 等）单独打包成镜像，只有某个模型真的需要时才拉取，用不到的一律不装。API 同时兼容 OpenAI、Anthropic 与 ElevenLabs 三家格式，所以现有客户端、脚本、Agent 基本不用改代码就能把地址切过来。自带 Agent（工具调用、RAG、MCP、技能）、模型画廊与一键量化微调、多用户 API Key 鉴权与配额、按用户统计用量，数据始终留在自己的基础设施里。</p>
+  <div class="why"><b>用途：</b>把云端 API 换成自己机器上的地址——本地跑得动的自己跑，跑不动的再按需回落云端，成本与隐私都能自己控；也能给团队成员发 API Key 并限制配额 · <b>亮点：</b>10月2日发布 v4.11.0，本周新增按模型统计磁盘占用（API 与 WebUI 都可查）、说话人分离返回声音事件、分布式模式下用租约限制并取消模型加载、修复已自行退出的后端仍被列出；vLLM 后端升到 0.31.0 · <b>适合：</b>想统一管住本地与云端模型入口、又不愿被单一厂商锁定的开发者和团队</div>
+  <p class="meta">最近推送：2026-10-08 · 最新版 v4.11.0 · GitHub API 当日实测</p>
+</div>
+<div class="card">
+  <div class="rank"><span class="medal">🥉</span><span class="name">Odysseus — 自托管 AI 工作台：聊天、邮件、笔记、日历收在一处</span><span class="stars">⭐ 91,846</span></div>
+  <div class="repo"><a href="https://github.com/odysseus-dev/odysseus">odysseus-dev/odysseus</a></div>
+  <p class="desc">一个自己部署的 AI 工作台，把日常工具都装进同一个界面：聊天与 Agent（本地或 API 模型、工具、MCP、文件、shell、技能、记忆）、Cookbook（按你的硬件推荐模型、下载并起服务）、深度研究（多步联网调研、读原文、出报告）、对比（盲测两个模型并做综合）、文档（写作优先的编辑器，AI 直接改稿，支持 Markdown/HTML/CSV 与语法高亮）、邮件（IMAP/SMTP 收件箱，自动分类、打标签、摘要、提醒、起草回复）、笔记与任务与日历（提醒、待办、Agent 定时任务、CalDAV 同步），外加图库与图片编辑、主题、网页搜索、预设与会话管理、两步验证。部署就是标准 Docker Compose：克隆、复制 .env、up -d，浏览器打开 7011 端口，首个管理员密码打印在容器日志里。官方镜像多架构、每推必发，拉不到才本地构建，所以在没有构建工具链的机器或 Portainer 里也能起。</p>
+  <div class="why"><b>用途：</b>把散落在十几个 SaaS 里的「AI + 邮箱 + 笔记 + 日历 + 文档」收拢到一台自己的服务器上，数据留在本地，手机浏览器也能直接用 · <b>亮点：</b>仓库今年 5 月底才建，本周仍有 25 次以上提交——提醒投递失败时改按配置渠道重试、grep/glob/ls 每次扫描只取一次控制面快照提速、外部上下文之后的审批门默认保持开启 · <b>适合：</b>有台常开的机器（NAS、小主机、云服务器）愿意自己部署、想少订几个订阅的人</div>
+  <p class="meta">最近推送：2026-10-07 · 未打 tag（dev 分支）· GitHub API 当日实测</p>
+</div>
+<div class="card">
+  <div class="rank"><span class="medal">4️⃣</span><span class="name">Handy — 离线语音转文字，说完话文字自己落进输入框</span><span class="stars">⭐ 33,139</span></div>
+  <div class="repo"><a href="https://github.com/cjpais/Handy">cjpais/Handy</a></div>
+  <p class="desc">一个跨平台桌面小工具，只干一件事：按一下可配置的快捷键说话，松开之后文字直接粘贴进你正在用的任何输入框。全过程在自己电脑上完成，音频不发给任何云端——先由 Silero 做 VAD 静音过滤，再交给 Whisper（Small/Medium/Turbo/Large，有显卡就加速）或 CPU 优化的 Parakeet V3（自带语言自动识别）转写。快捷键支持长按录音、再按停止，也能设成只能长按或只能切换；Windows、macOS、Linux 都有，macOS 可 brew 装、Windows 可 winget 装、Ubuntu 用 apt 装 deb 让依赖自动补齐。项目定位很明确：免费、开源、隐私、简单。</p>
+  <div class="why"><b>用途：</b>写日报、回消息、记灵感时不用打字，尤其适合手机上不好输入、回到电脑再补内容的场景；对隐私敏感的人也不必把会议内容交给第三方 · <b>亮点：</b>10月3日发布 v0.9.8（模型加载慢时在实时预览里显示加载状态而不是卡在「转写中」、录完发现没有音频就卸载模型、拒绝后端无法解析的组合键、修掉把 Ha 当英语填充词误删、transcribe-cpp 升到 0.2.4），本周 15 次提交 · <b>适合：</b>每天要写不少字、又不想为语音输入付费或上云的人</div>
+  <p class="meta">最近推送：2026-10-07 · 最新版 v0.9.8 · GitHub API 当日实测</p>
+</div>
+<div class="card">
+  <div class="rank"><span class="medal">5️⃣</span><span class="name">PrivateGPT — 用本地模型搭私有 AI 应用的 API 层</span><span class="stars">⭐ 57,559</span></div>
+  <div class="repo"><a href="https://github.com/zylon-ai/private-gpt">zylon-ai/private-gpt</a></div>
+  <p class="desc">它自己不做推理，而是补上「跑起模型之后」缺的那一层：以 Claude API 为蓝本的一套开源后端，让你不必把消息流式、文件摄入、检索引用、工具调用、数据库查询这些基础件重写一遍。接法很简单——任何实现了 /v1/chat/completions 与 /v1/models 的 OpenAI 兼容推理服务（Ollama、llama.cpp、vLLM 等）填进 OPENAI_API_BASE 就能用。提供标准 messages API（流式、异步、token 计数）、文件与产物摄入、带引用的检索与 agentic RAG、对齐 Claude API 的内置工具（联网搜索、抓取网页、执行代码）、自定义工具与 MCP 连接器、对数据库和 CSV 的结构化访问、嵌入与编排，另附一个 /ui 工作台方便试用和演示，但真正的产品是这套 API。</p>
+  <div class="why"><b>用途：</b>你要做的是「私有版 AI 产品」而不是「能聊天的本地模型」，它把后端积木直接给你，省掉几千行胶水代码；也是从云端 API 迁到本地模型时改动最小的一条路 · <b>亮点：</b>1.0 版本把两年的私有分支工作合并回开源主干（1.0 之前的老 API 不向前兼容，需按迁移指南改），本周在修鉴权里的断言改为显式检查、补充「更便宜的 OpenAI 兼容网关」配置示例 · <b>适合：</b>要交付私有化 AI 应用的开发者与需要本地部署的企业</div>
+  <p class="meta">最近推送：2026-10-07 · 最新版 v1.0.1 · GitHub API 当日实测</p>
+</div>
+
+<div class="nav" id="detail-nav"></div>
+<p class="footer">数据来源：GitHub API 实时抓取（2026年10月08日 08:04 CST）· Star 数与更新时间为当日实测<br>AI项目日报 · 由 Hermes Agent 自动生成</p>
+</div>
+<script>
+fetch('/ai-daily-report/detail-nav.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject()).then(d=>{
+  var n=document.getElementById('detail-nav');
+  (d.links||[]).forEach(function(l){var a=document.createElement('a');a.href=l.href;a.textContent=l.title;n.appendChild(a);});
+}).catch(()=>{});
+</script>
+</body>
+</html>
