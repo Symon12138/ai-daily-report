@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>AI项目TOP5 · 2026年10月10日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.65;padding:16px}
+.wrap{max-width:720px;margin:0 auto}
+.badge{display:inline-block;font-size:12px;color:#58a6ff;border:1px solid #1f6feb;border-radius:12px;padding:2px 10px;margin-bottom:8px}
+h1{font-size:22px;margin-bottom:4px}
+.sub{color:#8b949e;font-size:13px;margin-bottom:18px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:16px 18px;margin-bottom:14px}
+.rank{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.medal{font-size:20px}
+.name{font-size:17px;font-weight:700;color:#f0f6fc}
+.stars{color:#e3b341;font-size:13px;margin-left:auto;white-space:nowrap}
+.repo{font-size:12px;color:#58a6ff;font-family:monospace;margin-bottom:8px;word-break:break-all}
+.repo a{color:#58a6ff;text-decoration:none}
+.desc{font-size:14px;color:#c9d1d9;margin-bottom:8px}
+.why{background:#0d1117;border-radius:8px;padding:8px 10px;font-size:13px;color:#8b949e}
+.why b{color:#79c0ff}
+.meta{font-size:11px;color:#6e7681;margin-top:8px}
+.footer{text-align:center;color:#484f58;font-size:11px;margin-top:20px;padding-top:14px;border-top:1px solid #21262d}
+.nav{display:flex;gap:8px;margin:14px 0 4px;flex-wrap:wrap}
+.nav a{color:#58a6ff;text-decoration:none;font-size:13px;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:6px 12px}
+
+/* hermes-nav */
+.hermes-nav{
+  position:sticky; top:0; z-index:100;
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px;
+  margin:0 0 16px; padding:10px 12px;
+  border-radius:16px;
+  border:1px solid rgba(150,170,255,.28);
+  background:linear-gradient(135deg, rgba(20,24,52,.95), rgba(36,22,64,.93));
+  backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+  box-shadow:0 12px 32px rgba(0,0,0,.32), 0 0 0 1px rgba(255,255,255,.03) inset;
+}
+.hermes-nav::before{
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(110deg, transparent 30%, rgba(255,255,255,.08) 48%, transparent 65%);
+  transform:translateX(-120%); animation:hermesNavShine 5.5s ease-in-out infinite;
+}
+@keyframes hermesNavShine{0%,60%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.hermes-nav{ position:sticky; overflow:hidden; }
+.hermes-nav a{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:36px; padding:8px 12px; border-radius:11px;
+  color:#e5eeff; text-decoration:none; font-size:13px; font-weight:800;
+  border:1px solid rgba(130,160,255,.22);
+  background:rgba(90,140,255,.12);
+  box-shadow:0 0 0 rgba(0,240,255,0);
+  transition: transform .12s ease, box-shadow .15s ease, background .15s ease;
+}
+.hermes-nav a:active{ background:rgba(90,168,255,.24); transform:scale(.97); }
+.hermes-nav .nav-home{
+  background:linear-gradient(135deg, rgba(0,240,255,.20), rgba(122,92,255,.22));
+  border-color:rgba(0,240,255,.35); color:#f2ffff;
+  box-shadow:0 0 16px rgba(0,240,255,.18);
+}
+.hermes-nav .nav-mid{
+  flex:1 1 auto; text-align:center;
+  font-size:12px; font-weight:800; color:#c3d0f5;
+  padding:6px 10px; border-radius:999px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(150,170,255,.16);
+}
+.hermes-nav .nav-side{ display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+.hermes-nav .disabled{
+  color:#667089; font-size:13px; font-weight:700; padding:8px 10px; pointer-events:none;
+}
+
+/* hermes-detail-theme + effects */
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  position:relative;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  padding-bottom:calc(28px + env(safe-area-inset-bottom)) !important;
+  line-height:1.65;
+}
+body::before{
+  content:""; pointer-events:none; position:fixed; inset:0; z-index:0; opacity:.55;
+  background:
+    radial-gradient(700px 360px at 12% -8%, rgba(109,92,255,.22), transparent 60%),
+    radial-gradient(560px 300px at 100% 0%, rgba(0,229,255,.14), transparent 55%),
+    radial-gradient(520px 280px at 70% 100%, rgba(255,78,205,.10), transparent 50%);
+}
+body > *{ position:relative; z-index:1; }
+img,video{ max-width:100%; height:auto; }
+a{ word-break:break-word; }
+.container, .main, .wrap{ max-width:860px; margin-left:auto; margin-right:auto; }
+
+/* cards / common */
+.project-card, .card, .project{
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, filter .16s ease;
+}
+.project-card, .card, .project{
+  border-radius:14px !important;
+  box-shadow:0 12px 30px rgba(0,0,0,.20);
+}
+.project-card:hover, .card:hover, .project:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 36px rgba(0,0,0,.26), 0 0 0 1px rgba(120,160,255,.14);
+}
+.project-card:active, .card:active, .project:active{ transform:translateY(0); }
+.theme-box, .banner, .insight{
+  border-radius:14px !important;
+  box-shadow:0 10px 26px rgba(0,0,0,.16);
+}
+.theme-box{
+  position:relative; overflow:hidden;
+}
+.theme-box::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(110deg, transparent 35%, rgba(255,255,255,.08) 50%, transparent 65%);
+  transform:translateX(-130%); animation:hermesSweep 6s ease-in-out infinite;
+}
+@keyframes hermesSweep{0%,55%{transform:translateX(-130%)}100%{transform:translateX(130%)}}
+.card-name, .card-title, .project-name, .theme, h1, h2{ letter-spacing:.2px; }
+.card-links a, .card-link, .project-name a{
+  border-radius:10px; padding:6px 10px; display:inline-block;
+  transition: background .15s ease, color .15s ease, box-shadow .15s ease;
+}
+.card-links a:hover, .card-link:hover{ box-shadow:0 0 14px rgba(90,168,255,.2); }
+
+/* 晚报 */
+.hero{
+  border-radius:0 0 22px 22px;
+  box-shadow:0 18px 44px rgba(0,0,0,.28);
+  position:relative; overflow:hidden;
+}
+.hero::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(500px 220px at 70% 0%, rgba(255,255,255,.14), transparent 60%);
+}
+.nav{ gap:8px !important; }
+.nav-pill{
+  min-height:34px !important; border-radius:999px !important;
+  transition: transform .12s ease, border-color .15s ease, background .15s ease;
+}
+.nav-pill:hover{ transform:translateY(-1px); }
+.card-grid{ gap:14px !important; }
+.card{ border-radius:14px !important; }
+.card-link{ min-height:34px !important; border-radius:10px !important; }
+
+/* 周榜 */
+.domain-title{
+  border-radius:0 10px 10px 0;
+  padding:6px 10px !important;
+  background:linear-gradient(90deg, rgba(108,92,231,.16), rgba(108,92,231,.04));
+  box-shadow:0 0 18px rgba(108,92,231,.08);
+}
+.project{
+  border:1px solid rgba(255,255,255,.07);
+  background:linear-gradient(180deg, rgba(255,255,255,.02), transparent);
+}
+.project-header{ gap:12px; }
+.project-stars{
+  background:rgba(243,156,18,.12);
+  border:1px solid rgba(243,156,18,.28);
+  border-radius:999px;
+  padding:4px 10px;
+  box-shadow:0 0 12px rgba(243,156,18,.12);
+}
+
+/* rank pulse */
+.card-rank, .card-idx, .rank-num{
+  text-shadow:0 0 12px rgba(255,180,80,.25);
+}
+
+@media (max-width:480px){
+  .hermes-nav{ padding:8px 10px; border-radius:14px; }
+  .hermes-nav a{ min-height:34px; padding:7px 10px; font-size:12px; }
+  .hermes-nav .nav-mid{ font-size:11px; width:100%; order:3; }
+  .card-grid{ grid-template-columns:1fr !important; }
+  .hero-title{ font-size:28px !important; }
+  body{ font-size:15px; }
+}
+@media (prefers-reduced-motion:reduce){
+  .hermes-nav::before, .theme-box::after{ animation:none !important; }
+  .project-card, .card, .project, .nav-pill{ transition:none !important; }
+}
+
+
+/* ===== hermes-neon-v3 全站统一主题 · 霓虹深空 ===== */
+body{background:#05060f !important;}
+body::before{
+  opacity:.85;
+  background:
+    radial-gradient(900px 480px at 8% -10%, rgba(122,92,255,.20), transparent 60%),
+    radial-gradient(700px 420px at 105% 5%, rgba(0,240,255,.14), transparent 55%),
+    radial-gradient(640px 380px at 50% 110%, rgba(255,60,172,.12), transparent 55%) !important;
+}
+
+/* 标题渐变字 */
+h1,.hero-title,.theme{
+  background:linear-gradient(92deg,#9db4ff 0%,#7af7ff 45%,#ff8fe0 100%);
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent !important;-webkit-text-fill-color:transparent;
+  letter-spacing:.3px;
+}
+h1{text-shadow:none;}
+
+/* ---- TOP5 页 ---- */
+.badge{
+  background:rgba(122,92,255,.15)!important;border:1px solid rgba(122,92,255,.45)!important;
+  color:#c3b2ff!important;border-radius:999px!important;padding:3px 12px!important;
+  box-shadow:0 0 12px rgba(122,92,255,.25);
+}
+.card{
+  background:linear-gradient(165deg,rgba(24,20,56,.94),rgba(10,12,30,.98))!important;
+  border:1px solid rgba(150,170,255,.16)!important;border-radius:18px!important;
+  box-shadow:0 14px 34px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04)!important;
+}
+.card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(122,180,255,.4)!important;
+  box-shadow:0 20px 44px rgba(0,0,0,.5), 0 0 24px rgba(90,140,255,.18)!important;
+}
+.name{color:#f2f5ff!important;text-shadow:0 0 14px rgba(140,170,255,.25);}
+.stars{
+  color:#ffc857!important;background:rgba(255,200,87,.08);
+  border:1px solid rgba(255,200,87,.3);border-radius:999px;padding:3px 10px;
+  text-shadow:0 0 10px rgba(255,200,87,.3);
+}
+.repo a{color:#7af7ff!important;}
+.desc{color:#c9d2f2!important;}
+.why{
+  background:rgba(10,14,34,.8)!important;border-left:3px solid #00e5ff!important;
+  border-radius:4px 12px 12px 4px!important;color:#aeb9e2!important;
+}
+.why b{color:#ffc857!important;}
+.medal{filter:drop-shadow(0 0 8px rgba(255,200,87,.5));}
+.sub,.meta,.date,.footer,.upd,.tip{color:#7d88ad!important;}
+.footer{border-top:none!important;}
+.nav a{
+  background:rgba(122,92,255,.12)!important;border:1px solid rgba(122,92,255,.35)!important;
+  color:#c3d0f5!important;border-radius:999px!important;
+}
+.nav a:hover{box-shadow:0 0 14px rgba(122,92,255,.35);}
+
+/* ---- 周榜页 ---- */
+.banner{
+  background:rgba(14,18,44,.8)!important;border:1px solid rgba(0,229,255,.28)!important;
+  color:#aebadf!important;box-shadow:inset 0 0 24px rgba(0,229,255,.05)!important;
+}
+.domain-title{
+  background:linear-gradient(90deg,rgba(122,92,255,.22),rgba(0,240,255,.06))!important;
+  border-left:3px solid #00e5ff!important;color:#fff!important;
+  text-shadow:0 0 14px rgba(0,229,255,.35);
+}
+.project{
+  background:linear-gradient(165deg,rgba(22,20,52,.95),rgba(10,12,30,.98))!important;
+  border:1px solid rgba(150,170,255,.15)!important;border-radius:16px!important;
+}
+.project:hover{
+  transform:translateY(-3px);
+  border-color:rgba(122,180,255,.38)!important;
+  box-shadow:0 20px 44px rgba(0,0,0,.5), 0 0 24px rgba(90,140,255,.16)!important;
+}
+.project-name a{color:#f2f5ff!important;}
+.project-name a:hover{text-shadow:0 0 10px rgba(122,247,255,.5);}
+.project-stars{
+  background:rgba(255,200,87,.1)!important;border:1px solid rgba(255,200,87,.32)!important;
+  color:#ffc857!important;text-shadow:0 0 10px rgba(255,200,87,.3);
+}
+.project-usage{color:#c2cbec!important;}
+.project-meta{color:#7d88ad!important;}
+.insight{
+  background:linear-gradient(165deg,rgba(24,20,56,.94),rgba(10,12,30,.98))!important;
+  border:1px solid rgba(122,92,255,.3)!important;color:#c2cbec!important;
+}
+
+/* ---- 晚报页：CSS 变量整体换肤为全站霓虹色 ---- */
+:root{
+  --bg:#06081a;--surface:#0f1330;--card:#141940;--card-hover:#1a2150;
+  --border:#2a3468;--text:#eef1ff;--text-dim:#aab4dd;
+  --accent:#00e5ff;--accent2:#7a5cff;
+  --gradient:linear-gradient(135deg,#7a5cff 0%,#00c8ff 60%,#00e5ff 100%);
+  --gradient-soft:linear-gradient(135deg,rgba(122,92,255,.18),rgba(0,229,255,.1));
+}
+.nav{background:rgba(6,8,26,.92)!important;}
+.section-badge{box-shadow:0 0 12px rgba(0,229,255,.35);}
+
+/* ---- 全站动态背景层（首页同款深空特效）---- */
+.hermes-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.hb-orb{position:absolute;border-radius:50%;filter:blur(46px);opacity:.55;will-change:transform;}
+.hb-o1{width:380px;height:380px;left:-100px;top:-80px;background:radial-gradient(circle,rgba(122,92,255,.85),transparent 70%);}
+.hb-o2{width:320px;height:320px;right:-90px;top:8%;background:radial-gradient(circle,rgba(0,240,255,.5),transparent 70%);}
+.hb-o3{width:300px;height:300px;left:15%;bottom:-100px;background:radial-gradient(circle,rgba(255,60,172,.4),transparent 70%);}
+.hb-grid{
+  position:absolute;inset:0;opacity:.18;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:34px 34px;
+  -webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 20%,transparent 72%);
+  mask-image:radial-gradient(ellipse at 50% 0%,#000 20%,transparent 72%);
+}
+.hb-stars{
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 10% 20%,rgba(255,255,255,.7),transparent),
+    radial-gradient(1.5px 1.5px at 30% 70%,rgba(255,255,255,.45),transparent),
+    radial-gradient(1px 1px at 70% 40%,rgba(255,255,255,.55),transparent),
+    radial-gradient(1.5px 1.5px at 85% 15%,rgba(255,255,255,.5),transparent),
+    radial-gradient(1px 1px at 55% 80%,rgba(255,255,255,.4),transparent),
+    radial-gradient(1.2px 1.2px at 42% 32%,rgba(160,220,255,.6),transparent),
+    radial-gradient(1px 1px at 22% 52%,rgba(255,200,240,.5),transparent);
+}
+.hb-scan{
+  position:absolute;left:0;right:0;height:140px;top:-140px;
+  background:linear-gradient(180deg,transparent,rgba(0,240,255,.09),transparent);
+}
+@media (prefers-reduced-motion:no-preference){
+  .hb-orb{animation:hbFloat 14s ease-in-out infinite;}
+  .hb-o2{animation-duration:17s;animation-delay:-4s;}
+  .hb-o3{animation-duration:19s;animation-delay:-7s;}
+  @keyframes hbFloat{
+    0%,100%{transform:translate(0,0) scale(1)}
+    33%{transform:translate(40px,-30px) scale(1.08)}
+    66%{transform:translate(-30px,25px) scale(.95)}
+  }
+  .hb-stars{animation:hbTwinkle 4s ease-in-out infinite alternate;}
+  @keyframes hbTwinkle{from{opacity:.45}to{opacity:1}}
+  .hb-scan{animation:hbScan 7.5s linear infinite;}
+  @keyframes hbScan{from{transform:translateY(0)}to{transform:translateY(calc(100vh + 280px))}}
+
+  /* 入场动画 + 顶部流光 */
+  @keyframes hermesFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .card,.project{animation:hermesFadeUp .55s ease backwards;}
+  .card:nth-child(1),.project:nth-child(1){animation-delay:.03s}
+  .card:nth-child(2),.project:nth-child(2){animation-delay:.08s}
+  .card:nth-child(3),.project:nth-child(3){animation-delay:.13s}
+  .card:nth-child(4),.project:nth-child(4){animation-delay:.18s}
+  .card:nth-child(5),.project:nth-child(5){animation-delay:.23s}
+  .card:nth-child(6),.project:nth-child(n+6){animation-delay:.28s}
+  @keyframes hermesBeam{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+  body::after{
+    content:"";position:fixed;top:0;left:0;right:0;height:2px;z-index:999;pointer-events:none;
+    background:linear-gradient(90deg,transparent,#00e5ff,#7a5cff,#ff3cac,transparent);
+    animation:hermesBeam 6s linear infinite;opacity:.8;
+  }
+}
+}
+
+/* ===== hermes-neon-v4 组件/布局精修 · Linear 设计语言 ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+body{font-family:'Inter',system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;font-feature-settings:'cv01','ss03';}
+
+/* --- 排版：负字距标题层级 --- */
+h1{letter-spacing:-.8px !important;font-weight:600;}
+.theme{font-size:24px !important;letter-spacing:-.6px !important;font-weight:600;}
+.hero-title{letter-spacing:-1px !important;}
+.sub{font-size:14px !important;letter-spacing:-.16px;}
+.name,.project-name a{letter-spacing:-.2px;font-weight:600;}
+.desc,.project-usage{letter-spacing:-.11px;line-height:1.65;}
+
+/* --- 卡片：半透明亮度分层（Linear elevation model）--- */
+.card,.project{
+  background:rgba(255,255,255,.028) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:12px !important;
+  box-shadow:none !important;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.card:hover,.project:hover{
+  background:rgba(255,255,255,.05) !important;
+  border-color:rgba(255,255,255,.14) !important;
+  transform:translateY(-2px);
+  box-shadow:0 8px 28px rgba(0,0,0,.35) !important;
+}
+.card,.project{padding:18px 20px;}
+
+/* --- 徽章/星数：药丸组件 --- */
+.stars,.project-stars{
+  background:transparent !important;
+  border:1px solid rgba(255,200,87,.35) !important;
+  border-radius:9999px !important;
+  font-size:12px !important;font-weight:500;
+  padding:3px 10px !important;white-space:nowrap;
+  text-shadow:none !important;
+}
+.badge{
+  background:transparent !important;border:1px solid rgba(122,92,255,.5) !important;
+  border-radius:9999px !important;font-size:11px !important;font-weight:500;
+  letter-spacing:.02em;padding:3px 11px !important;
+}
+.card-idx,.section-badge{border-radius:9999px !important;font-weight:500;}
+
+/* --- 用途说明块：内凹面板（inset sunken）--- */
+.why,.project-usage{
+  background:rgba(0,0,0,.25) !important;
+  box-shadow:rgba(0,0,0,.2) 0 0 12px 0 inset !important;
+  border-left:none !important;border-radius:8px !important;
+  padding:10px 12px !important;font-size:13px !important;
+}
+.why b{color:#ffc857 !important;}
+
+/* --- 周榜分组标题：药丸头 --- */
+.domain-title{
+  display:inline-block;background:rgba(122,92,255,.12) !important;
+  border:1px solid rgba(122,92,255,.3);border-radius:9999px !important;
+  font-size:13px !important;font-weight:600;letter-spacing:-.1px;
+  padding:6px 16px !important;margin-bottom:14px !important;
+  text-shadow:none !important;
+}
+.domain{margin-bottom:28px;}
+
+/* --- 导航栏：Linear 精修 --- */
+.hermes-nav{
+  background:rgba(10,11,22,.82) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+}
+.hermes-nav::before{display:none;}
+.hermes-nav a{
+  background:rgba(255,255,255,.04) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:6px !important;font-weight:500;color:#d0d6e0 !important;
+}
+.hermes-nav a:hover{color:#f7f8f8 !important;background:rgba(255,255,255,.08) !important;}
+.hermes-nav .nav-home{
+  background:linear-gradient(135deg,rgba(94,106,210,.85),rgba(113,112,255,.85)) !important;
+  border-color:transparent !important;color:#fff !important;
+}
+.hermes-nav .nav-mid{
+  background:transparent !important;border:none !important;
+  color:#8a8f98 !important;font-weight:500;
+}
+
+/* --- TOP5 页面布局节奏 --- */
+.rank{margin-bottom:10px;}
+.repo{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important;font-size:11.5px !important;}
+.meta{font-size:11px;letter-spacing:-.05px;}
+
+/* --- 链接交互 --- */
+.project-name a:hover{color:#828fff !important;text-shadow:none !important;}
+.repo a:hover{color:#828fff !important;}
+
+/* --- insight 汇总块 --- */
+.insight{
+  background:rgba(255,255,255,.03) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:12px !important;backdrop-filter:blur(6px);
+}
+
+@media (max-width:480px){
+  .card,.project{padding:15px 16px;}
+  h1{letter-spacing:-.5px !important;}
+}
+
+
+/* ===== hermes-neon-v5.4 晚报归一化 · 与日报/周榜同骨架 ===== */
+
+/* 1) 隐藏晚报自带的第二条药丸导航（hermes-nav 已提供导航） */
+body > nav.nav, nav.nav:not(.hermes-nav){display:none !important;}
+
+/* 2) 全宽渐变大 hero → V3 紧凑左对齐头部 */
+header.hero, .hero{
+  background:transparent !important;
+  background-image:none !important;
+  padding:6px 0 14px !important;
+  text-align:left !important;
+  border:0 !important;
+  overflow:visible !important;
+}
+.hero::before{display:none !important;content:none !important;}
+.hero-date{font-size:12.5px !important;opacity:.7 !important;letter-spacing:.06em !important;}
+.hero-title{
+  font-size:22px !important;font-weight:600 !important;letter-spacing:-.8px !important;
+  margin:6px 0 6px !important;
+}
+.hero-sub{font-size:13.5px !important;opacity:.6 !important;margin:0 0 12px !important;font-weight:400 !important;}
+.hero-stats{justify-content:flex-start !important;gap:8px !important;}
+.hero-stat{
+  background:rgba(255,255,255,.028) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:12px !important;
+  min-width:0 !important;padding:7px 12px !important;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.hero-stat-num{font-size:17px !important;font-weight:800 !important;}
+.hero-stat-label{font-size:10.5px !important;opacity:.65 !important;}
+
+/* 3) 容器宽度 1200 → 860（与日报 .wrap 对齐） */
+.main{max-width:860px !important;margin:0 auto !important;padding:8px 0 40px !important;}
+
+/* 4) 卡片网格 双列 → 单列（与日报一致）—— 作用域限定晚报（.main 内） */
+.main .card-grid{grid-template-columns:1fr !important;gap:14px !important;}
+
+/* 5) 分区标题节奏对齐日报 —— 仅晚报 */
+.main .section{margin-bottom:34px !important;}
+.main .section-title{
+  font-size:17px !important;font-weight:700 !important;
+  padding-bottom:10px !important;margin-bottom:16px !important;
+  border-bottom:1px solid rgba(150,170,255,.18) !important;
+}
+
+/* 6) 卡片内边距统一 —— 仅晚报（圆角不覆盖：晚报自身 --radius:12px 与日报一致） */
+.main .card{padding:18px 20px !important;}
+
+/* 7) 字体栈对齐日报 —— 仅晚报外壳（不写 body，避免波及日报） */
+.hero, .main{
+  font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif !important;
+}
+
+@media (max-width:480px){
+  .hero-title{font-size:21px !important;}
+  .main{padding:4px 0 28px !important;}
+  .main .card{padding:15px 16px !important;}
+}
+
+</style>
+</head>
+<body>
+<!--hermes-nav-start--><nav class="hermes-nav" aria-label="页面导航"><div class="nav-side"><a class="nav-home" href="../../首页.html">🏠 首页</a></div><div class="nav-mid">2026年10月10日 · TOP5</div><div class="nav-side"><a href="../2026年10月09日/AI项目TOP5.html">← 上篇</a><span class="disabled">下篇 →</span></div></nav><!--hermes-nav-end-->
+
+<div class="hermes-bg"><div class="hb-orb hb-o1"></div><div class="hb-orb hb-o2"></div><div class="hb-orb hb-o3"></div><div class="hb-grid"></div><div class="hb-stars"></div><div class="hb-scan"></div></div>
+<div class="wrap">
+<div class="badge">🤖 GitHub API 实时抓取 · 每日更新 08:00</div>
+<h1>🔥 AI实用项目TOP5</h1>
+<p class="sub">2026年10月10日（周六）· 今日主题：把 AI 接进手上的活（通道管理 · 出 PPT · 查料 · 求职 · 长期记忆） · 按实用性排序 · 近一周有重大更新优先</p>
+
+<div class="card">
+  <div class="rank"><span class="medal">🥇</span><span class="name">CC Switch — 一个桌面窗口，管住你所有 AI 编程工具的供应商与配置</span><span class="stars">⭐ 141,902</span></div>
+  <div class="repo"><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></div>
+  <p class="desc">现在同时用 Claude Code、Codex、Gemini CLI、Hermes 的人，痛点都一样：每换一家 API 供应商就要手改 JSON / TOML / YAML / .env，MCP、技能、提示词还得在每个工具里各维护一份。CC Switch 把这些收进一个桌面应用：选中工具 → 挑预设 → 填 Key → 一键切换，而切换只替换端点、Key、模型这类连接信息，你加的插件、hooks、MCP 和注释原样保留；首次启动会自动把现有配置导入成一个叫 default 的供应商，不会丢东西。三种接法随你挑——直连（工具直接连供应商）、路由（请求经本机转发，自动做 API 格式转换与故障转移，于是能在 Claude Code 里用 GPT、在 Codex 里用 Claude）、聚合（把多家供应商的模型合并成一个模型列表，选哪个模型就走哪家）。除了供应商，它还把 MCP 服务器、技能（可从 skills.sh 或 GitHub 一键安装并同步到各工具）、提示词（写入 CLAUDE.md / AGENTS.md / GEMINI.md，原内容先存回库）、会话阅读视图（每一轮干了什么、改了哪些文件、哪一步失败，一眼看清，还能复制恢复命令接着聊）和用量额度（官方订阅的 5 小时 / 周 / 月配额、账户余额，直接显示在供应商卡片和托盘上）统一管起来。</p>
+  <div class="why"><b>用途：</b>手上有多家模型通道或订阅的人，用它统一管理、一键切换，还能在 Claude Code 里跑 GPT、在 Codex 里跑 Claude，不用再手改配置文件 · <b>亮点：</b>10 月 7 日发布 v4.0 正式版——界面、聚合模式、配置切换全面重做，是该项目迄今最大的一次更新，随后 10 月 8 日 v4.0.5、10 月 9 日 v4.0.6 连发修复（Codex 可以用 GitHub Copilot 账号、供应商页新增搜索、Skills 检查到更新后一键全量更新、额度不足 20% 三色提醒、修复 Claude Code 经路由转 OpenAI 格式时最后一段回复丢失等）；内置 90+ 供应商预设，Windows / macOS / Linux 原生桌面（Tauri 2，macOS 版已签名公证，brew install --cask cc-switch 即可装） · <b>适合：</b>同时用多个编程 Agent 或多家模型通道、不想再手改配置文件的开发者</div>
+  <p class="meta">最近推送：2026-10-09 · 最新版 v4.0.6 · GitHub API 当日实测</p>
+</div>
+<div class="card">
+  <div class="rank"><span class="medal">🥈</span><span class="name">PPT Master — 把 PDF / Word / 网页或一句话，变成能在 PowerPoint 里继续改的原生 PPT</span><span class="stars">⭐ 58,719</span></div>
+  <div class="repo"><a href="https://github.com/hugohe3/ppt-master">hugohe3/ppt-master</a></div>
+  <p class="desc">它不是「生成图片再贴进 PPT」的工具，而是直接产出 PowerPoint 的原生对象：幻灯片母版与版式、带可调控制点的原生形状与连接线、带「编辑数据」的数据图表与表格、OMML 原生公式，还能加原生转场、动画和旁白配音。用法极简：装好 Python 3.10+ 和一个有 agent 能力的 AI 工具（Claude Code、Cursor、Codex CLI 等），把 PDF / DOCX / 图片放进 projects/ 目录，在对话里说「用 projects/q3-report/sources/report.pdf 做一份 PPT」，它会先跟你确认设计规格（模板、比例、页数），然后自己完成内容分析、视觉设计、SVG 生成与 PPTX 导出，成品落在 exports/名称_时间戳.pptx。也可以直接粘一段文字开工，或者说「快速生成 5 页，不用跟我确认」跳过确认环节。除了从素材生成，它还能从你的参考文件里蒸馏出可复用的品牌 / 样式 / 版式模板；拿一份现成的 .pptx 当模板、把新内容填进去（未改动的页面逐字节保留）；给做好的稿子补动画与配音。配图两条路：AI 生成（默认 Google 的 Nano Banana 2.1，也支持 gpt-image-2 等）或网络图搜（零配置可用 Openverse / Wikimedia，配上免费的 Pexels / Pixabay Key 质量明显更好，授权自动处理并加署名）。</p>
+  <div class="why"><b>用途：</b>报告、方案、讲课稿——把手上的文档直接变成还能继续编辑的演示稿，省掉最耗时的排版 · <b>亮点：</b>10 月 8 日发布 v6.7.0：新增设计规格的浏览器评审页、Google 图像生成默认换成 Nano Banana 2.1、修复源文档转换与 PPTX / SVG 文本往返会静默丢内容的问题；作者自述每条路线都拿真实稿件跑过端到端；开源免费，只付模型费用，整条流程在本机跑、数据不出门，也不锁定平台（Claude、GPT、Gemini、Kimi 都能驱动） · <b>适合：</b>经常要做 PPT 的职场人（作者本人是财务出身、天天审稿），以及想把 Python + Agent 用起来的人</div>
+  <p class="meta">最近推送：2026-10-08 · 最新版 v6.7.0 · GitHub API 当日实测</p>
+</div>
+<div class="card">
+  <div class="rank"><span class="medal">🥉</span><span class="name">last30days — 不搜编辑写好的文章，搜「这 30 天真人怎么说」</span><span class="stars">⭐ 63,850</span></div>
+  <div class="repo"><a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a></div>
+  <p class="desc">一个给 Agent 用的搜索技能：你说 /last30days 加某个话题（人名、公司、产品、事件都行），它并行去 Reddit、X、YouTube、TikTok、Instagram、Hacker News、Polymarket、GitHub、arXiv、Techmeme、Digg、Bluesky、Threads、Pinterest、LinkedIn、StockTwits 等平台捞最近 30 天的内容，按真人的互动量（上赞、点赞、播放、预测市场里真金白银的赔率）排序，再由 AI 综合成一份带出处的简报。Reddit、HN、Polymarket、GitHub 零配置即可用，跑一次会让它引导你在 30 秒内解锁 X、YouTube、TikTok、arXiv、Techmeme 等。典型用法：见客户或开会前先摸清对方最近一个月在做什么（推文、播客转录、GitHub 提交速度与合并率）；用「what's exploding in AI agents?」进入发现模式，拿到 5-10 个正在起量的选题；比较工具时实时拉 GitHub 星数做对照表。它的理由很直接：Google 搜的是编辑，它搜的是人——Reddit 评论、X 帖子、YouTube 转录各自关在围墙里，只有把钥匙交给 Agent 才能一起搜、一起排序。</p>
+  <div class="why"><b>用途：</b>见人、开会、写选题、选型之前，用半小时换到别人几天也未必凑齐的一手信号；也能当「这个话题现在到底怎么样了」的快速事实核查 · <b>亮点：</b>10 月 8-9 日连发 v3.27.0 / v3.27.1 / v3.27.2——在 Grok Bot 上 X 直接零配置可用（走机器人自带的 X 工具，不花 API 额度），并修掉报告尾部多余的来源列表、YouTube 结果过薄、Reddit 被拦截时无法归类等问题；安装两条命令（Claude Code 走插件市场，其他 50+ 支持 Agent Skills 的工具用 npx skills add），对 Codex 是一等公民支持而非移植 · <b>适合：</b>做销售、投资、内容、招聘的人，以及想跟上 AI 圈每天都在变的东西的人</div>
+  <p class="meta">最近推送：2026-10-09 · 最新版 v3.27.2 · GitHub API 当日实测</p>
+</div>
+<div class="card">
+  <div class="rank"><span class="medal">4️⃣</span><span class="name">career-ops — 投简历之前，先让 AI 告诉你这份工作值不值得投</span><span class="stars">⭐ 73,909</span></div>
+  <div class="repo"><a href="https://github.com/career-ops-hq/career-ops">career-ops-hq/career-ops</a></div>
+  <p class="desc">一个开源的求职 Agent（作者用它筛了 740 个岗位、投了 68 家，拿到 12 个面试和 1 个 offer）。把招聘链接或 JD 粘给它：它先确认这个岗位是否还开着、是不是又被重新挂出来的幽灵岗；再拿你的真实简历给这个岗位打分（1-5 分，低于 4 分它会劝你别投，你也可以覆盖）；然后按这份 JD 量身改出一份 ATS 友好的简历（PDF）和求职信，准备好 STAR+R 面试问题，把每次评估里讲过的经历攒成 5-10 个可复用的面试故事库；还会做公司调研、找出该联系的招聘经理或 HR 并起草一条 300 字以内的 LinkedIn 私信、生成正式的申请邮件草稿、算跟进节奏、把 HR 的回复自动归类进求职看板，并在一连串拒绝之后告诉你缺的到底是什么能力。它内置 100+ 公司的门户扫描（Ashby / Greenhouse / Lever / Wellfound），也有终端看板可以筛选排序。</p>
+  <div class="why"><b>用途：</b>把「海投」换成「少投、投对」——每份申请都对着 JD 改过，投之前就知道自己差在哪、值不值得花这个晚上 · <b>亮点：</b>边界设计是它最值钱的地方——绝不自动提交申请、绝不发邮件、没有遥测，所有数据留在你本机（代码里还专门做了「简历只能改写、不能编造」的检查）；10 月 1 日发布 career-ops v1.35.0（新增 9 个职位源，86 位贡献者里 50 位是第一次贡献）与 web v0.13.0（新增对 Hermes Agent 无头 CLI 的支持），10 月 9 日仍在密集提交（ATS 版 PDF、回复分类、简历检查等）；安装一条命令 npx @santifer/career-ops init，然后在目录里打开你常用的 AI CLI 就能用，含中文文档与本地免费模型方案 · <b>适合：</b>正在找工作、或准备换工作的人</div>
+  <p class="meta">最近推送：2026-10-09 · 最新版 v1.35.0 · GitHub API 当日实测</p>
+</div>
+<div class="card">
+  <div class="rank"><span class="medal">5️⃣</span><span class="name">MemPalace — 让 AI 记住你：本地存原文、按语义找回，全程不调云端</span><span class="stars">⭐ 59,486</span></div>
+  <div class="repo"><a href="https://github.com/MemPalace/mempalace">MemPalace/mempalace</a></div>
+  <p class="desc">一个「本地优先」的 AI 长期记忆系统。它不做摘要、不做改写，把对话原文逐字存下来，再用语义检索找回去；索引是结构化的——人和项目分成 wing、话题分成 room、原文放在 drawer，所以搜索可以限定范围，而不是在一片平铺的语料里瞎捞。用法很直接：mempalace mine ~/projects/myapp 把项目文件挖进记忆宫殿，mempalace mine ~/.claude/projects/ --mode convos 把 Claude Code 的历史会话也挖进去，mempalace search "我们当时为什么换成 GraphQL" 检索，mempalace wake-up 在新会话里一次性加载上下文，mempalace audit 给记忆宫殿的整理度打分。它还带一个有时间有效期的实体关系知识图谱（本地 SQLite）、45 个 MCP 工具（读写、图谱、跨 wing 导航、Agent 日记与协作）、以及给 Claude Code / Codex CLI / Cursor 用的自动保存钩子（定期保存，并在上下文压缩前抢救一轮）。安装推荐 uv tool install mempalace（隔离环境，避免和系统 Python 打架），也支持 pipx 与 Docker。</p>
+  <div class="why"><b>用途：</b>治 Agent 最大的短板——换个会话就忘光。把项目历史、决策原因、个人偏好存成可检索的长期记忆，新会话一句 wake-up 就接上；也适合做跨工具共用的记忆库 · <b>亮点：</b>官方基准可复现且不依赖云：LongMemEval 500 题纯语义检索 R@5 达 96.6%（全程不用 LLM、不用 API Key），混合管线在 450 题留出集上 98.4%，再加一次 LLM 重排可到 99% 以上；10 月 6 日一批性能提交把挖掘、检索、隧道同步都改成批量处理，大记忆库也能保持轻快；原文逐字存储，不是「AI 帮你总结的记忆」，不会越用越失真 · <b>适合：</b>长期和 AI 结对做项目、又不想把聊天记录交给第三方的人</div>
+  <p class="meta">最近推送：2026-10-09 · 最新版 v3.10.0 · GitHub API 当日实测</p>
+</div>
+
+<div class="nav" id="detail-nav"></div>
+<p class="footer">数据来源：GitHub API 实时抓取（2026年10月10日 08:05 CST）· Star 数与更新时间为当日实测<br>AI项目日报 · 由 Hermes Agent 自动生成</p>
+</div>
+<script>
+fetch('/ai-daily-report/detail-nav.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject()).then(d=>{
+  var n=document.getElementById('detail-nav');
+  (d.links||[]).forEach(function(l){var a=document.createElement('a');a.href=l.href;a.textContent=l.title;n.appendChild(a);});
+}).catch(()=>{});
+</script>
+</body>
+</html>
