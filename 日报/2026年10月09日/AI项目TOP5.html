@@ -528,35 +528,35 @@ header.hero, .hero{
 
 <div class="card">
   <div class="rank"><span class="medal">🥇</span><span class="name">Headroom — 内容进模型之前先压一遍，Agent 的 token 账单直接砍半</span><span class="stars">⭐ 74,760</span></div>
-  <div class="repo"><a href="https://github.com/headroomlabs-ai/headroom">headroomlabs-ai/headroom</a></div>
+  <div class="repo"><a href="https://github.com/headroomlabs-ai/headroom" target="_blank" rel="noopener">headroomlabs-ai/headroom</a></div>
   <p class="desc">它插在你的 Agent 和大模型之间，把 Agent 读进去的一切——工具返回结果、日志、RAG 检索块、文件、对话历史——先压一遍再送给模型，答案不变、token 大幅减少。压缩全程在本机完成，官方明确写着不会把提示词或文件内容发出去做压缩。四种用法：① 当库用，Python / TypeScript 里直接调 compress(messages)；② 当代理用，headroom proxy --port 8787，不改一行业务代码，任何语言都能接；③ 包住现成 Agent，headroom wrap claude|codex|cursor|aider|cline|goose|openhands 等一条命令搞定，unwrap 可撤销；④ 当 MCP 服务用，提供 headroom_compress、headroom_retrieve、headroom_stats。内部按内容类型分流：JSON 走 SmartCrusher、代码走 AST 级 CodeCompressor、普通文本走自研 Kompress-v2 模型；原始内容本地缓存，需要时可原样取回（CCR 可逆）。另外还附带跨 Agent 共享记忆（Claude / Codex / Gemini / Grok 共用一个记忆库并自动去重）、headroom learn（把失败的会话挖出来，自动把纠正写进 CLAUDE.md / AGENTS.md）、以及输出侧省钱（管住模型啰嗦的回复，并在一轮只是「读完文件接着干」时降低思考强度）。</p>
   <div class="why"><b>用途：</b>给已经在用 Claude Code / Cursor / Codex 的人直接砍 token 账单——尤其是长会话、日志很多、工具返回一大坨 JSON 的场景 · <b>亮点：</b>官方基准可复现：代码搜索场景省 21%、SRE 排障 57%、代码库探索 42%、GitHub issue 分诊 30%，重复的 JSON 数组与日志行能过 90%；压缩耗时中位数 0.21 毫秒（1 万 token）到 1.4 毫秒（10 万 token），基本不影响响应速度；准确率侧 GSM8K 持平，SQuAD v2 压缩 19% 时保持 97%，BFCL 工具调用压缩 32% 时保持 97%。10 月 6 日发布 v0.40.0：新增逐条消息的压缩诊断、live-agent densify 模式（无损且不破坏缓存）、仪表盘新增「省下的碳排放」卡片、learn 支持 Antigravity CLI 作为分析后端；本周仍在高频提交（Claude Code 压缩动画插件、Windows 常驻服务等）· <b>适合：</b>token 账单高、或长会话经常撞上下文上限的 Agent 用户</div>
   <p class="meta">最近推送：2026-10-08 · 最新版 v0.40.0 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">🥈</span><span class="name">Orca — 同时开一队编程 Agent 的「指挥台」</span><span class="stars">⭐ 87,918</span></div>
-  <div class="repo"><a href="https://github.com/stablyai/orca">stablyai/orca</a></div>
+  <div class="repo"><a href="https://github.com/stablyai/orca" target="_blank" rel="noopener">stablyai/orca</a></div>
   <p class="desc">一个桌面应用（也有手机端），把并行的 AI 编程 Agent 管在一个界面里：同一句提示可以扇出到五个 Agent，各自在独立的 git worktree 里干活，跑完对比结果、挑最好的合并。支持用自己的订阅跑 Codex、Claude Code、OpenCode、Pi 等 Agent；除了本机，还能把 Agent 放到性能更强的远程机器（SSH worktree，自带自动重连与端口转发）或配对的 Orca 服务器上跑。编辑器是 VS Code 那一套并带全局自动保存，文件、图片可以直接拖进 Agent 的提示里；终端是 Ghostty 级别的 WebGL 渲染，支持无限分屏、重启后保留滚动记录。Design Mode 能在真实 Chromium 窗口里点任意 UI 元素，把它的 HTML、CSS 和局部截图直接塞进 Agent 的提示。PR、issue、Linear 看板都在应用内看，任何任务都能一键开出 worktree，diff 上逐行批注再发回给 Agent。手机端可以随时看 Agent 是否跑完、收到通知并从外面继续追问。另有 Orca CLI（orca worktree create / snapshot / click / fill），让 Agent 反过来驱动 Orca。</p>
   <div class="why"><b>用途：</b>一个人同时推进多条任务线——一个 Agent 修 bug、一个写测试、一个重构，各自隔离互不干扰，最后择优合并；也能在手机上盯着跑在服务器上的 Agent · <b>亮点：</b>10 月 8 日发布 v1.4.223（结构化原生聊天上线：Grok 可在本机与配对服务器上以聊天形态打开，支持回退到某条历史消息、用 @ 选文件、对话以首条消息命名、等待审批时提醒、草稿跨重启保留；SSH 工作区在断线重连与重启后能保住打开的文件和 Agent 标签页；手机端在 orca serve 重启后保留所有终端），本周几乎每天发版 · <b>适合：</b>愿意订阅编程 Agent、又想榨干订阅额度、同时推进多任务的人</div>
   <p class="meta">最近推送：2026-10-09 · 最新版 v1.4.223 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">🥉</span><span class="name">Archify — 一句话把想法、计划或整个代码库变成可交互的图</span><span class="stars">⭐ 79,990</span></div>
-  <div class="repo"><a href="https://github.com/tt-a1i/archify">tt-a1i/archify</a></div>
+  <div class="repo"><a href="https://github.com/tt-a1i/archify" target="_blank" rel="noopener">tt-a1i/archify</a></div>
   <p class="desc">它本质是一个 Agent 技能（Skill），装完就能用自然语言「画图」：跟 Agent 描述一句，它输出一张可交互的 HTML——能点开节点、跟随源码链接、追踪一条完整调用路径，还能继续用对话改（「加上鉴权」「高亮缓存未命中那条路」「换成浅色主题」）。不需要有仓库也能用，凭描述就能开始；给它一个仓库，它会读源码画出有出处可查的架构图。安装就一条命令 npx skills add tt-a1i/archify -g，支持 Cursor、Claude Code、Codex CLI、OpenCode 等 Agent。用途不限于架构：旅行行程、学习路线图、复杂系统梳理都能画，官方有示例画廊可以直接看效果。10 月 4 日发布 DSH 1.0.0，把 3.x 的创作与交付流程接进 DeepSeek Harness 社区集成（内置 Archify 3.0.1，宿主锁定 dsh 0.1.2-rc.1）；3.0 版本引入了品牌标记、Workflow schema v2、查看器本地化与可选的更新提示。</p>
   <div class="why"><b>用途：</b>接手一个陌生代码库时先出一张图、写方案时把系统画清楚给同事看、学习新领域时把知识串成一张能点的地图；生成的 HTML 就是普通工作区文件，可以直接分享 · <b>亮点：</b>安装零门槛（一条 npx 命令），不用写代码；输出是可交互 HTML 而不是死图；本周仍在提交（发布双语导航、可读性修复、官网迁到 Cloudflare Pages），10 月 4 日发布 DSH 1.0.0 · <b>适合：</b>想把「说不清楚」的东西变成一张能点的图的人——工程师与非技术岗都能用</div>
   <p class="meta">最近推送：2026-10-08 · 最新版 v3.0.1 / DSH 1.0.0 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">4️⃣</span><span class="name">Moli — 专给 AI Agent 用的无头浏览器，Rust 写的，轻又快</span><span class="stars">⭐ 13,810</span></div>
-  <div class="repo"><a href="https://github.com/lexmount/moli">lexmount/moli</a></div>
+  <div class="repo"><a href="https://github.com/lexmount/moli" target="_blank" rel="noopener">lexmount/moli</a></div>
   <p class="desc">一个面向 AI Agent 的无头浏览器：按需布局与渲染的设计，既保留完整的浏览器运行时，又把资源占用压得很低。Agent 可以用它抓取和抽取网页、联网搜索、自动化浏览器操作。接入有四条路——命令行、CDP（Chrome DevTools 协议）、WebDriver Classic、WebDriver BiDi，所以现有基于 Playwright / Puppeteer 的脚本改个连接地址就能用。命令行直接出结果：moli fetch --dump markdown --wait-until done 把页面渲染成 Markdown，或 --dump semantic_tree_text 输出适合模型阅读的语义树；加 --layout 还能截视口图、整页图或分页 PDF。项目专门提供了 skills 目录，把安装提示丢给 Agent 它自己就能装好。Linux、macOS、Windows 三平台都有预编译二进制，一行 curl 或 PowerShell 命令安装。</p>
   <div class="why"><b>用途：</b>让 Agent 真的能上网——抓页面转 Markdown 喂给模型、跑需要登录和 JS 渲染的自动化流程、批量截图存档；因为兼容 CDP 与 WebDriver，现有自动化代码几乎不用改 · <b>亮点：</b>10 月 7 日发布 v1.1.15，本周在密集修 CDP 标签行为、导航与渲染、WebIDL 原生绑定、Fetch / 流 / Cookie 等兼容性细节（说明它在往「真浏览器」的兼容度上死磕）；10 月 8 日的提交集中在安全（javascript URL 导航前先检查发起方）与窗口 / 历史行为。仓库今年 8 月才建，两个月涨到 1.3 万星 · <b>适合：</b>做浏览器自动化、或要给 Agent 接网页能力的开发者，尤其是嫌 Chrome 太重、启动太慢的人</div>
   <p class="meta">最近推送：2026-10-08 · 最新版 v1.1.15 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">5️⃣</span><span class="name">REA — 让 Agent 帮你逆向：从 App 行为一路挖到二进制</span><span class="stars">⭐ 25,917</span></div>
-  <div class="repo"><a href="https://github.com/morluto/rea">morluto/rea</a></div>
+  <div class="repo"><a href="https://github.com/morluto/rea" target="_blank" rel="noopener">morluto/rea</a></div>
   <p class="desc">一个给 Agent 用的逆向工程工具箱（MCP 服务）：看到某个 App 里有个想要的功能，就让 Agent 用 REA 去查——它能在没有源码的情况下检查目标、讲清这个功能是怎么实现的、把证据摆出来，然后在你自己的项目里做一个类似版本。覆盖范围包括原生二进制、JavaScript 与 Electron 应用、.NET 程序集、网页；原生分析可以复用你已装好的 Hopper 或 Ghidra，纯静态 JS 分析则不需要任何引擎。分析全程在本地跑，每条结论都附带证据与局限说明，而不是给个似是而非的答案。安装是 npx rea-agents setup，会帮你把 MCP 服务和配套工作流说明注册进 Agent（支持 Claude Code、Codex、Cursor、Gemini CLI、Grok Build 等），改动前会备份原配置。也可以在终端直接用，例如 npx rea-agents@latest analyze-javascript-application /path/to/app --json 列出模块、导入关系与 Electron 边界。要求 Node.js 22.19 以上。</p>
   <div class="why"><b>用途：</b>想学一个功能的实现思路、接手没有文档的第三方程序、做安全分析或打 CTF 时快速摸清目标结构；也是「这个功能到底怎么做的」这类问题的调查工具 · <b>亮点：</b>10 月 8 日发布 v6.0.0——新增通过 EVMole 离线检查 EVM 字节码接口、Ghidra 支持 Windows 上的原生 x86 PE 程序、通过 pwntools 检查离线 ELF 布局、追踪 Mach-O bundle 里的 dylib 解析、浏览历史网页的网络抓包；破坏性变更：MCP 的文件输入改为必须传绝对路径。仓库今年 4 月才建，半年涨到 2.5 万星，最近三天连发 v4.1.0 / v5.0.0 / v6.0.0 三个大版本 · <b>适合：</b>安全研究者、逆向爱好者，以及想从现成产品里学习实现手法的开发者</div>
   <p class="meta">最近推送：2026-10-09 · 最新版 v6.0.0 · GitHub API 当日实测</p>
