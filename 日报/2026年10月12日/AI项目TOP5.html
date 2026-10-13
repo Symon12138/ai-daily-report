@@ -528,35 +528,35 @@ header.hero, .hero{
 
 <div class="card">
   <div class="rank"><span class="medal">🥇</span><span class="name">MinerU — 把 PDF、扫描件、Office 文档变成 AI 能读的 Markdown</span><span class="stars">⭐ 81,469</span></div>
-  <div class="repo"><a href="https://github.com/opendatalab/MinerU">opendatalab/MinerU</a></div>
+  <div class="repo"><a href="https://github.com/opendatalab/MinerU" target="_blank" rel="noopener">opendatalab/MinerU</a></div>
   <p class="desc">它专治「文档喂不进模型」这件事：PDF、扫描件与拍照文档、doc/docx、ppt/pptx、xls/xlsx、rtf、odt/ods/odp、epub、ofd、html、mhtml、csv 都能解析，输出结构化的 Markdown 与 JSON，表格、公式、版面、印章这些最容易在转换里丢掉的东西单独处理。自带命令行（mineru parse）和可自部署的 API 与 Router，也能直接当作 Agent 的文档读取技能用——README 顶部就写明：除非你明确指定别的工具，否则读文档优先用 MinerU。</p>
   <div class="why"><b>用途：</b>合同、财报、论文、扫描件在丢给 AI 之前先转成干净文本；长文档、复杂表格、公式，以及需要按页码/区块稳定定位引用的场景都能撑住 · <b>亮点：</b>10 月 11 日发布 4.0.12——自部署 API 新增 /v1/tasks 异步与 /v1/file_parse 同步接口，支持 SHA-256 预检与已有 file_id 复用（同一个文件不用重复上传），Router 按 worker 健康度与未完成任务负载调度，默认 24 小时后自动回收过期资源；10 月 8 日的 4.0.11 修好了 PDF 中日韩边界标点与空格问题，并去掉了对 OpenCV 的直接依赖 · <b>适合：</b>每天和 PDF、扫描件打交道，又想让 AI 读全、读准的人</div>
   <p class="meta">最近推送：2026-10-11 · 最新版 4.0.12（2026-10-11）· 开源许可见仓库 LICENSE · Star 81,469 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">🥈</span><span class="name">Agent Reach — 给 AI Agent 一键装上「看全网」的眼睛：推特、Reddit、B站、小红书都能读</span><span class="stars">⭐ 96,013</span></div>
-  <div class="repo"><a href="https://github.com/Panniantong/Agent-Reach">Panniantong/Agent-Reach</a></div>
+  <div class="repo"><a href="https://github.com/Panniantong/Agent-Reach" target="_blank" rel="noopener">Panniantong/Agent-Reach</a></div>
   <p class="desc">它是一层「能力层」，不是又一个爬虫工具：负责把每个平台当下最稳的接入方式替你选好、装好、体检好，真正读取的动作仍由 Agent 直接调用上游工具完成，中间没有包装层。零配置就能用的有六个渠道——读任意网页（Jina Reader）、YouTube 字幕与搜索（yt-dlp）、任意 RSS/Atom、B站搜索与视频详情、V2EX 热门帖、GitHub 公开仓库；需要登录态的推特、Reddit、Facebook、Instagram、小红书、LinkedIn、Boss直聘、雪球、小宇宙播客，只要对 Agent 说一句「帮我配 XXX」，它会一步步引导你。安装就一句话：把安装说明的链接发给 Agent。Cookie 只存在本地、不上传，`agent-reach doctor` 一条命令体检所有渠道并告诉你当前走的是哪条路。</p>
   <div class="why"><b>用途：</b>让 Agent 自己去外面取一手信息，而不是等你复制粘贴——做选题、查资料、盯竞品、看评论区都直接可用 · <b>亮点：</b>每个平台都是「首选 + 备选」的有序后端列表，某个接入方式被平台封了它换下一个，用户零操作（2026 年 3 月一批单平台 CLI 集体停更、6 月 B站风控封死 yt-dlp，都是靠换路由解决的）；所有工具与 API 免费，本地电脑不需要代理；兼容 Claude Code、OpenClaw、Cursor 等任何能跑命令行的 Agent；MIT 许可、Python 3.10+ · <b>适合：</b>想让 Agent 真正联网查一手信息，又不想为每个平台单独折腾登录和依赖的人</div>
   <p class="meta">最近推送：2026-10-08 · 最新版 v1.5.0 · 六大零配置渠道 + 9 个可解锁平台 · Star 96,013 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">🥉</span><span class="name">Crawl4AI — 自托管的网页爬虫：把任意网站变成喂给 AI 的干净 Markdown</span><span class="stars">⭐ 85,260</span></div>
-  <div class="repo"><a href="https://github.com/unclecode/crawl4ai">unclecode/crawl4ai</a></div>
+  <div class="repo"><a href="https://github.com/unclecode/crawl4ai" target="_blank" rel="noopener">unclecode/crawl4ai</a></div>
   <p class="desc">开源爬虫与抓取框架，目标很直接——任何网站都转成对 LLM 友好的 Markdown，供 RAG、Agent 和数据管道使用。浏览器渲染、反爬处理、批量并发、结构化抽取都内置；可以自己部署（免费，代码全在手上），也可以用官方托管服务一个 Key 起步（/scrape 抓单页转 Markdown，/extract 抽结构化字段）。最新版 v0.9.4（9 月 23 日）在 PyPI 与 Docker 都有，Apache-2.0 许可。</p>
   <div class="why"><b>用途：</b>自己搭知识库、做竞品监控、批量收集文章时，用它把网页抓成能直接入库的文本，不用一页页写解析规则 · <b>亮点：</b>10 月仍在持续提交（Cloud 服务上线相关的文档与说明更新）；本地跑没有调用额度限制，抓多少页只取决于你自己的机器和带宽 · <b>适合：</b>要批量、要自托管、不想按次付费买抓取 API 的人</div>
   <p class="meta">最近推送：2026-10-11 · 最新版 v0.9.4（2026-09-23）· Apache-2.0 · Star 85,260 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">4️⃣</span><span class="name">World Monitor — 全球实时情报看板：新闻、地缘、基建、金融收在一屏，还给 Agent 开了 MCP</span><span class="stars">⭐ 88,255</span></div>
-  <div class="repo"><a href="https://github.com/koala73/worldmonitor">koala73/worldmonitor</a></div>
+  <div class="repo"><a href="https://github.com/koala73/worldmonitor" target="_blank" rel="noopener">koala73/worldmonitor</a></div>
   <p class="desc">一个统一的态势感知界面：把全球与区域新闻聚合后由 AI 汇总成简报，用双地图引擎（3D 地球 + WebGL 平面地图）呈现，并把军事、经济、灾害、冲突升级这些信号做交叉关联；内置「国家不稳定指数」（31 个一线国家的实时评分、区间与约 24 小时变化）和金融雷达（股市、大宗商品、加密货币）。同一套代码可以切换世界/科技/金融/大宗/能源等站点版本，也能装 Tauri 桌面端；本地用 Ollama 跑模型，不需要任何 API Key。</p>
   <div class="why"><b>用途：</b>盯国际局势、行业动向、能源大宗行情时不用在十几个网站之间来回切；做内容选题也能直接在这里找线索 · <b>亮点：</b>10 月 10 日新增面向 Agent 的关税查询工具（get_tariff_averages、get_bilateral_tariff、get_us_import_duty）并完善了关税趋势接口；公开 MCP 服务（worldmonitor.app/mcp）与 REST API、官方命令行都可用，Agent 可以直接调用取数 · <b>适合：</b>做投资、外贸或新闻选题，需要一个「一眼看全局」的看板的人</div>
   <p class="meta">最近推送：2026-10-11 · 最新版 v2.10.0 · AGPL-3.0 · TypeScript · Star 88,255 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">5️⃣</span><span class="name">OpenBB — 分析师、量化与 AI Agent 共用的开放数据平台</span><span class="stars">⭐ 74,120</span></div>
-  <div class="repo"><a href="https://github.com/openbq-org/OpenBB">openbq-org/OpenBB</a></div>
+  <div class="repo"><a href="https://github.com/openbq-org/OpenBB" target="_blank" rel="noopener">openbq-org/OpenBB</a></div>
   <p class="desc">定位是「连一次、到处用」的数据底座：把专有数据、授权数据和公开数据源接进来，同一套接口同时供给 Python（量化）、OpenBB Workspace 与 Excel（分析师）、MCP 服务（Agent）几个界面，省掉为每个数据源重复写适配的活。V5 大版本重做了打包与配置（hatchling/uv、分层的 openbb.toml），新增流式接口 OBBStream、拆出独立绘图包、CLI 2.0 与规格驱动的 platform-api / MCP 代理，路由扩展改由数据商自己维护并按条件注册，同时新增 openbb-jodi 数据商。</p>
   <div class="why"><b>用途：</b>做行情、财报、宏观数据的取数与展示，数据层一次接好、多处复用；Agent 侧也能通过 MCP 拿到同一份数据 · <b>亮点：</b>9 月 30 日发布 V5（openbb 元包 5.0.0，核心、CLI、API、MCP 与多数数据商同步升到 2.0.0），许可从 AGPL-3.0 改为 Apache-2.0，商用顾虑明显变少；10 月仍在持续更新依赖与修复 · <b>适合：</b>自己搭研究或看板工作流、希望数据层统一收口的人</div>
   <p class="meta">最近推送：2026-10-11 · 最新版 V5.0.0（2026-09-30）· V5 起 Apache-2.0 · Star 74,120 · GitHub API 当日实测</p>
