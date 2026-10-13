@@ -528,35 +528,35 @@ header.hero, .hero{
 
 <div class="card">
   <div class="rank"><span class="medal">🥇</span><span class="name">AnythingLLM — 把私有 ChatGPT 搬回自己电脑的一站式应用</span><span class="stars">⭐ 66,798</span></div>
-  <div class="repo"><a href="https://github.com/Mintplex-Labs/anything-llm">Mintplex-Labs/anything-llm</a></div>
+  <div class="repo"><a href="https://github.com/Mintplex-Labs/anything-llm" target="_blank" rel="noopener">Mintplex-Labs/anything-llm</a></div>
   <p class="desc">下载桌面版（Mac/Windows/Linux）或起 Docker 服务端，接上本地模型（Ollama、LM Studio、本地推理引擎）或云端模型，把 PDF、Word、表格、网页、邮件丢进工作区就能问答，默认就在本地跑、几乎不用配置。开箱自带 RAG 向量库、能浏览网页与调用工具的 AI Agent、多用户与权限管理、可嵌到网站的聊天挂件。四项特色能力值得单拎：动态模型路由（按你定的规则把每轮对话自动分给最合适的模型与厂商）、自动与手动记忆（让模型记住关于你和这个工作区的重要信息）、定时任务（用 cron 让 Agent 按周期自动跑提示词与整条工具链）、智能技能选择（工具数量不设上限，单次查询 token 用量最多降 80%）。另有无代码 Agent 构建器、MCP 兼容、多模态与可嵌入挂件。</p>
   <div class="why"><b>用途：</b>给个人或小团队搭一个数据不出门的 ChatGPT——公司文档、合同、会议记录、笔记全丢进去提问；不想折腾环境就直接用桌面版，想要多人协作和权限就上 Docker 版 · <b>亮点：</b>10月1日发布 v1.17.0（修电子表格日期被读成序列号、纯 HTML 邮件被整封跳过、文本上传按写入编码读取、Weaviate 与 Astra 的相似度打分口径、在 AWS Bedrock 上跑 OpenAI 模型等），本周提交 25 次以上，集中在文档采集器与定时任务 · <b>适合：</b>想要一个能立刻用起来的私有 AI 应用、又不想自己拼装向量库和 RAG 管线的人</div>
   <p class="meta">最近推送：2026-10-07 · 最新版 v1.17.0 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">🥈</span><span class="name">LocalAI — 一个本地地址跑通所有模型的 AI 引擎</span><span class="stars">⭐ 49,424</span></div>
-  <div class="repo"><a href="https://github.com/mudler/LocalAI">mudler/LocalAI</a></div>
+  <div class="repo"><a href="https://github.com/mudler/LocalAI" target="_blank" rel="noopener">mudler/LocalAI</a></div>
   <p class="desc">它不是「又一个模型运行器」，而是一台自托管的 AI 引擎：LLM、视觉、语音、图像、视频全部收在同一个 API 后面，硬件要求也低——NVIDIA、AMD、Intel、Apple 芯片、Vulkan 甚至纯 CPU 都能跑，官方明确写着不需要显卡。架构上坚持「小核心」：每个后端（llama.cpp、vLLM、whisper.cpp、stable-diffusion、MLX、kokoro 等）单独打包成镜像，只有某个模型真的需要时才拉取，用不到的一律不装。API 同时兼容 OpenAI、Anthropic 与 ElevenLabs 三家格式，所以现有客户端、脚本、Agent 基本不用改代码就能把地址切过来。自带 Agent（工具调用、RAG、MCP、技能）、模型画廊与一键量化微调、多用户 API Key 鉴权与配额、按用户统计用量，数据始终留在自己的基础设施里。</p>
   <div class="why"><b>用途：</b>把云端 API 换成自己机器上的地址——本地跑得动的自己跑，跑不动的再按需回落云端，成本与隐私都能自己控；也能给团队成员发 API Key 并限制配额 · <b>亮点：</b>10月2日发布 v4.11.0，本周新增按模型统计磁盘占用（API 与 WebUI 都可查）、说话人分离返回声音事件、分布式模式下用租约限制并取消模型加载、修复已自行退出的后端仍被列出；vLLM 后端升到 0.31.0 · <b>适合：</b>想统一管住本地与云端模型入口、又不愿被单一厂商锁定的开发者和团队</div>
   <p class="meta">最近推送：2026-10-08 · 最新版 v4.11.0 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">🥉</span><span class="name">Odysseus — 自托管 AI 工作台：聊天、邮件、笔记、日历收在一处</span><span class="stars">⭐ 91,846</span></div>
-  <div class="repo"><a href="https://github.com/odysseus-dev/odysseus">odysseus-dev/odysseus</a></div>
+  <div class="repo"><a href="https://github.com/odysseus-dev/odysseus" target="_blank" rel="noopener">odysseus-dev/odysseus</a></div>
   <p class="desc">一个自己部署的 AI 工作台，把日常工具都装进同一个界面：聊天与 Agent（本地或 API 模型、工具、MCP、文件、shell、技能、记忆）、Cookbook（按你的硬件推荐模型、下载并起服务）、深度研究（多步联网调研、读原文、出报告）、对比（盲测两个模型并做综合）、文档（写作优先的编辑器，AI 直接改稿，支持 Markdown/HTML/CSV 与语法高亮）、邮件（IMAP/SMTP 收件箱，自动分类、打标签、摘要、提醒、起草回复）、笔记与任务与日历（提醒、待办、Agent 定时任务、CalDAV 同步），外加图库与图片编辑、主题、网页搜索、预设与会话管理、两步验证。部署就是标准 Docker Compose：克隆、复制 .env、up -d，浏览器打开 7011 端口，首个管理员密码打印在容器日志里。官方镜像多架构、每推必发，拉不到才本地构建，所以在没有构建工具链的机器或 Portainer 里也能起。</p>
   <div class="why"><b>用途：</b>把散落在十几个 SaaS 里的「AI + 邮箱 + 笔记 + 日历 + 文档」收拢到一台自己的服务器上，数据留在本地，手机浏览器也能直接用 · <b>亮点：</b>仓库今年 5 月底才建，本周仍有 25 次以上提交——提醒投递失败时改按配置渠道重试、grep/glob/ls 每次扫描只取一次控制面快照提速、外部上下文之后的审批门默认保持开启 · <b>适合：</b>有台常开的机器（NAS、小主机、云服务器）愿意自己部署、想少订几个订阅的人</div>
   <p class="meta">最近推送：2026-10-07 · 未打 tag（dev 分支）· GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">4️⃣</span><span class="name">Handy — 离线语音转文字，说完话文字自己落进输入框</span><span class="stars">⭐ 33,139</span></div>
-  <div class="repo"><a href="https://github.com/cjpais/Handy">cjpais/Handy</a></div>
+  <div class="repo"><a href="https://github.com/cjpais/Handy" target="_blank" rel="noopener">cjpais/Handy</a></div>
   <p class="desc">一个跨平台桌面小工具，只干一件事：按一下可配置的快捷键说话，松开之后文字直接粘贴进你正在用的任何输入框。全过程在自己电脑上完成，音频不发给任何云端——先由 Silero 做 VAD 静音过滤，再交给 Whisper（Small/Medium/Turbo/Large，有显卡就加速）或 CPU 优化的 Parakeet V3（自带语言自动识别）转写。快捷键支持长按录音、再按停止，也能设成只能长按或只能切换；Windows、macOS、Linux 都有，macOS 可 brew 装、Windows 可 winget 装、Ubuntu 用 apt 装 deb 让依赖自动补齐。项目定位很明确：免费、开源、隐私、简单。</p>
   <div class="why"><b>用途：</b>写日报、回消息、记灵感时不用打字，尤其适合手机上不好输入、回到电脑再补内容的场景；对隐私敏感的人也不必把会议内容交给第三方 · <b>亮点：</b>10月3日发布 v0.9.8（模型加载慢时在实时预览里显示加载状态而不是卡在「转写中」、录完发现没有音频就卸载模型、拒绝后端无法解析的组合键、修掉把 Ha 当英语填充词误删、transcribe-cpp 升到 0.2.4），本周 15 次提交 · <b>适合：</b>每天要写不少字、又不想为语音输入付费或上云的人</div>
   <p class="meta">最近推送：2026-10-07 · 最新版 v0.9.8 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">5️⃣</span><span class="name">PrivateGPT — 用本地模型搭私有 AI 应用的 API 层</span><span class="stars">⭐ 57,559</span></div>
-  <div class="repo"><a href="https://github.com/zylon-ai/private-gpt">zylon-ai/private-gpt</a></div>
+  <div class="repo"><a href="https://github.com/zylon-ai/private-gpt" target="_blank" rel="noopener">zylon-ai/private-gpt</a></div>
   <p class="desc">它自己不做推理，而是补上「跑起模型之后」缺的那一层：以 Claude API 为蓝本的一套开源后端，让你不必把消息流式、文件摄入、检索引用、工具调用、数据库查询这些基础件重写一遍。接法很简单——任何实现了 /v1/chat/completions 与 /v1/models 的 OpenAI 兼容推理服务（Ollama、llama.cpp、vLLM 等）填进 OPENAI_API_BASE 就能用。提供标准 messages API（流式、异步、token 计数）、文件与产物摄入、带引用的检索与 agentic RAG、对齐 Claude API 的内置工具（联网搜索、抓取网页、执行代码）、自定义工具与 MCP 连接器、对数据库和 CSV 的结构化访问、嵌入与编排，另附一个 /ui 工作台方便试用和演示，但真正的产品是这套 API。</p>
   <div class="why"><b>用途：</b>你要做的是「私有版 AI 产品」而不是「能聊天的本地模型」，它把后端积木直接给你，省掉几千行胶水代码；也是从云端 API 迁到本地模型时改动最小的一条路 · <b>亮点：</b>1.0 版本把两年的私有分支工作合并回开源主干（1.0 之前的老 API 不向前兼容，需按迁移指南改），本周在修鉴权里的断言改为显式检查、补充「更便宜的 OpenAI 兼容网关」配置示例 · <b>适合：</b>要交付私有化 AI 应用的开发者与需要本地部署的企业</div>
   <p class="meta">最近推送：2026-10-07 · 最新版 v1.0.1 · GitHub API 当日实测</p>
