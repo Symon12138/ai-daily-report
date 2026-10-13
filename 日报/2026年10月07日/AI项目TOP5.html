@@ -531,35 +531,35 @@ header.hero, .hero{
 
 <div class="card">
   <div class="rank"><span class="medal">🥇</span><span class="name">UI UX Pro Max — 给 AI 装上设计智能的技能</span><span class="stars">⭐ 133,594</span></div>
-  <div class="repo"><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill">nextlevelbuilder/ui-ux-pro-max-skill</a></div>
+  <div class="repo"><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener">nextlevelbuilder/ui-ux-pro-max-skill</a></div>
   <p class="desc">装进编码工具后，你只要说一句「给我的 SaaS 做落地页」，它先跑一遍设计系统推理引擎：从 192 条推理规则里匹配产品类型与版式模式，再并行检索 79 种 UI 风格（50 种为活跃推荐）、192 套配色、34 种落地页版式与 74 组字体搭配，几秒内给出完整方案——区块结构、风格关键词、主色/辅色/CTA 色及其十六进制值、字体组合、关键动效、明确要避开的反模式，以及交付前检查清单；随后按你的技术栈直接生成代码。栈覆盖 HTML+Tailwind、React/Next.js/shadcn、Vue/Nuxt、Angular、Laravel、Svelte/Astro/Three.js，桌面端到 JavaFX、WPF、WinUI 3、Avalonia。</p>
   <div class="why"><b>用途：</b>一句话拿到能落地的设计方案，不用再翻配色网站、凭感觉挑字体；也能用它给已有页面做改版评审，或让团队共用一套设计规范 · <b>亮点：</b>10月3日修掉 Cursor 技能指向空 Quick Reference 的问题，9月26日新增 ZCode 平台支持并更新 Three.js 已废弃 API 的指导；一条命令装好：npm 全局装 ui-ux-pro-max-cli 后跑 uipro init --ai claude，支持 20 多个编码工具与通用技能目录 · <b>适合：</b>用 AI 写前端、但产出总像模板的开发者</div>
   <p class="meta">最近推送：2026-10-03 · 最新版 v2.15.0 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">🥈</span><span class="name">Impeccable — 24 条命令把设计变成可调用的动作</span><span class="stars">⭐ 77,673</span></div>
-  <div class="repo"><a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a></div>
+  <div class="repo"><a href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener">pbakaus/impeccable</a></div>
   <p class="desc">一个技能 + 24 条命令 + 60 条确定性检测规则。装好后在 Claude Code、Cursor、Codex、GitHub Copilot 里输入 /impeccable init，它先扫项目并把「产品事实」写进 PRODUCT.md（受众、用途、运行环境、约束、语气），后续命令就知道自己在给谁做设计：shape 先规划界面再写代码、craft 走完整构建流程、critique 做 UX 评审、audit 查无障碍与性能与响应式、polish 做上线前收尾、bolder 与 quieter 调视觉强弱、distill 精简、animate 加动效、typeset 修字体层级、live 在浏览器里实时改某个元素。内置反模式清单直指 AI 通病：别用 Inter 与系统默认字体、别在彩色背景上放灰字、别用纯黑纯灰、别把卡片套卡片、别用弹跳缓动。</p>
   <div class="why"><b>用途：</b>把「审美」变成可反复执行的命令，改版、收尾、上线前自检各有对应动作；60 条确定性规则由命令行工具与浏览器扩展在本地跑，不调大模型、不需要 API key，省钱且结果可复现 · <b>亮点：</b>北京时间 10月7日凌晨仍在合并实时浏览器抓取与规则核心的修复（RTL 像素裁切、页脚、弹窗竞态、重复 id），10月2日发布 skill 4.5.0 与引擎 0.1.11；npx impeccable install 一条命令装到 Claude Code、Cursor、Codex、Copilot、Gemini CLI、Grok Build、Hermes Agent 等工具 · <b>适合：</b>已用编码 Agent 写前端、想让产出不像 AI 生成的人</div>
   <p class="meta">最近推送：2026-10-07 · 最新版 skill-v4.5.0 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">🥉</span><span class="name">OpenDesign — 本地优先的协作设计工作台</span><span class="stars">⭐ 99,713</span></div>
-  <div class="repo"><a href="https://github.com/nexu-io/open-design">nexu-io/open-design</a></div>
+  <div class="repo"><a href="https://github.com/nexu-io/open-design" target="_blank" rel="noopener">nexu-io/open-design</a></div>
   <p class="desc">开源的 Claude Design 替代品（Apache 2.0），把「写需求 → 出原型 → 团队反馈 → Agent 接着改」串在同一个项目里。桌面应用支持 macOS（苹果芯片与 Intel）与 Windows x64，本地优先、每一层都能自带密钥（BYOK）：既能直接调用 Claude Code、Codex、OpenCode，也能把 DeepSeek Harness 作为一等原生运行时接进来（结构化流式输出、模型发现、取消任务、会话续接），没有装命令行工具时，只填 baseUrl + apiKey + model 就能接 OpenAI、Anthropic、Azure、Gemini、Ollama、LM Studio、vLLM 等任意兼容端点。四个可组合平面：插件跑工作流、技能定义 Agent 行为、设计模板管渲染蓝图，自带 100+ 技能、277 个插件与模板。</p>
   <div class="why"><b>用途：</b>没有专职设计师的小团队也能把原型做出来并持续迭代——Studio 里做网页原型、幻灯片、配图，HyperFrames 把 HTML 动效导成 MP4；生成的文件留在工作流内，可直接预览与交付，还能用 Agent 加 DESIGN.md 把已有仓库刷新成品牌样式 · <b>亮点：</b>9月30日刷新产品导览并补齐 13 种语言翻译，DeepSeek Harness 已接入为原生运行时，9月29日新增一键稳定回滚 · <b>适合：</b>想在自己机器上跑设计流程、又不愿被单一模型厂商锁定的产品与前端团队</div>
   <p class="meta">最近推送：2026-10-06 · 最新版 open-design-v0.24.1 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">4️⃣</span><span class="name">Taste Skill — 专治「AI 味」的前端技能包</span><span class="stars">⭐ 93,132</span></div>
-  <div class="repo"><a href="https://github.com/Leonxlnx/taste-skill">Leonxlnx/taste-skill</a></div>
+  <div class="repo"><a href="https://github.com/Leonxlnx/taste-skill" target="_blank" rel="noopener">Leonxlnx/taste-skill</a></div>
   <p class="desc">一组可移植的 Agent 技能，目标是把 AI 生成的界面从「一眼模板」拉回有设计感。默认技能已重写为 v2（实验版）：先读需求推断设计语言，再调三个旋钮——版式变化度 VARIANCE、动效强度 MOTION、信息密度 DENSITY，同时给出 GSAP 动效代码骨架、硬性禁用破折号、改版审计流程与交付前自检。仓库还带图像生成技能：先生成网页、移动端、品牌套件的参考板，再交给 Codex、Cursor、Claude Code 照着实现；另有面向 GPT/Codex 的加强版 gpt-taste 与 redesign 审计技能。</p>
   <div class="why"><b>用途：</b>让 Agent 产出真正有排版的落地页、官网与产品页，而不是 Bootstrap 味模板；一条命令 npx skills add 装齐，也能把单个 SKILL.md 直接贴进对话里用 · <b>亮点：</b>10月6日更新 README 徽章并补上 Kimi API 入口；v2 正在向 2.0.0 稳定版迭代，同时保留 v1 供依赖旧行为的人锁定 · <b>适合：</b>用 AI 做落地页、官网、活动页，希望页面「能看」的人</div>
   <p class="meta">最近推送：2026-10-06 · 最新版 v2（实验版） · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">5️⃣</span><span class="name">Awesome DESIGN.md — 73 份真实网站的设计规范</span><span class="stars">⭐ 119,802</span></div>
-  <div class="repo"><a href="https://github.com/VoltAgent/awesome-design-md">VoltAgent/awesome-design-md</a></div>
+  <div class="repo"><a href="https://github.com/VoltAgent/awesome-design-md" target="_blank" rel="noopener">VoltAgent/awesome-design-md</a></div>
   <p class="desc">DESIGN.md 是 Google Stitch 提出的概念：一份纯文本设计系统文档，专门给设计型 Agent 读，Markdown 正好是大模型读得最顺的格式。这个仓库把 73 个开发者熟悉的网站（AI 与 LLM 平台、开发工具、各类产品站）的视觉语言整理成可直接使用的 DESIGN.md，内容包含分析过的设计模式、设计 token 与规则，不是浮于表面的风格描述。用法极简：复制一份到项目根目录，对 Agent 说「照这个样子给我做一页」，产出的 UI 就会沿用同一套设计语言；不需要 Figma 导出、不需要 JSON schema、不需要额外工具。</p>
   <div class="why"><b>用途：</b>快速给项目定视觉基调的起点，省掉自己写设计规范的时间；AGENTS.md 管「怎么建项目」，DESIGN.md 管「界面长什么样」，两份文档一起放进仓库，多个页面的产出立刻稳定一致 · <b>亮点：</b>10月5日更新官方 MCP Servers 徽章，9月21日刷新合集内容；MIT 协议，13,000 多人 fork，属于长期维护的资源型项目 · <b>适合：</b>独立开发者与 vibecoding 用户，想让多个页面看起来像同一个产品</div>
   <p class="meta">最近推送：2026-10-05 · 最新版 73 份合集 · GitHub API 当日实测</p>
