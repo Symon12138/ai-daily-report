@@ -527,35 +527,35 @@ header.hero, .hero{
 <p class="sub">2026年10月13日（周二）· 今日主题：让 AI 记住并调用你读过的（书→技能 · 无向量检索 · 知识库 · 学习辅导 · 离线文档研究） · 按实用性排序 · 近一周有重大更新优先</p>
 <div class="card">
   <div class="rank"><span class="medal">🥇</span><span class="name">book-to-skill — 把技术书变成 Agent 随时能调用的技能，不用再把整本书塞进上下文</span><span class="stars">⭐ 34,665</span></div>
-  <div class="repo"><a href="https://github.com/virgiliojr94/book-to-skill">virgiliojr94/book-to-skill</a></div>
+  <div class="repo"><a href="https://github.com/virgiliojr94/book-to-skill" target="_blank" rel="noopener">virgiliojr94/book-to-skill</a></div>
   <p class="desc">它解决的是「书只读了一遍、三个月后忘了第七章讲过什么」：指向一个 PDF/epub/docx/rtf 文件、一个资料文件夹或一串 glob，它会蒸馏出一份结构化技能——核心心智模型与章节索引（SKILL.md，约 4 千 token）、每章一个按需加载的文件（各约 1 千 token）、按字母排序并标注章节出处的术语表、以及全部技法与反模式的模式库。它明确不做「摘要式总结」，而是抽结构，之后你只打一句「/书名 关键词」，Agent 就去读对应章节、按原文回答，不靠模型瞎编。遵循 Agent Skills 开放标准，GitHub Copilot CLI、Amp、Claude Code、Codex、Hermes Agent、OpenCode、OpenClaw 读的是同一份 SKILL.md；对 Hermes Agent 会按分类装进个人技能目录。官方实测：回答同一个问题时，比把整本书灌进上下文省 24–51 倍 token。</p>
   <div class="why"><b>用途：</b>把读过一遍的技术书、内部规范、资料合集沉淀成 Agent 能长期反复调用的能力，写代码、做方案时随手一问就取回原文依据 · <b>亮点：</b>近一周持续提交，10 月 11 日一天连修 7 处提取可靠性问题（康熙部首归一到对应汉字、拒绝畸形 BOM 编码输入、校验 Markdown 代码围栏闭合、保留 RTF 转义控制字面量、波斯语 ZWNJ 序数、首章标题之前的正文可达性）；v1.4.0 一次修掉 6 处「静默丢内容 / 静默答错」，扫描版 PDF 现在约 0.01 秒快速失败并提示先用 ocrmypdf；MIT 许可，pip 装完用 book-to-skill 命令行即可 · <b>适合：</b>买了不少技术书、想让它真正变成干活时能查的东西的人</div>
   <p class="meta">最近推送：2026-10-12 · 最新版 v1.4.0（2026-08-10）· MIT · Star 34,665 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">🥈</span><span class="name">PageIndex — 不用向量库的长文档检索：让模型像人一样翻目录，找到对的那一页</span><span class="stars">⭐ 39,083</span></div>
-  <div class="repo"><a href="https://github.com/VectifyAI/PageIndex">VectifyAI/PageIndex</a></div>
+  <div class="repo"><a href="https://github.com/VectifyAI/PageIndex" target="_blank" rel="noopener">VectifyAI/PageIndex</a></div>
   <p class="desc">向量检索按「语义相似」捞段落，但相似不等于相关——专业长文档真正需要的是相关性，而相关性要靠推理。PageIndex 把向量索引换成层级树索引：第一步给每份文档生成树结构，第二步让 LLM 沿树推理着检索，像人类专家那样直接翻到报告里该读的那一节；结果能追溯到明确的节点与页码，可解释、可核对，不做切块、不建向量库。</p>
   <div class="why"><b>用途：</b>财报、研报、标准、长论文这类「必须找对那一页」的场景，问一句就拿到带出处的答案 · <b>亮点：</b>10 月 12 日发布 v0.4.0，官方称「现在建 PageIndex 比建向量索引更便宜」——pip install -U pageindex 一条命令就带本地模式：索引、检索、问答全在自己机器上跑，用自己的 LLM key，不需要服务器、不需要向量库、也不需要 PageIndex 的 API key，同一套 client 也能指向云端；Flash 引擎改用版面统计直接生成树结构，生成结构本身不调 LLM，只有节点摘要是模型写的，树扩展并发提议一批节点，索引速度大幅提升；同日还把默认索引与对话模型换成 gpt-6-luna / gpt-6-sol；MIT 许可 · <b>适合：</b>被向量库检索准确率折磨过、又不想维护一整套 RAG 基础设施的人</div>
   <p class="meta">最近推送：2026-10-12 · 最新版 v0.4.0（2026-10-12）· MIT · Star 39,083 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">🥉</span><span class="name">思源笔记 SiYuan — 隐私优先的自托管知识库，人和 AI Agent 在同一个工作空间里干活</span><span class="stars">⭐ 46,737</span></div>
-  <div class="repo"><a href="https://github.com/siyuan-note/siyuan">siyuan-note/siyuan</a></div>
+  <div class="repo"><a href="https://github.com/siyuan-note/siyuan" target="_blank" rel="noopener">siyuan-note/siyuan</a></div>
   <p class="desc">块级引用的个人知识管理系统：Markdown 所见即所得，块级双向链接与引用、自定义属性、SQL 查询嵌入、大纲与块缩放、百万字大文档编辑，公式、图表、流程图、甘特图、时序图、乐谱都能写，网页剪藏、PDF 标注链接、数据库表视图、间隔重复闪卡、OCR 一并内置；可导出标准 Markdown（带资源）、PDF、Word、HTML，也能一键复制到公众号、知乎、语雀。数据全部存在自己机器上，支持 Docker、Kubernetes、Unraid、TrueNAS 自托管，绝大多数功能免费（含商用）。</p>
   <div class="why"><b>用途：</b>把笔记、网页剪藏、PDF 标注和 AI 问答收在同一个本地工作空间，写作与查资料不再换工具 · <b>亮点：</b>10 月 12 日推送 v3.8.7-beta.3，这一轮几乎都在补「和 AI Agent 协作」：长任务上下文压缩、Agent 管理数据库视图、给 Agent 用的 CSS/JS 代码片段管理、内置插件开发技能、图片菜单里的 AI OCR、支持 ChatGPT 账号登录，另加按日期创建与引用日记、斜杠菜单常用项、数据库日期字段的农历输入；同时把 PDF.js、ECharts 6.1.0、KaTeX 0.19.0、Mermaid 12.1.0、Graphviz 16.1.0 全线升级，修掉了升级 PDF.js 后标注、文本选择与查看器生命周期的回归；稳定版为 v3.8.6（9 月 29 日）· <b>适合：</b>在意数据在自己手上，又想直接让 AI 读写自己笔记库的人</div>
   <p class="meta">最近推送：2026-10-12 · 最新版 v3.8.7-beta.3（2026-10-12）/ 稳定版 v3.8.6（2026-09-29）· AGPL-3.0 · Star 46,737 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">4️⃣</span><span class="name">DeepTutor — 终身个性化辅导：知识库、阅读、听力、题库和科研工具收进一个学习工作台</span><span class="stars">⭐ 41,213</span></div>
-  <div class="repo"><a href="https://github.com/HKUDS/DeepTutor">HKUDS/DeepTutor</a></div>
+  <div class="repo"><a href="https://github.com/HKUDS/DeepTutor" target="_blank" rel="noopener">HKUDS/DeepTutor</a></div>
   <p class="desc">一个会持续跟着你的个人辅导系统：知识库跟着工作区放置和迁移，能接入可搜索的 Kiwix 离线百科档案；沉浸式阅读带朗读音频和测验星标奖励，视频学习已并入 Reading（旧的 Watching 会话重新打开时自动迁移）；题库练习、任务看板、学习日志、多语言界面与多家模型供应商都在同一个界面里。</p>
   <div class="why"><b>用途：</b>用 AI 系统学一门新东西，从看原书、听音频、刷题到复习一条线走完 · <b>亮点：</b>10 月 8 日发布 v1.6.14——问附件知识库里的某张图、某个表格、PDF 的某一页时，它会取回原始图片或渲染出对应页面与区域，保留文档身份与来源链接，不再只回一段没有出处的文字；长文档索引改成可恢复、发布前校验；新增有出处的科研原语与受限私有 MCP 来源、可审核的托管插件生命周期（运行时权限可撤销）、学习日志概览与供应商配置改进 · <b>适合：</b>要答案能指回原书原页，而不是一句听起来对的话的人</div>
   <p class="meta">最近推送：2026-10-12 · 最新版 v1.6.14（2026-10-08）· Apache-2.0 · Star 41,213 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">5️⃣</span><span class="name">SurfSense — 空气隔离式开源 NotebookLM 替代：不能上传的文档，就在自己机器上研究</span><span class="stars">⭐ 16,397</span></div>
-  <div class="repo"><a href="https://github.com/MODSetter/SurfSense">MODSetter/SurfSense</a></div>
+  <div class="repo"><a href="https://github.com/MODSetter/SurfSense" target="_blank" rel="noopener">MODSetter/SurfSense</a></div>
   <p class="desc">给「文件不方便传到别人服务器」的人用的桌面应用：索引留在你硬盘上，模型本地或远程自己挑，不需要账号。PDF（含扫描页）、Word、Excel（连公式一起读）、PPT 等格式都能做带引用的研究问答、生成、编辑（改的是副本，Word 以修订和批注形式呈现）与格式转换；PDF 还能填表盖章加水印、合并拆分旋转重排页面。</p>
   <div class="why"><b>用途：</b>合同、财报、内部资料这类不方便上云的文件，也能有 NotebookLM 式的提问与整理体验 · <b>亮点：</b>10 月 9 日发布 v2.2.0——本地模型运行时从 Ollama 换成内置 llama.cpp，附带精选 GGUF 模型目录和按机器内存估算可跑性的适配器；Windows / macOS / Linux 都有安装包（exe / dmg / AppImage / deb）；注意两点：2.2.0 首次启动会先备份再升级本地数据库，需要与 surfsense.db 相当的可用磁盘空间，空间不足会静默退出；退回 2.1.0 需手动恢复备份。另外托管网页版将于 2026 年 10 月 18 日下线，用过的人要在此之前导出工作区再导入本地 · <b>适合：</b>资料敏感、又想要「扔进文件夹就能问」的人</div>
   <p class="meta">最近推送：2026-10-12 · 最新版 v2.2.0（2026-10-09）· 开源许可见仓库 LICENSE · Star 16,397 · GitHub API 当日实测</p>
