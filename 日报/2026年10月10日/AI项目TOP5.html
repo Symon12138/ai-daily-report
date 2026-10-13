@@ -528,35 +528,35 @@ header.hero, .hero{
 
 <div class="card">
   <div class="rank"><span class="medal">🥇</span><span class="name">CC Switch — 一个桌面窗口，管住你所有 AI 编程工具的供应商与配置</span><span class="stars">⭐ 141,902</span></div>
-  <div class="repo"><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></div>
+  <div class="repo"><a href="https://github.com/farion1231/cc-switch" target="_blank" rel="noopener">farion1231/cc-switch</a></div>
   <p class="desc">现在同时用 Claude Code、Codex、Gemini CLI、Hermes 的人，痛点都一样：每换一家 API 供应商就要手改 JSON / TOML / YAML / .env，MCP、技能、提示词还得在每个工具里各维护一份。CC Switch 把这些收进一个桌面应用：选中工具 → 挑预设 → 填 Key → 一键切换，而切换只替换端点、Key、模型这类连接信息，你加的插件、hooks、MCP 和注释原样保留；首次启动会自动把现有配置导入成一个叫 default 的供应商，不会丢东西。三种接法随你挑——直连（工具直接连供应商）、路由（请求经本机转发，自动做 API 格式转换与故障转移，于是能在 Claude Code 里用 GPT、在 Codex 里用 Claude）、聚合（把多家供应商的模型合并成一个模型列表，选哪个模型就走哪家）。除了供应商，它还把 MCP 服务器、技能（可从 skills.sh 或 GitHub 一键安装并同步到各工具）、提示词（写入 CLAUDE.md / AGENTS.md / GEMINI.md，原内容先存回库）、会话阅读视图（每一轮干了什么、改了哪些文件、哪一步失败，一眼看清，还能复制恢复命令接着聊）和用量额度（官方订阅的 5 小时 / 周 / 月配额、账户余额，直接显示在供应商卡片和托盘上）统一管起来。</p>
   <div class="why"><b>用途：</b>手上有多家模型通道或订阅的人，用它统一管理、一键切换，还能在 Claude Code 里跑 GPT、在 Codex 里跑 Claude，不用再手改配置文件 · <b>亮点：</b>10 月 7 日发布 v4.0 正式版——界面、聚合模式、配置切换全面重做，是该项目迄今最大的一次更新，随后 10 月 8 日 v4.0.5、10 月 9 日 v4.0.6 连发修复（Codex 可以用 GitHub Copilot 账号、供应商页新增搜索、Skills 检查到更新后一键全量更新、额度不足 20% 三色提醒、修复 Claude Code 经路由转 OpenAI 格式时最后一段回复丢失等）；内置 90+ 供应商预设，Windows / macOS / Linux 原生桌面（Tauri 2，macOS 版已签名公证，brew install --cask cc-switch 即可装） · <b>适合：</b>同时用多个编程 Agent 或多家模型通道、不想再手改配置文件的开发者</div>
   <p class="meta">最近推送：2026-10-09 · 最新版 v4.0.6 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">🥈</span><span class="name">PPT Master — 把 PDF / Word / 网页或一句话，变成能在 PowerPoint 里继续改的原生 PPT</span><span class="stars">⭐ 58,719</span></div>
-  <div class="repo"><a href="https://github.com/hugohe3/ppt-master">hugohe3/ppt-master</a></div>
+  <div class="repo"><a href="https://github.com/hugohe3/ppt-master" target="_blank" rel="noopener">hugohe3/ppt-master</a></div>
   <p class="desc">它不是「生成图片再贴进 PPT」的工具，而是直接产出 PowerPoint 的原生对象：幻灯片母版与版式、带可调控制点的原生形状与连接线、带「编辑数据」的数据图表与表格、OMML 原生公式，还能加原生转场、动画和旁白配音。用法极简：装好 Python 3.10+ 和一个有 agent 能力的 AI 工具（Claude Code、Cursor、Codex CLI 等），把 PDF / DOCX / 图片放进 projects/ 目录，在对话里说「用 projects/q3-report/sources/report.pdf 做一份 PPT」，它会先跟你确认设计规格（模板、比例、页数），然后自己完成内容分析、视觉设计、SVG 生成与 PPTX 导出，成品落在 exports/名称_时间戳.pptx。也可以直接粘一段文字开工，或者说「快速生成 5 页，不用跟我确认」跳过确认环节。除了从素材生成，它还能从你的参考文件里蒸馏出可复用的品牌 / 样式 / 版式模板；拿一份现成的 .pptx 当模板、把新内容填进去（未改动的页面逐字节保留）；给做好的稿子补动画与配音。配图两条路：AI 生成（默认 Google 的 Nano Banana 2.1，也支持 gpt-image-2 等）或网络图搜（零配置可用 Openverse / Wikimedia，配上免费的 Pexels / Pixabay Key 质量明显更好，授权自动处理并加署名）。</p>
   <div class="why"><b>用途：</b>报告、方案、讲课稿——把手上的文档直接变成还能继续编辑的演示稿，省掉最耗时的排版 · <b>亮点：</b>10 月 8 日发布 v6.7.0：新增设计规格的浏览器评审页、Google 图像生成默认换成 Nano Banana 2.1、修复源文档转换与 PPTX / SVG 文本往返会静默丢内容的问题；作者自述每条路线都拿真实稿件跑过端到端；开源免费，只付模型费用，整条流程在本机跑、数据不出门，也不锁定平台（Claude、GPT、Gemini、Kimi 都能驱动） · <b>适合：</b>经常要做 PPT 的职场人（作者本人是财务出身、天天审稿），以及想把 Python + Agent 用起来的人</div>
   <p class="meta">最近推送：2026-10-08 · 最新版 v6.7.0 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">🥉</span><span class="name">last30days — 不搜编辑写好的文章，搜「这 30 天真人怎么说」</span><span class="stars">⭐ 63,850</span></div>
-  <div class="repo"><a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a></div>
+  <div class="repo"><a href="https://github.com/mvanhorn/last30days-skill" target="_blank" rel="noopener">mvanhorn/last30days-skill</a></div>
   <p class="desc">一个给 Agent 用的搜索技能：你说 /last30days 加某个话题（人名、公司、产品、事件都行），它并行去 Reddit、X、YouTube、TikTok、Instagram、Hacker News、Polymarket、GitHub、arXiv、Techmeme、Digg、Bluesky、Threads、Pinterest、LinkedIn、StockTwits 等平台捞最近 30 天的内容，按真人的互动量（上赞、点赞、播放、预测市场里真金白银的赔率）排序，再由 AI 综合成一份带出处的简报。Reddit、HN、Polymarket、GitHub 零配置即可用，跑一次会让它引导你在 30 秒内解锁 X、YouTube、TikTok、arXiv、Techmeme 等。典型用法：见客户或开会前先摸清对方最近一个月在做什么（推文、播客转录、GitHub 提交速度与合并率）；用「what's exploding in AI agents?」进入发现模式，拿到 5-10 个正在起量的选题；比较工具时实时拉 GitHub 星数做对照表。它的理由很直接：Google 搜的是编辑，它搜的是人——Reddit 评论、X 帖子、YouTube 转录各自关在围墙里，只有把钥匙交给 Agent 才能一起搜、一起排序。</p>
   <div class="why"><b>用途：</b>见人、开会、写选题、选型之前，用半小时换到别人几天也未必凑齐的一手信号；也能当「这个话题现在到底怎么样了」的快速事实核查 · <b>亮点：</b>10 月 8-9 日连发 v3.27.0 / v3.27.1 / v3.27.2——在 Grok Bot 上 X 直接零配置可用（走机器人自带的 X 工具，不花 API 额度），并修掉报告尾部多余的来源列表、YouTube 结果过薄、Reddit 被拦截时无法归类等问题；安装两条命令（Claude Code 走插件市场，其他 50+ 支持 Agent Skills 的工具用 npx skills add），对 Codex 是一等公民支持而非移植 · <b>适合：</b>做销售、投资、内容、招聘的人，以及想跟上 AI 圈每天都在变的东西的人</div>
   <p class="meta">最近推送：2026-10-09 · 最新版 v3.27.2 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">4️⃣</span><span class="name">career-ops — 投简历之前，先让 AI 告诉你这份工作值不值得投</span><span class="stars">⭐ 73,909</span></div>
-  <div class="repo"><a href="https://github.com/career-ops-hq/career-ops">career-ops-hq/career-ops</a></div>
+  <div class="repo"><a href="https://github.com/career-ops-hq/career-ops" target="_blank" rel="noopener">career-ops-hq/career-ops</a></div>
   <p class="desc">一个开源的求职 Agent（作者用它筛了 740 个岗位、投了 68 家，拿到 12 个面试和 1 个 offer）。把招聘链接或 JD 粘给它：它先确认这个岗位是否还开着、是不是又被重新挂出来的幽灵岗；再拿你的真实简历给这个岗位打分（1-5 分，低于 4 分它会劝你别投，你也可以覆盖）；然后按这份 JD 量身改出一份 ATS 友好的简历（PDF）和求职信，准备好 STAR+R 面试问题，把每次评估里讲过的经历攒成 5-10 个可复用的面试故事库；还会做公司调研、找出该联系的招聘经理或 HR 并起草一条 300 字以内的 LinkedIn 私信、生成正式的申请邮件草稿、算跟进节奏、把 HR 的回复自动归类进求职看板，并在一连串拒绝之后告诉你缺的到底是什么能力。它内置 100+ 公司的门户扫描（Ashby / Greenhouse / Lever / Wellfound），也有终端看板可以筛选排序。</p>
   <div class="why"><b>用途：</b>把「海投」换成「少投、投对」——每份申请都对着 JD 改过，投之前就知道自己差在哪、值不值得花这个晚上 · <b>亮点：</b>边界设计是它最值钱的地方——绝不自动提交申请、绝不发邮件、没有遥测，所有数据留在你本机（代码里还专门做了「简历只能改写、不能编造」的检查）；10 月 1 日发布 career-ops v1.35.0（新增 9 个职位源，86 位贡献者里 50 位是第一次贡献）与 web v0.13.0（新增对 Hermes Agent 无头 CLI 的支持），10 月 9 日仍在密集提交（ATS 版 PDF、回复分类、简历检查等）；安装一条命令 npx @santifer/career-ops init，然后在目录里打开你常用的 AI CLI 就能用，含中文文档与本地免费模型方案 · <b>适合：</b>正在找工作、或准备换工作的人</div>
   <p class="meta">最近推送：2026-10-09 · 最新版 v1.35.0 · GitHub API 当日实测</p>
 </div>
 <div class="card">
   <div class="rank"><span class="medal">5️⃣</span><span class="name">MemPalace — 让 AI 记住你：本地存原文、按语义找回，全程不调云端</span><span class="stars">⭐ 59,486</span></div>
-  <div class="repo"><a href="https://github.com/MemPalace/mempalace">MemPalace/mempalace</a></div>
+  <div class="repo"><a href="https://github.com/MemPalace/mempalace" target="_blank" rel="noopener">MemPalace/mempalace</a></div>
   <p class="desc">一个「本地优先」的 AI 长期记忆系统。它不做摘要、不做改写，把对话原文逐字存下来，再用语义检索找回去；索引是结构化的——人和项目分成 wing、话题分成 room、原文放在 drawer，所以搜索可以限定范围，而不是在一片平铺的语料里瞎捞。用法很直接：mempalace mine ~/projects/myapp 把项目文件挖进记忆宫殿，mempalace mine ~/.claude/projects/ --mode convos 把 Claude Code 的历史会话也挖进去，mempalace search "我们当时为什么换成 GraphQL" 检索，mempalace wake-up 在新会话里一次性加载上下文，mempalace audit 给记忆宫殿的整理度打分。它还带一个有时间有效期的实体关系知识图谱（本地 SQLite）、45 个 MCP 工具（读写、图谱、跨 wing 导航、Agent 日记与协作）、以及给 Claude Code / Codex CLI / Cursor 用的自动保存钩子（定期保存，并在上下文压缩前抢救一轮）。安装推荐 uv tool install mempalace（隔离环境，避免和系统 Python 打架），也支持 pipx 与 Docker。</p>
   <div class="why"><b>用途：</b>治 Agent 最大的短板——换个会话就忘光。把项目历史、决策原因、个人偏好存成可检索的长期记忆，新会话一句 wake-up 就接上；也适合做跨工具共用的记忆库 · <b>亮点：</b>官方基准可复现且不依赖云：LongMemEval 500 题纯语义检索 R@5 达 96.6%（全程不用 LLM、不用 API Key），混合管线在 450 题留出集上 98.4%，再加一次 LLM 重排可到 99% 以上；10 月 6 日一批性能提交把挖掘、检索、隧道同步都改成批量处理，大记忆库也能保持轻快；原文逐字存储，不是「AI 帮你总结的记忆」，不会越用越失真 · <b>适合：</b>长期和 AI 结对做项目、又不想把聊天记录交给第三方的人</div>
   <p class="meta">最近推送：2026-10-09 · 最新版 v3.10.0 · GitHub API 当日实测</p>
