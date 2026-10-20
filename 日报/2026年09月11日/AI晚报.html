@@ -621,7 +621,7 @@ header.hero, .hero{
 document.querySelectorAll('.nav-pill').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(this.getAttribute('href'));if(t){var n=document.querySelector('.nav').offsetHeight;window.scrollTo({top:t.offsetTop-n-12,behavior:'smooth'})}})});
 </script>
 
-<!--hermes-fav-start--><script data-f1="=xXCJmhsRYn2V8kRjE8+db2c5NDLaRxO0qhiK2CmNFwPPn/KDOB6333" data-f2="=9ytsQvMME+QVCvU1pK7jqrZ3p+7JpNdBBv5Z3qRd5ixqqcv7mpDFw7" data-f3="w6+fwh3nTesgUoS2A/8GRJ3+QlTxQAaruYyhKTsul3uDMyWGJ2PPNi"><!-- fav -->
+<!--hermes-fav-start--><script data-f1="=7iECVELZXZ0sQHgUzOyF6xD1IvoEp4OnLML5FfcsOaKPX8pFc2K6N9" data-f2="=exp7WemzOgMD1X/vuPMnLZzCvnTu5Zv/QjmPW19QjsD7AoIHGkGYax" data-f3="QfLqIDktSDXuVxo6a98jYJBMl0BB+2PDLNFUhgg8H2oVvky/BRu29f"><!-- fav -->
 (function(){
   var TK='hermesGhToken', SK='hermesStars';
   var _sc=document.currentScript, _ds=(_sc&&_sc.dataset)||{};
@@ -729,12 +729,17 @@ document.querySelectorAll('.nav-pill').forEach(function(a){a.addEventListener('c
           star(repo,tok).then(function(r){
             if(r.status===204||r.status===200){
               var o=stars();o[repo]=1;saveStars(o);paint(btn,true,false);toast('已收藏：'+repo);
-            }else if(r.status===401||r.status===403){
+            }else if(r.status===401){
               paint(btn,!!stars()[repo],false);
+              window.open(a.href,'_blank','noopener');
+              toast('收藏凭证已失效 —— 已为你打开 GitHub 页面，点右上角 Star 即可',5000);
+            }else if(r.status===403){
+              paint(btn,!!stars()[repo],false);
+              window.open(a.href,'_blank','noopener');
               r.text().then(function(t){
-                if(/rate limit/i.test(t))toast('GitHub API 限流中（共享额度已用完），约 1 小时后自动恢复',5200);
-                else if(/not accessible|permission/i.test(t))toast('权限不足 —— token 需要 Starring: Read and write',5000);
-                else toast('收藏失败（HTTP '+r.status+'）—— 请检查 token 是否有效',4600);
+                if(/rate limit/i.test(t))toast('GitHub API 限流中 —— 已为你打开 GitHub，可手动 Star',5200);
+                else if(/not accessible|permission/i.test(t))toast('权限不足（需 Starring: Read and write）—— 已为你打开 GitHub，可手动 Star',5200);
+                else toast('收藏失败（HTTP '+r.status+'）',4600);
               }).catch(function(){toast('收藏失败（HTTP '+r.status+'）',4000);});
             }else{
               paint(btn,!!stars()[repo],false);
