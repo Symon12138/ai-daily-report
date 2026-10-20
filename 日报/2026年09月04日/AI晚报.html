@@ -629,6 +629,9 @@ document.querySelectorAll('.nav-pill').forEach(function(a){a.addEventListener('c
 <!--hermes-fav-start--><script>
 (function(){
   var TK='hermesGhToken', SK='hermesStars';
+  /* 加密后的 token（iv||密文 的 base64）。为空则回退到本机 localStorage。 */
+  var EMBED='';
+  var _tok=null,_tokP=null;
   function ls(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
   function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
   function lsDel(k){try{localStorage.removeItem(k)}catch(e){}}
@@ -638,6 +641,49 @@ document.querySelectorAll('.nav-pill').forEach(function(a){a.addEventListener('c
     var m=(a.getAttribute('href')||'').match(/^https?:\/\/github\.com\/([^\/?#]+)\/([^\/?#]+)/i);
     if(!m)return null;
     return m[1]+'/'+m[2].replace(/\.git$/i,'');
+  }
+  /* ---- 内置密钥（5 段 / 逆序 / 每位 +37）---- */
+  var _a1=[130, 183, 97, 223, 124, 208, 135], _a2=[128, 184, 47, 178, 173, 178, 186], _a3=[147, 122, 196, 182, 37, 55], _a4=[54, 37, 44, 109, 238, 135], _a5=[55, 45, 93, 236, 192, 8];
+  function kb(){
+    var all=_a1.concat(_a2,_a3,_a4,_a5).reverse();
+    var out=new Uint8Array(all.length);
+    for(var i=0;i<all.length;i++) out[i]=(all[i]-37+256)&255;
+    return out;
+  }
+  function b64d(s){
+    var bin=atob(s), out=new Uint8Array(bin.length);
+    for(var i=0;i<bin.length;i++) out[i]=bin.charCodeAt(i);
+    return out;
+  }
+  function b64e(u){
+    var s='';for(var i=0;i<u.length;i++)s+=String.fromCharCode(u[i]);
+    return btoa(s);
+  }
+  function keyObj(usage){
+    return crypto.subtle.importKey('raw',kb(),{name:'AES-GCM'},false,[usage]);
+  }
+  function ensureTok(){
+    if(_tokP)return _tokP;
+    var local=ls(TK);
+    if(local){_tok=local;_tokP=Promise.resolve(local);return _tokP;}
+    if(!EMBED||EMBED.length<24||!crypto.subtle){_tok='';_tokP=Promise.resolve('');return _tokP;}
+    _tokP=keyObj('decrypt').then(function(k){
+      var raw=b64d(EMBED), iv=raw.slice(0,12), ct=raw.slice(12);
+      return crypto.subtle.decrypt({name:'AES-GCM',iv:iv},k,ct);
+    }).then(function(pt){
+      _tok=new TextDecoder().decode(pt);return _tok;
+    }).catch(function(){_tok='';return '';});
+    return _tokP;
+  }
+  function seal(tok){
+    return keyObj('encrypt').then(function(k){
+      var iv=crypto.getRandomValues(new Uint8Array(12));
+      return crypto.subtle.encrypt({name:'AES-GCM',iv:iv},k,new TextEncoder().encode(tok)).then(function(ct){
+        var out=new Uint8Array(12+ct.byteLength);
+        out.set(iv,0);out.set(new Uint8Array(ct),12);
+        return b64e(out);
+      });
+    });
   }
   var toastEl,toastT;
   function toast(msg,ms){
@@ -667,25 +713,26 @@ document.querySelectorAll('.nav-pill').forEach(function(a){a.addEventListener('c
       paint(btn,!!st[repo],false);
       btn.addEventListener('click',function(ev){
         ev.preventDefault();ev.stopPropagation();
-        var tok=ls(TK);
-        if(!tok){
-          window.open(a.href,'_blank','noopener');
-          toast('已打开 GitHub —— 点右上角 Star 即可。想以后一键收藏，点右下角 ⚙ 粘一次 Token。',4200);
-          return;
-        }
-        paint(btn,false,true);
-        star(repo,tok).then(function(r){
-          if(r.status===204||r.status===200){
-            var o=stars();o[repo]=1;saveStars(o);paint(btn,true,false);toast('已收藏：'+repo);
-          }else if(r.status===401||r.status===403){
-            paint(btn,!!stars()[repo],false);
-            toast('Token 无效或权限不足（需 Starring: Read and write）。点 ⚙ 重新设置。',4200);
-          }else{
-            paint(btn,!!stars()[repo],false);
-            toast('收藏失败（HTTP '+r.status+'），可点项目名去 GitHub 手动 Star',3800);
+        ensureTok().then(function(tok){
+          if(!tok){
+            window.open(a.href,'_blank','noopener');
+            toast('已打开 GitHub —— 点右上角 Star 即可。',4200);
+            return;
           }
-        }).catch(function(){
-          paint(btn,!!stars()[repo],false);toast('网络错误，收藏失败',3000);
+          paint(btn,false,true);
+          star(repo,tok).then(function(r){
+            if(r.status===204||r.status===200){
+              var o=stars();o[repo]=1;saveStars(o);paint(btn,true,false);toast('已收藏：'+repo);
+            }else if(r.status===401||r.status===403){
+              paint(btn,!!stars()[repo],false);
+              toast('收藏凭证无效（HTTP '+r.status+'）—— 请重新生成 token。',4600);
+            }else{
+              paint(btn,!!stars()[repo],false);
+              toast('收藏失败（HTTP '+r.status+'），可点项目名去 GitHub 手动 Star',3800);
+            }
+          }).catch(function(){
+            paint(btn,!!stars()[repo],false);toast('网络错误，收藏失败',3000);
+          });
         });
       });
       a.insertAdjacentElement('afterend',btn);
@@ -694,12 +741,16 @@ document.querySelectorAll('.nav-pill').forEach(function(a){a.addEventListener('c
   function openBox(){
     var mask=document.createElement('div');mask.className='fav-mask show';
     mask.innerHTML='<div class="fav-box"><h3>收藏设置</h3>'
-      +'<p>粘一个 GitHub <b>fine-grained token</b>（只需 <b>Starring: Read and write</b> + Metadata: Read），只存本机浏览器，不上传任何服务器。</p>'
-      +'<p>创建入口：<a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a></p>'
+      +'<p>粘一个 GitHub <b>fine-grained token</b>（只需 <b>Starring: Read and write</b>），只存本机浏览器。</p>'
+      +'<p>创建：<a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a></p>'
       +'<input type="password" placeholder="github_pat_..." autocomplete="off" spellcheck="false">'
-      +'<div class="row"><button class="primary" data-act="save">保存</button><button data-act="clear">清除</button><button data-act="close">关闭</button></div></div>';
+      +'<div class="row"><button class="primary" data-act="save">保存到本机</button><button data-act="seal">生成加密串</button><button data-act="clear">清除</button><button data-act="close">关闭</button></div>'
+      +'<div class="sealout" style="display:none;margin-top:10px"><p style="margin:0 0 6px">复制这串发给贾维斯，他嵌进页面后全设备生效：</p>'
+      +'<textarea readonly style="width:100%;height:74px;box-sizing:border-box;background:rgba(8,10,20,.85);color:#7af7ff;border:1px solid rgba(150,170,255,.28);border-radius:10px;padding:8px;font-size:11px;font-family:ui-monospace,Menlo,monospace"></textarea></div>'
+      +'</div>';
     document.body.appendChild(mask);
     var inp=mask.querySelector('input'); if(ls(TK))inp.value=ls(TK);
+    var out=mask.querySelector('.sealout'), ta=mask.querySelector('textarea');
     mask.addEventListener('click',function(e){if(e.target===mask)mask.remove();});
     Array.prototype.forEach.call(mask.querySelectorAll('button'),function(b){
       b.addEventListener('click',function(){
@@ -707,7 +758,15 @@ document.querySelectorAll('.nav-pill').forEach(function(a){a.addEventListener('c
         if(act==='save'){
           var v=(inp.value||'').trim();
           if(!v){toast('请先粘贴 token');return;}
-          lsSet(TK,v);mask.remove();toast('已保存，现在可以一键收藏了');
+          lsSet(TK,v);mask.remove();toast('已保存到本机浏览器');
+        }else if(act==='seal'){
+          var t=(inp.value||'').trim();
+          if(!t){toast('请先粘贴 token');return;}
+          if(!crypto.subtle){toast('请用 https 打开本页再生成',4000);return;}
+          seal(t).then(function(blob){
+            out.style.display='block';ta.value=blob;ta.focus();ta.select();
+            toast('已生成加密串，复制后发给贾维斯');
+          }).catch(function(){toast('生成失败，请确认用 https 打开',4000);});
         }else if(act==='clear'){lsDel(TK);mask.remove();toast('已清除 token');}
         else{mask.remove();}
       });
