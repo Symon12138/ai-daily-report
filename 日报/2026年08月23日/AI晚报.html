@@ -716,7 +716,11 @@ document.querySelectorAll('.nav-pill').forEach(function(a){a.addEventListener('c
               var o=stars();o[repo]=1;saveStars(o);paint(btn,true,false);toast('已收藏：'+repo);
             }else if(r.status===401||r.status===403){
               paint(btn,!!stars()[repo],false);
-              toast('收藏凭证无效（HTTP '+r.status+'）—— 请重新生成 token。',4600);
+              r.text().then(function(t){
+                if(/rate limit/i.test(t))toast('GitHub API 限流中（共享额度已用完），约 1 小时后自动恢复',5200);
+                else if(/not accessible|permission/i.test(t))toast('权限不足 —— token 需要 Starring: Read and write',5000);
+                else toast('收藏失败（HTTP '+r.status+'）—— 请检查 token 是否有效',4600);
+              }).catch(function(){toast('收藏失败（HTTP '+r.status+'）',4000);});
             }else{
               paint(btn,!!stars()[repo],false);
               toast('收藏失败（HTTP '+r.status+'），可点项目名去 GitHub 手动 Star',3800);
