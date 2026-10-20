@@ -693,11 +693,10 @@ header.hero, .hero{
 </div>
 </div>
 
-<!--hermes-fav-start--><script>
+<!--hermes-fav-start--><script data-f1="" data-f2="" data-f3=""><!-- fav -->
 (function(){
   var TK='hermesGhToken', SK='hermesStars';
-  /* 加密后的 token（iv||密文 的 base64）。为空则回退到本机 localStorage。 */
-  var EMBED='';
+  var _sc=document.currentScript, _ds=(_sc&&_sc.dataset)||{};
   var _tok=null,_tokP=null;
   function ls(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
   function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
@@ -709,46 +708,62 @@ header.hero, .hero{
     if(!m)return null;
     return m[1]+'/'+m[2].replace(/\.git$/i,'');
   }
-  /* ---- 内置密钥（5 段 / 逆序 / 每位 +37）---- */
+  /* ---- L2/L3/L4/L5 密钥：5 段 / 逆序 / 每字节 +37 / 变量名伪装 ---- */
   var _a1=[130, 183, 97, 223, 124, 208, 135], _a2=[128, 184, 47, 178, 173, 178, 186], _a3=[147, 122, 196, 182, 37, 55], _a4=[54, 37, 44, 109, 238, 135], _a5=[55, 45, 93, 236, 192, 8];
+  /* ---- L7 域名绑定：密钥再异或一段由 hostname 派生的掩码 ---- */
+  function hm(){
+    var h=location.hostname||'',x=5381,i;
+    for(i=0;i<h.length;i++) x=((x*33)^h.charCodeAt(i))>>>0;
+    if(!x)x=1;
+    var o=new Uint8Array(32);
+    for(i=0;i<32;i++){ x=(x*1664525+1013904223)>>>0; o[i]=(x>>>16)&255; }
+    return o;
+  }
   function kb(){
     var all=_a1.concat(_a2,_a3,_a4,_a5).reverse();
-    var out=new Uint8Array(all.length);
-    for(var i=0;i<all.length;i++) out[i]=(all[i]-37+256)&255;
+    var m=hm(), out=new Uint8Array(all.length);
+    for(var i=0;i<all.length;i++) out[i]=(((all[i]-37+256)&255)^m[i&31]);
     return out;
   }
-  function b64d(s){
-    var bin=atob(s), out=new Uint8Array(bin.length);
+  /* ---- L6 密文拆 3 段 / 各段逆序 / 交错存放于 script 的 data-f* 属性 ---- */
+  function _rev(x){return x?x.split('').reverse().join(''):''}
+  function blob(){
+    var a=_rev(_ds.f1||''),b=_rev(_ds.f2||''),c=_rev(_ds.f3||'');
+    if(!a&&!b&&!c)return '';
+    var n=Math.max(a.length,b.length,c.length),o='',i;
+    for(i=0;i<n;i++){if(i<a.length)o+=a[i];if(i<b.length)o+=b[i];if(i<c.length)o+=c[i];}
+    return o;
+  }
+  function b64d(x){
+    var bin=atob(x), out=new Uint8Array(bin.length);
     for(var i=0;i<bin.length;i++) out[i]=bin.charCodeAt(i);
     return out;
   }
   function b64e(u){
-    var s='';for(var i=0;i<u.length;i++)s+=String.fromCharCode(u[i]);
-    return btoa(s);
+    var x='';for(var i=0;i<u.length;i++)x+=String.fromCharCode(u[i]);
+    return btoa(x);
   }
-  function keyObj(usage){
-    return crypto.subtle.importKey('raw',kb(),{name:'AES-GCM'},false,[usage]);
-  }
+  function keyObj(u){return crypto.subtle.importKey('raw',kb(),{name:'AES-GCM'},false,[u]);}
   function ensureTok(){
     if(_tokP)return _tokP;
     var local=ls(TK);
     if(local){_tok=local;_tokP=Promise.resolve(local);return _tokP;}
-    if(!EMBED||EMBED.length<24||!crypto.subtle){_tok='';_tokP=Promise.resolve('');return _tokP;}
+    var bl=blob();
+    if(!bl||bl.length<24||!crypto.subtle){_tok='';_tokP=Promise.resolve('');return _tokP;}
     _tokP=keyObj('decrypt').then(function(k){
-      var raw=b64d(EMBED), iv=raw.slice(0,12), ct=raw.slice(12);
+      var raw=b64d(bl), iv=raw.slice(0,12), ct=raw.slice(12);
       return crypto.subtle.decrypt({name:'AES-GCM',iv:iv},k,ct);
-    }).then(function(pt){
-      _tok=new TextDecoder().decode(pt);return _tok;
-    }).catch(function(){_tok='';return '';});
+    }).then(function(pt){_tok=new TextDecoder().decode(pt);return _tok;})
+      .catch(function(){_tok='';return '';});
     return _tokP;
   }
   function seal(tok){
     return keyObj('encrypt').then(function(k){
       var iv=crypto.getRandomValues(new Uint8Array(12));
       return crypto.subtle.encrypt({name:'AES-GCM',iv:iv},k,new TextEncoder().encode(tok)).then(function(ct){
-        var out=new Uint8Array(12+ct.byteLength);
-        out.set(iv,0);out.set(new Uint8Array(ct),12);
-        return b64e(out);
+        var o=new Uint8Array(12+ct.byteLength);
+        o.set(iv,0);o.set(new Uint8Array(ct),12);
+        return b64e(o);
       });
     });
   }
@@ -781,11 +796,7 @@ header.hero, .hero{
       btn.addEventListener('click',function(ev){
         ev.preventDefault();ev.stopPropagation();
         ensureTok().then(function(tok){
-          if(!tok){
-            window.open(a.href,'_blank','noopener');
-            toast('已打开 GitHub —— 点右上角 Star 即可。',4200);
-            return;
-          }
+          if(!tok){window.open(a.href,'_blank','noopener');toast('已打开 GitHub —— 点右上角 Star 即可。',4200);return;}
           paint(btn,false,true);
           star(repo,tok).then(function(r){
             if(r.status===204||r.status===200){
@@ -797,9 +808,7 @@ header.hero, .hero{
               paint(btn,!!stars()[repo],false);
               toast('收藏失败（HTTP '+r.status+'），可点项目名去 GitHub 手动 Star',3800);
             }
-          }).catch(function(){
-            paint(btn,!!stars()[repo],false);toast('网络错误，收藏失败',3000);
-          });
+          }).catch(function(){paint(btn,!!stars()[repo],false);toast('网络错误，收藏失败',3000);});
         });
       });
       a.insertAdjacentElement('afterend',btn);
@@ -823,17 +832,13 @@ header.hero, .hero{
       b.addEventListener('click',function(){
         var act=b.getAttribute('data-act');
         if(act==='save'){
-          var v=(inp.value||'').trim();
-          if(!v){toast('请先粘贴 token');return;}
+          var v=(inp.value||'').trim(); if(!v){toast('请先粘贴 token');return;}
           lsSet(TK,v);mask.remove();toast('已保存到本机浏览器');
         }else if(act==='seal'){
-          var t=(inp.value||'').trim();
-          if(!t){toast('请先粘贴 token');return;}
+          var t=(inp.value||'').trim(); if(!t){toast('请先粘贴 token');return;}
           if(!crypto.subtle){toast('请用 https 打开本页再生成',4000);return;}
-          seal(t).then(function(blob){
-            out.style.display='block';ta.value=blob;ta.focus();ta.select();
-            toast('已生成加密串，复制后发给贾维斯');
-          }).catch(function(){toast('生成失败，请确认用 https 打开',4000);});
+          seal(t).then(function(b){out.style.display='block';ta.value=b;ta.focus();ta.select();toast('已生成加密串，复制后发给贾维斯');})
+                     .catch(function(){toast('生成失败，请确认用 https 打开',4000);});
         }else if(act==='clear'){lsDel(TK);mask.remove();toast('已清除 token');}
         else{mask.remove();}
       });
