@@ -455,7 +455,7 @@ h1{letter-spacing:-.8px !important;font-weight:600;}
 }
 
 
-/* ===== hermes-neon-v5.4 晚报归一化 · 与日报/周榜同骨架 ===== */
+/* ===== hermes-neon-v5.5 晚报归一化 · 与日报/周榜同骨架 ===== */
 
 /* 1) 隐藏晚报自带的第二条药丸导航（hermes-nav 已提供导航） */
 body > nav.nav, nav.nav:not(.hermes-nav){display:none !important;}
@@ -514,6 +514,46 @@ header.hero, .hero{
   .main{padding:4px 0 28px !important;}
   .main .card{padding:15px 16px !important;}
 }
+
+
+/* ===== hermes-fav 收藏按钮（⭐ star，一键）===== */
+.fav-btn{display:inline-flex;align-items:center;gap:4px;margin-left:8px;padding:2px 9px;border-radius:999px;
+  font-size:11.5px;line-height:1.7;font-family:inherit;border:1px solid rgba(150,170,255,.35);
+  background:rgba(120,140,255,.10);color:#c8d4ff;cursor:pointer;vertical-align:middle;
+  transition:background .18s,border-color .18s,color .18s;-webkit-tap-highlight-color:transparent;}
+.fav-btn:hover{background:rgba(120,140,255,.20);border-color:rgba(150,170,255,.6);}
+.fav-btn:active{transform:scale(.96);}
+.fav-btn.on{border-color:rgba(0,229,255,.55);background:rgba(0,229,255,.14);color:#7af7ff;}
+.fav-btn.busy{opacity:.55;pointer-events:none;}
+.fav-gear{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:99;
+  width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(150,170,255,.30);background:rgba(18,22,40,.86);color:#c8d4ff;font-size:16px;
+  cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 6px 22px rgba(0,0,0,.45);}
+.fav-gear:active{transform:scale(.94);}
+.fav-toast{position:fixed;left:50%;bottom:calc(64px + env(safe-area-inset-bottom));
+  transform:translateX(-50%) translateY(8px);z-index:100;max-width:86vw;padding:9px 14px;border-radius:12px;
+  background:rgba(18,22,40,.96);border:1px solid rgba(150,170,255,.28);color:#dbe4ff;font-size:13px;
+  line-height:1.5;text-align:center;opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;
+  box-shadow:0 8px 28px rgba(0,0,0,.5);}
+.fav-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.fav-mask{position:fixed;inset:0;z-index:101;background:rgba(4,6,14,.72);display:none;
+  align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);}
+.fav-mask.show{display:flex;}
+.fav-box{width:100%;max-width:420px;background:#12162a;border:1px solid rgba(150,170,255,.24);
+  border-radius:16px;padding:18px 18px 14px;color:#dbe4ff;font-size:13.5px;line-height:1.6;
+  box-shadow:0 18px 60px rgba(0,0,0,.6);}
+.fav-box h3{margin:0 0 8px;font-size:15px;color:#9db4ff;font-weight:700;}
+.fav-box p{margin:0 0 10px;color:#8b97b8;font-size:12.5px;}
+.fav-box input{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:10px;
+  border:1px solid rgba(150,170,255,.28);background:rgba(8,10,20,.85);color:#dbe4ff;font-size:13px;
+  font-family:ui-monospace,Menlo,monospace;}
+.fav-box .row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;}
+.fav-box button{flex:1;min-width:88px;padding:9px 12px;border-radius:10px;cursor:pointer;font-size:13px;
+  font-family:inherit;border:1px solid rgba(150,170,255,.30);background:rgba(120,140,255,.14);color:#c8d4ff;}
+.fav-box button.primary{background:rgba(0,229,255,.16);border-color:rgba(0,229,255,.45);color:#7af7ff;font-weight:600;}
+.fav-box a{color:#7af7ff;text-decoration:none;border-bottom:1px dashed rgba(122,247,255,.4);}
+@media (max-width:480px){.fav-btn{margin-left:6px;padding:2px 8px;font-size:11px;}
+  .fav-gear{width:34px;height:34px;font-size:15px;right:10px;}}
 </style>
 </head>
 <body>
@@ -570,5 +610,104 @@ fetch('/ai-daily-report/detail-nav.json',{cache:'no-store'}).then(r=>r.ok?r.json
   (d.links||[]).forEach(function(l){var a=document.createElement('a');a.href=l.href;a.textContent=l.title;n.appendChild(a);});
 }).catch(()=>{});
 </script>
+
+<!--hermes-fav-start--><script>
+(function(){
+  var TK='hermesGhToken', SK='hermesStars';
+  function ls(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
+  function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  function lsDel(k){try{localStorage.removeItem(k)}catch(e){}}
+  function stars(){try{return JSON.parse(ls(SK)||'{}')||{}}catch(e){return {}}}
+  function saveStars(o){lsSet(SK,JSON.stringify(o))}
+  function repoOf(a){
+    var m=(a.getAttribute('href')||'').match(/^https?:\/\/github\.com\/([^\/?#]+)\/([^\/?#]+)/i);
+    if(!m)return null;
+    return m[1]+'/'+m[2].replace(/\.git$/i,'');
+  }
+  var toastEl,toastT;
+  function toast(msg,ms){
+    if(!toastEl){toastEl=document.createElement('div');toastEl.className='fav-toast';document.body.appendChild(toastEl);}
+    toastEl.textContent=msg;toastEl.classList.add('show');
+    clearTimeout(toastT);toastT=setTimeout(function(){toastEl.classList.remove('show')},ms||2600);
+  }
+  function paint(btn,on,busy){
+    btn.classList.toggle('on',!!on);btn.classList.toggle('busy',!!busy);
+    btn.textContent=busy?'…':(on?'✅ 已收藏':'⭐ 收藏');
+  }
+  function star(repo,token){
+    return fetch('https://api.github.com/user/starred/'+repo,{method:'PUT',
+      headers:{'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json',
+               'X-GitHub-Api-Version':'2022-11-28'}});
+  }
+  function bind(){
+    var links=document.querySelectorAll('.card .repo a[href*="github.com"], .project .project-name a[href*="github.com"]');
+    if(!links.length)return;
+    var st=stars();
+    Array.prototype.forEach.call(links,function(a){
+      if(a.dataset.favBound)return;
+      var repo=repoOf(a); if(!repo)return;
+      a.dataset.favBound='1';
+      var btn=document.createElement('button');
+      btn.type='button';btn.className='fav-btn';btn.setAttribute('aria-label','收藏 '+repo);
+      paint(btn,!!st[repo],false);
+      btn.addEventListener('click',function(ev){
+        ev.preventDefault();ev.stopPropagation();
+        var tok=ls(TK);
+        if(!tok){
+          window.open(a.href,'_blank','noopener');
+          toast('已打开 GitHub —— 点右上角 Star 即可。想以后一键收藏，点右下角 ⚙ 粘一次 Token。',4200);
+          return;
+        }
+        paint(btn,false,true);
+        star(repo,tok).then(function(r){
+          if(r.status===204||r.status===200){
+            var o=stars();o[repo]=1;saveStars(o);paint(btn,true,false);toast('已收藏：'+repo);
+          }else if(r.status===401||r.status===403){
+            paint(btn,!!stars()[repo],false);
+            toast('Token 无效或权限不足（需 Starring: Read and write）。点 ⚙ 重新设置。',4200);
+          }else{
+            paint(btn,!!stars()[repo],false);
+            toast('收藏失败（HTTP '+r.status+'），可点项目名去 GitHub 手动 Star',3800);
+          }
+        }).catch(function(){
+          paint(btn,!!stars()[repo],false);toast('网络错误，收藏失败',3000);
+        });
+      });
+      a.insertAdjacentElement('afterend',btn);
+    });
+  }
+  function openBox(){
+    var mask=document.createElement('div');mask.className='fav-mask show';
+    mask.innerHTML='<div class="fav-box"><h3>收藏设置</h3>'
+      +'<p>粘一个 GitHub <b>fine-grained token</b>（只需 <b>Starring: Read and write</b> + Metadata: Read），只存本机浏览器，不上传任何服务器。</p>'
+      +'<p>创建入口：<a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a></p>'
+      +'<input type="password" placeholder="github_pat_..." autocomplete="off" spellcheck="false">'
+      +'<div class="row"><button class="primary" data-act="save">保存</button><button data-act="clear">清除</button><button data-act="close">关闭</button></div></div>';
+    document.body.appendChild(mask);
+    var inp=mask.querySelector('input'); if(ls(TK))inp.value=ls(TK);
+    mask.addEventListener('click',function(e){if(e.target===mask)mask.remove();});
+    Array.prototype.forEach.call(mask.querySelectorAll('button'),function(b){
+      b.addEventListener('click',function(){
+        var act=b.getAttribute('data-act');
+        if(act==='save'){
+          var v=(inp.value||'').trim();
+          if(!v){toast('请先粘贴 token');return;}
+          lsSet(TK,v);mask.remove();toast('已保存，现在可以一键收藏了');
+        }else if(act==='clear'){lsDel(TK);mask.remove();toast('已清除 token');}
+        else{mask.remove();}
+      });
+    });
+  }
+  function gear(){
+    if(document.querySelector('.fav-gear'))return;
+    var g=document.createElement('button');
+    g.type='button';g.className='fav-gear';g.title='收藏设置';g.textContent='⚙';
+    g.addEventListener('click',openBox);document.body.appendChild(g);
+  }
+  function init(){bind();gear();}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script><!--hermes-fav-end-->
+
 </body>
 </html>
