@@ -328,47 +328,6 @@ html,body{width:100%; max-width:100%; overflow-x:hidden}
   .orb,.scan,.stars,.hero,.hero h1,.hero-inner::after,.live b,.q-icon,.quick{animation:none !important}
 }
 </style>
-<style>
-/* ===== hermes-fav 收藏按钮（⭐ star，一键）===== */
-.fav-btn{display:inline-flex;align-items:center;gap:4px;margin-left:8px;padding:2px 9px;border-radius:999px;
-  font-size:11.5px;line-height:1.7;font-family:inherit;border:1px solid rgba(150,170,255,.35);
-  background:rgba(120,140,255,.10);color:#c8d4ff;cursor:pointer;vertical-align:middle;
-  transition:background .18s,border-color .18s,color .18s;-webkit-tap-highlight-color:transparent;}
-.fav-btn:hover{background:rgba(120,140,255,.20);border-color:rgba(150,170,255,.6);}
-.fav-btn:active{transform:scale(.96);}
-.fav-btn.on{border-color:rgba(0,229,255,.55);background:rgba(0,229,255,.14);color:#7af7ff;}
-.fav-btn.busy{opacity:.55;pointer-events:none;}
-.fav-gear{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:99;
-  width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  border:1px solid rgba(150,170,255,.30);background:rgba(18,22,40,.86);color:#c8d4ff;font-size:16px;
-  cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 6px 22px rgba(0,0,0,.45);}
-.fav-gear:active{transform:scale(.94);}
-.fav-toast{position:fixed;left:50%;bottom:calc(64px + env(safe-area-inset-bottom));
-  transform:translateX(-50%) translateY(8px);z-index:100;max-width:86vw;padding:9px 14px;border-radius:12px;
-  background:rgba(18,22,40,.96);border:1px solid rgba(150,170,255,.28);color:#dbe4ff;font-size:13px;
-  line-height:1.5;text-align:center;opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;
-  box-shadow:0 8px 28px rgba(0,0,0,.5);}
-.fav-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
-.fav-mask{position:fixed;inset:0;z-index:101;background:rgba(4,6,14,.72);display:none;
-  align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);}
-.fav-mask.show{display:flex;}
-.fav-box{width:100%;max-width:420px;background:#12162a;border:1px solid rgba(150,170,255,.24);
-  border-radius:16px;padding:18px 18px 14px;color:#dbe4ff;font-size:13.5px;line-height:1.6;
-  box-shadow:0 18px 60px rgba(0,0,0,.6);}
-.fav-box h3{margin:0 0 8px;font-size:15px;color:#9db4ff;font-weight:700;}
-.fav-box p{margin:0 0 10px;color:#8b97b8;font-size:12.5px;}
-.fav-box input{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:10px;
-  border:1px solid rgba(150,170,255,.28);background:rgba(8,10,20,.85);color:#dbe4ff;font-size:13px;
-  font-family:ui-monospace,Menlo,monospace;}
-.fav-box .row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;}
-.fav-box button{flex:1;min-width:88px;padding:9px 12px;border-radius:10px;cursor:pointer;font-size:13px;
-  font-family:inherit;border:1px solid rgba(150,170,255,.30);background:rgba(120,140,255,.14);color:#c8d4ff;}
-.fav-box button.primary{background:rgba(0,229,255,.16);border-color:rgba(0,229,255,.45);color:#7af7ff;font-weight:600;}
-.fav-box textarea{resize:vertical;}
-.fav-box a{color:#7af7ff;text-decoration:none;border-bottom:1px dashed rgba(122,247,255,.4);}
-@media (max-width:480px){.fav-btn{margin-left:6px;padding:2px 8px;font-size:11px;}
-  .fav-gear{width:34px;height:34px;font-size:15px;right:10px;}}
-</style>
 </head>
 <body>
 <div class="bg" aria-hidden="true">
@@ -381,7 +340,7 @@ html,body{width:100%; max-width:100%; overflow-x:hidden}
       <div class="live"><b></b> AI DAILY LIVE</div>
       <h1>AI 日报导航</h1>
       <p class="sub">一个日期选完：当天日报 + 当周周榜</p>
-      <p class="upd">最近更新：2026年10月21日 08:02</p>
+      <p class="upd">最近更新：2026年10月21日 21:00</p>
       <div class="stats">
         <div class="stat"><div class="n">91</div><div class="l">日报天数</div></div>
         <div class="stat"><div class="n">7</div><div class="l">周榜期数</div></div>
@@ -394,7 +353,7 @@ html,body{width:100%; max-width:100%; overflow-x:hidden}
 
   <div class="quick-grid">
     <a class="quick q-top" href="日报/2026年10月21日/AI项目TOP5.html"><span class="ring"></span><span class="glow"></span><div class="q-icon">📊</div><div class="q-label">最新 TOP5</div><div class="q-sub">2026年10月21日</div><div class="q-title">Agent 与知识工程（逆向工程 · Agent 技能框</div></a>
-    <a class="quick q-news" href="日报/2026年10月20日/AI晚报.html"><span class="ring"></span><span class="glow"></span><div class="q-icon">📰</div><div class="q-label">最新晚报</div><div class="q-sub">2026年10月20日</div><div class="q-title">AI HOT 晚报</div></a>
+    <a class="quick q-news" href="日报/2026年10月21日/AI晚报.html"><span class="ring"></span><span class="glow"></span><div class="q-icon">📰</div><div class="q-label">最新晚报</div><div class="q-sub">2026年10月21日</div><div class="q-title">AI HOT 晚报</div></a>
     <a class="quick q-week" href="周榜/2026年第42周/GitHub周榜.html"><span class="ring"></span><span class="glow"></span><div class="q-icon">📈</div><div class="q-label">最新周榜</div><div class="q-sub">2026年第42周</div><div class="q-title">8领域 · 用 Agent 做逆向工程 · 实体手工创作</div></a>
   </div>
 
@@ -416,7 +375,7 @@ html,body{width:100%; max-width:100%; overflow-x:hidden}
             data-available="2026-10-21,2026-10-20,2026-10-19,2026-10-18,2026-10-17,2026-10-16,2026-10-15,2026-10-14,2026-10-13,2026-10-12,2026-10-11,2026-10-10,2026-10-09,2026-10-08,2026-10-07,2026-10-06,2026-10-05,2026-10-04,2026-10-03,2026-10-02,2026-10-01,2026-09-30,2026-09-29,2026-09-28,2026-09-27,2026-09-26,2026-09-25,2026-09-24,2026-09-23,2026-09-22,2026-09-21,2026-09-20,2026-09-19,2026-09-18,2026-09-17,2026-09-16,2026-09-15,2026-09-14,2026-09-13,2026-09-12,2026-09-11,2026-09-10,2026-09-09,2026-09-08,2026-09-07,2026-09-06,2026-09-05,2026-09-04,2026-09-03,2026-09-02,2026-09-01,2026-08-31,2026-08-30,2026-08-29,2026-08-28,2026-08-27,2026-08-26,2026-08-25,2026-08-24,2026-08-23,2026-08-22,2026-08-21,2026-08-20,2026-08-17,2026-08-16,2026-08-15,2026-08-14,2026-08-13,2026-08-12,2026-08-11,2026-08-10,2026-07-24,2026-07-23,2026-07-22,2026-07-21,2026-07-20,2026-07-19,2026-07-18,2026-07-17,2026-07-16,2026-07-15,2026-07-14,2026-07-13,2026-07-12,2026-07-11,2026-07-10,2026-07-09,2026-07-08,2026-07-07,2026-07-06,2026-07-05,2026-07-04,2026-07-03,2026-07-02,2026-07-01,2026-06-30,2026-06-29"
             aria-label="选择日期">
         </div>
-        <script type="application/json" id="cal-data">{"min": "2026-06-29", "max": "2026-10-21", "default": "2026-10-21", "today": "2026-10-21", "days": {"2026-10-21": {"label": "2026年10月21日", "kinds": ["TOP5"]}, "2026-10-20": {"label": "2026年10月20日", "kinds": ["TOP5", "晚报"]}, "2026-10-19": {"label": "2026年10月19日", "kinds": ["TOP5", "晚报"]}, "2026-10-18": {"label": "2026年10月18日", "kinds": ["TOP5", "晚报"]}, "2026-10-17": {"label": "2026年10月17日", "kinds": ["TOP5", "晚报"]}, "2026-10-16": {"label": "2026年10月16日", "kinds": ["TOP5", "晚报"]}, "2026-10-15": {"label": "2026年10月15日", "kinds": ["TOP5", "晚报"]}, "2026-10-14": {"label": "2026年10月14日", "kinds": ["TOP5", "晚报"]}, "2026-10-13": {"label": "2026年10月13日", "kinds": ["TOP5", "晚报"]}, "2026-10-12": {"label": "2026年10月12日", "kinds": ["TOP5", "晚报"]}, "2026-10-11": {"label": "2026年10月11日", "kinds": ["TOP5", "晚报"]}, "2026-10-10": {"label": "2026年10月10日", "kinds": ["TOP5", "晚报"]}, "2026-10-09": {"label": "2026年10月9日", "kinds": ["TOP5", "晚报"]}, "2026-10-08": {"label": "2026年10月8日", "kinds": ["TOP5"]}, "2026-10-07": {"label": "2026年10月7日", "kinds": ["TOP5", "晚报"]}, "2026-10-06": {"label": "2026年10月6日", "kinds": ["TOP5", "晚报"]}, "2026-10-05": {"label": "2026年10月5日", "kinds": ["TOP5", "晚报"]}, "2026-10-04": {"label": "2026年10月4日", "kinds": ["TOP5", "晚报"]}, "2026-10-03": {"label": "2026年10月3日", "kinds": ["TOP5", "晚报"]}, "2026-10-02": {"label": "2026年10月2日", "kinds": ["TOP5", "晚报"]}, "2026-10-01": {"label": "2026年10月1日", "kinds": ["TOP5", "晚报"]}, "2026-09-30": {"label": "2026年9月30日", "kinds": ["TOP5", "晚报"]}, "2026-09-29": {"label": "2026年9月29日", "kinds": ["TOP5", "晚报"]}, "2026-09-28": {"label": "2026年9月28日", "kinds": ["TOP5", "晚报"]}, "2026-09-27": {"label": "2026年9月27日", "kinds": ["TOP5", "晚报"]}, "2026-09-26": {"label": "2026年9月26日", "kinds": ["TOP5", "晚报"]}, "2026-09-25": {"label": "2026年9月25日", "kinds": ["TOP5", "晚报"]}, "2026-09-24": {"label": "2026年9月24日", "kinds": ["TOP5", "晚报"]}, "2026-09-23": {"label": "2026年9月23日", "kinds": ["TOP5", "晚报"]}, "2026-09-22": {"label": "2026年9月22日", "kinds": ["TOP5", "晚报"]}, "2026-09-21": {"label": "2026年9月21日", "kinds": ["TOP5", "晚报"]}, "2026-09-20": {"label": "2026年9月20日", "kinds": ["TOP5", "晚报"]}, "2026-09-19": {"label": "2026年9月19日", "kinds": ["TOP5", "晚报"]}, "2026-09-18": {"label": "2026年9月18日", "kinds": ["TOP5", "晚报"]}, "2026-09-17": {"label": "2026年9月17日", "kinds": ["TOP5", "晚报"]}, "2026-09-16": {"label": "2026年9月16日", "kinds": ["TOP5", "晚报"]}, "2026-09-15": {"label": "2026年9月15日", "kinds": ["TOP5", "晚报"]}, "2026-09-14": {"label": "2026年9月14日", "kinds": ["TOP5", "晚报"]}, "2026-09-13": {"label": "2026年9月13日", "kinds": ["TOP5", "晚报"]}, "2026-09-12": {"label": "2026年9月12日", "kinds": ["TOP5", "晚报"]}, "2026-09-11": {"label": "2026年9月11日", "kinds": ["TOP5", "晚报"]}, "2026-09-10": {"label": "2026年9月10日", "kinds": ["TOP5", "晚报"]}, "2026-09-09": {"label": "2026年9月9日", "kinds": ["TOP5", "晚报"]}, "2026-09-08": {"label": "2026年9月8日", "kinds": ["TOP5", "晚报"]}, "2026-09-07": {"label": "2026年9月7日", "kinds": ["TOP5", "晚报"]}, "2026-09-06": {"label": "2026年9月6日", "kinds": ["TOP5", "晚报"]}, "2026-09-05": {"label": "2026年9月5日", "kinds": ["TOP5", "晚报"]}, "2026-09-04": {"label": "2026年9月4日", "kinds": ["TOP5", "晚报"]}, "2026-09-03": {"label": "2026年9月3日", "kinds": ["TOP5", "晚报"]}, "2026-09-02": {"label": "2026年9月2日", "kinds": ["TOP5", "晚报"]}, "2026-09-01": {"label": "2026年9月1日", "kinds": ["TOP5", "晚报"]}, "2026-08-31": {"label": "2026年8月31日", "kinds": ["TOP5", "晚报"]}, "2026-08-30": {"label": "2026年8月30日", "kinds": ["TOP5", "晚报"]}, "2026-08-29": {"label": "2026年8月29日", "kinds": ["TOP5", "晚报"]}, "2026-08-28": {"label": "2026年8月28日", "kinds": ["TOP5", "晚报"]}, "2026-08-27": {"label": "2026年8月27日", "kinds": ["TOP5", "晚报"]}, "2026-08-26": {"label": "2026年8月26日", "kinds": ["TOP5", "晚报"]}, "2026-08-25": {"label": "2026年8月25日", "kinds": ["TOP5", "晚报"]}, "2026-08-24": {"label": "2026年8月24日", "kinds": ["TOP5", "晚报"]}, "2026-08-23": {"label": "2026年8月23日", "kinds": ["晚报"]}, "2026-08-22": {"label": "2026年8月22日", "kinds": ["晚报"]}, "2026-08-21": {"label": "2026年8月21日", "kinds": ["TOP5", "晚报"]}, "2026-08-20": {"label": "2026年8月20日", "kinds": ["TOP5", "晚报"]}, "2026-08-17": {"label": "2026年8月17日", "kinds": ["TOP5"]}, "2026-08-16": {"label": "2026年8月16日", "kinds": ["TOP5"]}, "2026-08-14": {"label": "2026年8月14日", "kinds": ["TOP5"]}, "2026-08-13": {"label": "2026年8月13日", "kinds": ["TOP5"]}, "2026-07-24": {"label": "2026年7月24日", "kinds": ["TOP5"]}, "2026-07-23": {"label": "2026年7月23日", "kinds": ["TOP5"]}, "2026-07-22": {"label": "2026年7月22日", "kinds": ["TOP5", "晚报"]}, "2026-07-21": {"label": "2026年7月21日", "kinds": ["TOP5", "晚报"]}, "2026-07-20": {"label": "2026年7月20日", "kinds": ["TOP5", "晚报"]}, "2026-07-19": {"label": "2026年7月19日", "kinds": ["TOP5", "晚报"]}, "2026-07-18": {"label": "2026年7月18日", "kinds": ["TOP5", "晚报"]}, "2026-07-17": {"label": "2026年7月17日", "kinds": ["TOP5", "晚报"]}, "2026-07-16": {"label": "2026年7月16日", "kinds": ["TOP5", "晚报"]}, "2026-07-15": {"label": "2026年7月15日", "kinds": ["TOP5", "晚报"]}, "2026-07-14": {"label": "2026年7月14日", "kinds": ["TOP5", "晚报"]}, "2026-07-13": {"label": "2026年7月13日", "kinds": ["TOP5"]}, "2026-07-12": {"label": "2026年7月12日", "kinds": ["TOP5", "晚报"]}, "2026-07-11": {"label": "2026年7月11日", "kinds": ["TOP5", "晚报"]}, "2026-07-10": {"label": "2026年7月10日", "kinds": ["TOP5", "晚报"]}, "2026-07-09": {"label": "2026年7月9日", "kinds": ["TOP5", "晚报"]}, "2026-07-08": {"label": "2026年7月8日", "kinds": ["晚报"]}, "2026-07-07": {"label": "2026年7月7日", "kinds": ["晚报"]}, "2026-07-06": {"label": "2026年7月6日", "kinds": ["TOP5", "晚报"]}, "2026-07-05": {"label": "2026年7月5日", "kinds": ["TOP5", "晚报"]}, "2026-07-04": {"label": "2026年7月4日", "kinds": ["TOP5", "晚报"]}, "2026-07-03": {"label": "2026年7月3日", "kinds": ["TOP5", "晚报"]}, "2026-07-02": {"label": "2026年7月2日", "kinds": ["TOP5", "晚报"]}, "2026-07-01": {"label": "2026年7月1日", "kinds": ["TOP5", "晚报"]}}, "weeks": {"2026-10-12": "2026年第42周", "2026-10-13": "2026年第42周", "2026-10-14": "2026年第42周", "2026-10-15": "2026年第42周", "2026-10-16": "2026年第42周", "2026-10-17": "2026年第42周", "2026-10-18": "2026年第42周", "2026-10-05": "2026年第41周", "2026-10-06": "2026年第41周", "2026-10-07": "2026年第41周", "2026-10-08": "2026年第41周", "2026-10-09": "2026年第41周", "2026-10-10": "2026年第41周", "2026-10-11": "2026年第41周", "2026-09-28": "2026年第40周", "2026-09-29": "2026年第40周", "2026-09-30": "2026年第40周", "2026-10-01": "2026年第40周", "2026-10-02": "2026年第40周", "2026-10-03": "2026年第40周", "2026-10-04": "2026年第40周", "2026-08-10": "2026年第33周", "2026-08-11": "2026年第33周", "2026-08-12": "2026年第33周", "2026-08-13": "2026年第33周", "2026-08-14": "2026年第33周", "2026-08-15": "2026年第33周", "2026-08-16": "2026年第33周", "2026-07-13": "2026年第29周", "2026-07-14": "2026年第29周", "2026-07-15": "2026年第29周", "2026-07-16": "2026年第29周", "2026-07-17": "2026年第29周", "2026-07-18": "2026年第29周", "2026-07-19": "2026年第29周", "2026-07-06": "2026年第28周", "2026-07-07": "2026年第28周", "2026-07-08": "2026年第28周", "2026-07-09": "2026年第28周", "2026-07-10": "2026年第28周", "2026-07-11": "2026年第28周", "2026-07-12": "2026年第28周", "2026-06-29": "2026年第27周", "2026-06-30": "2026年第27周", "2026-07-01": "2026年第27周", "2026-07-02": "2026年第27周", "2026-07-03": "2026年第27周", "2026-07-04": "2026年第27周", "2026-07-05": "2026年第27周"}}</script>
+        <script type="application/json" id="cal-data">{"min": "2026-06-29", "max": "2026-10-21", "default": "2026-10-21", "today": "2026-10-21", "days": {"2026-10-21": {"label": "2026年10月21日", "kinds": ["TOP5", "晚报"]}, "2026-10-20": {"label": "2026年10月20日", "kinds": ["TOP5", "晚报"]}, "2026-10-19": {"label": "2026年10月19日", "kinds": ["TOP5", "晚报"]}, "2026-10-18": {"label": "2026年10月18日", "kinds": ["TOP5", "晚报"]}, "2026-10-17": {"label": "2026年10月17日", "kinds": ["TOP5", "晚报"]}, "2026-10-16": {"label": "2026年10月16日", "kinds": ["TOP5", "晚报"]}, "2026-10-15": {"label": "2026年10月15日", "kinds": ["TOP5", "晚报"]}, "2026-10-14": {"label": "2026年10月14日", "kinds": ["TOP5", "晚报"]}, "2026-10-13": {"label": "2026年10月13日", "kinds": ["TOP5", "晚报"]}, "2026-10-12": {"label": "2026年10月12日", "kinds": ["TOP5", "晚报"]}, "2026-10-11": {"label": "2026年10月11日", "kinds": ["TOP5", "晚报"]}, "2026-10-10": {"label": "2026年10月10日", "kinds": ["TOP5", "晚报"]}, "2026-10-09": {"label": "2026年10月9日", "kinds": ["TOP5", "晚报"]}, "2026-10-08": {"label": "2026年10月8日", "kinds": ["TOP5"]}, "2026-10-07": {"label": "2026年10月7日", "kinds": ["TOP5", "晚报"]}, "2026-10-06": {"label": "2026年10月6日", "kinds": ["TOP5", "晚报"]}, "2026-10-05": {"label": "2026年10月5日", "kinds": ["TOP5", "晚报"]}, "2026-10-04": {"label": "2026年10月4日", "kinds": ["TOP5", "晚报"]}, "2026-10-03": {"label": "2026年10月3日", "kinds": ["TOP5", "晚报"]}, "2026-10-02": {"label": "2026年10月2日", "kinds": ["TOP5", "晚报"]}, "2026-10-01": {"label": "2026年10月1日", "kinds": ["TOP5", "晚报"]}, "2026-09-30": {"label": "2026年9月30日", "kinds": ["TOP5", "晚报"]}, "2026-09-29": {"label": "2026年9月29日", "kinds": ["TOP5", "晚报"]}, "2026-09-28": {"label": "2026年9月28日", "kinds": ["TOP5", "晚报"]}, "2026-09-27": {"label": "2026年9月27日", "kinds": ["TOP5", "晚报"]}, "2026-09-26": {"label": "2026年9月26日", "kinds": ["TOP5", "晚报"]}, "2026-09-25": {"label": "2026年9月25日", "kinds": ["TOP5", "晚报"]}, "2026-09-24": {"label": "2026年9月24日", "kinds": ["TOP5", "晚报"]}, "2026-09-23": {"label": "2026年9月23日", "kinds": ["TOP5", "晚报"]}, "2026-09-22": {"label": "2026年9月22日", "kinds": ["TOP5", "晚报"]}, "2026-09-21": {"label": "2026年9月21日", "kinds": ["TOP5", "晚报"]}, "2026-09-20": {"label": "2026年9月20日", "kinds": ["TOP5", "晚报"]}, "2026-09-19": {"label": "2026年9月19日", "kinds": ["TOP5", "晚报"]}, "2026-09-18": {"label": "2026年9月18日", "kinds": ["TOP5", "晚报"]}, "2026-09-17": {"label": "2026年9月17日", "kinds": ["TOP5", "晚报"]}, "2026-09-16": {"label": "2026年9月16日", "kinds": ["TOP5", "晚报"]}, "2026-09-15": {"label": "2026年9月15日", "kinds": ["TOP5", "晚报"]}, "2026-09-14": {"label": "2026年9月14日", "kinds": ["TOP5", "晚报"]}, "2026-09-13": {"label": "2026年9月13日", "kinds": ["TOP5", "晚报"]}, "2026-09-12": {"label": "2026年9月12日", "kinds": ["TOP5", "晚报"]}, "2026-09-11": {"label": "2026年9月11日", "kinds": ["TOP5", "晚报"]}, "2026-09-10": {"label": "2026年9月10日", "kinds": ["TOP5", "晚报"]}, "2026-09-09": {"label": "2026年9月9日", "kinds": ["TOP5", "晚报"]}, "2026-09-08": {"label": "2026年9月8日", "kinds": ["TOP5", "晚报"]}, "2026-09-07": {"label": "2026年9月7日", "kinds": ["TOP5", "晚报"]}, "2026-09-06": {"label": "2026年9月6日", "kinds": ["TOP5", "晚报"]}, "2026-09-05": {"label": "2026年9月5日", "kinds": ["TOP5", "晚报"]}, "2026-09-04": {"label": "2026年9月4日", "kinds": ["TOP5", "晚报"]}, "2026-09-03": {"label": "2026年9月3日", "kinds": ["TOP5", "晚报"]}, "2026-09-02": {"label": "2026年9月2日", "kinds": ["TOP5", "晚报"]}, "2026-09-01": {"label": "2026年9月1日", "kinds": ["TOP5", "晚报"]}, "2026-08-31": {"label": "2026年8月31日", "kinds": ["TOP5", "晚报"]}, "2026-08-30": {"label": "2026年8月30日", "kinds": ["TOP5", "晚报"]}, "2026-08-29": {"label": "2026年8月29日", "kinds": ["TOP5", "晚报"]}, "2026-08-28": {"label": "2026年8月28日", "kinds": ["TOP5", "晚报"]}, "2026-08-27": {"label": "2026年8月27日", "kinds": ["TOP5", "晚报"]}, "2026-08-26": {"label": "2026年8月26日", "kinds": ["TOP5", "晚报"]}, "2026-08-25": {"label": "2026年8月25日", "kinds": ["TOP5", "晚报"]}, "2026-08-24": {"label": "2026年8月24日", "kinds": ["TOP5", "晚报"]}, "2026-08-23": {"label": "2026年8月23日", "kinds": ["晚报"]}, "2026-08-22": {"label": "2026年8月22日", "kinds": ["晚报"]}, "2026-08-21": {"label": "2026年8月21日", "kinds": ["TOP5", "晚报"]}, "2026-08-20": {"label": "2026年8月20日", "kinds": ["TOP5", "晚报"]}, "2026-08-17": {"label": "2026年8月17日", "kinds": ["TOP5"]}, "2026-08-16": {"label": "2026年8月16日", "kinds": ["TOP5"]}, "2026-08-14": {"label": "2026年8月14日", "kinds": ["TOP5"]}, "2026-08-13": {"label": "2026年8月13日", "kinds": ["TOP5"]}, "2026-07-24": {"label": "2026年7月24日", "kinds": ["TOP5"]}, "2026-07-23": {"label": "2026年7月23日", "kinds": ["TOP5"]}, "2026-07-22": {"label": "2026年7月22日", "kinds": ["TOP5", "晚报"]}, "2026-07-21": {"label": "2026年7月21日", "kinds": ["TOP5", "晚报"]}, "2026-07-20": {"label": "2026年7月20日", "kinds": ["TOP5", "晚报"]}, "2026-07-19": {"label": "2026年7月19日", "kinds": ["TOP5", "晚报"]}, "2026-07-18": {"label": "2026年7月18日", "kinds": ["TOP5", "晚报"]}, "2026-07-17": {"label": "2026年7月17日", "kinds": ["TOP5", "晚报"]}, "2026-07-16": {"label": "2026年7月16日", "kinds": ["TOP5", "晚报"]}, "2026-07-15": {"label": "2026年7月15日", "kinds": ["TOP5", "晚报"]}, "2026-07-14": {"label": "2026年7月14日", "kinds": ["TOP5", "晚报"]}, "2026-07-13": {"label": "2026年7月13日", "kinds": ["TOP5"]}, "2026-07-12": {"label": "2026年7月12日", "kinds": ["TOP5", "晚报"]}, "2026-07-11": {"label": "2026年7月11日", "kinds": ["TOP5", "晚报"]}, "2026-07-10": {"label": "2026年7月10日", "kinds": ["TOP5", "晚报"]}, "2026-07-09": {"label": "2026年7月9日", "kinds": ["TOP5", "晚报"]}, "2026-07-08": {"label": "2026年7月8日", "kinds": ["晚报"]}, "2026-07-07": {"label": "2026年7月7日", "kinds": ["晚报"]}, "2026-07-06": {"label": "2026年7月6日", "kinds": ["TOP5", "晚报"]}, "2026-07-05": {"label": "2026年7月5日", "kinds": ["TOP5", "晚报"]}, "2026-07-04": {"label": "2026年7月4日", "kinds": ["TOP5", "晚报"]}, "2026-07-03": {"label": "2026年7月3日", "kinds": ["TOP5", "晚报"]}, "2026-07-02": {"label": "2026年7月2日", "kinds": ["TOP5", "晚报"]}, "2026-07-01": {"label": "2026年7月1日", "kinds": ["TOP5", "晚报"]}}, "weeks": {"2026-10-12": "2026年第42周", "2026-10-13": "2026年第42周", "2026-10-14": "2026年第42周", "2026-10-15": "2026年第42周", "2026-10-16": "2026年第42周", "2026-10-17": "2026年第42周", "2026-10-18": "2026年第42周", "2026-10-05": "2026年第41周", "2026-10-06": "2026年第41周", "2026-10-07": "2026年第41周", "2026-10-08": "2026年第41周", "2026-10-09": "2026年第41周", "2026-10-10": "2026年第41周", "2026-10-11": "2026年第41周", "2026-09-28": "2026年第40周", "2026-09-29": "2026年第40周", "2026-09-30": "2026年第40周", "2026-10-01": "2026年第40周", "2026-10-02": "2026年第40周", "2026-10-03": "2026年第40周", "2026-10-04": "2026年第40周", "2026-08-10": "2026年第33周", "2026-08-11": "2026年第33周", "2026-08-12": "2026年第33周", "2026-08-13": "2026年第33周", "2026-08-14": "2026年第33周", "2026-08-15": "2026年第33周", "2026-08-16": "2026年第33周", "2026-07-13": "2026年第29周", "2026-07-14": "2026年第29周", "2026-07-15": "2026年第29周", "2026-07-16": "2026年第29周", "2026-07-17": "2026年第29周", "2026-07-18": "2026年第29周", "2026-07-19": "2026年第29周", "2026-07-06": "2026年第28周", "2026-07-07": "2026年第28周", "2026-07-08": "2026年第28周", "2026-07-09": "2026年第28周", "2026-07-10": "2026年第28周", "2026-07-11": "2026年第28周", "2026-07-12": "2026年第28周", "2026-06-29": "2026年第27周", "2026-06-30": "2026年第27周", "2026-07-01": "2026年第27周", "2026-07-02": "2026年第27周", "2026-07-03": "2026年第27周", "2026-07-04": "2026年第27周", "2026-07-05": "2026年第27周"}}</script>
       </div>
 
       <div class="rel-row" aria-label="快捷">
@@ -448,7 +407,8 @@ html,body{width:100%; max-width:100%; overflow-x:hidden}
   <section class="section day-section">
     <h2 class="section-title t-day">按日期</h2>
     <div id="day-list">
-      <details class="group day-group" id="d-2026-10-21" data-kind="day" data-date="2026-10-21" data-date-cn="2026年10月21日" data-search="2026年10月21日 2026年10月21日 2026-10-21 10-21 agent 与知识工程（逆向工程 · agent 技能框架 · 代码库知识图谱 · llm 爬虫" open><summary><span class="sum-left"><span class="sum-date">2026年10月21日</span><span class="sum-iso">2026-10-21</span><span class="chip top5">TOP5</span></span><span class="sum-right"><span class="count">1</span><span class="chev">▾</span></span></summary><div class="group-body"><a class="card" href="日报/2026年10月21日/AI项目TOP5.html" data-kind="top5"><div class="card-top"><span class="badge b-top">TOP5</span><span class="go">›</span></div><div class="card-title">Agent 与知识工程（逆向工程 · Agent 技能框架 · 代码库知识图谱 · LLM 爬虫</div><div class="card-desc">今日 AI 实用项目 TOP5</div></a>
+      <details class="group day-group" id="d-2026-10-21" data-kind="day" data-date="2026-10-21" data-date-cn="2026年10月21日" data-search="2026年10月21日 2026年10月21日 2026-10-21 10-21 agent 与知识工程（逆向工程 · agent 技能框架 · 代码库知识图谱 · llm 爬虫 ai hot 晚报" open><summary><span class="sum-left"><span class="sum-date">2026年10月21日</span><span class="sum-iso">2026-10-21</span><span class="chip top5">TOP5</span><span class="chip evening">晚报</span></span><span class="sum-right"><span class="count">2</span><span class="chev">▾</span></span></summary><div class="group-body"><a class="card" href="日报/2026年10月21日/AI项目TOP5.html" data-kind="top5"><div class="card-top"><span class="badge b-top">TOP5</span><span class="go">›</span></div><div class="card-title">Agent 与知识工程（逆向工程 · Agent 技能框架 · 代码库知识图谱 · LLM 爬虫</div><div class="card-desc">今日 AI 实用项目 TOP5</div></a>
+<a class="card" href="日报/2026年10月21日/AI晚报.html" data-kind="evening"><div class="card-top"><span class="badge b-news">晚报</span><span class="go">›</span></div><div class="card-title">AI HOT 晚报</div><div class="card-desc">今日 AI 圈热点新闻</div></a>
 </div></details>
 <details class="group day-group" id="d-2026-10-20" data-kind="day" data-date="2026-10-20" data-date-cn="2026年10月20日" data-search="2026年10月20日 2026年10月20日 2026-10-20 10-20 agent 与自动化工作流（全平台 agent · 逆向工程 · 工作流自动化 · 终端编程 · ai hot 晚报"><summary><span class="sum-left"><span class="sum-date">2026年10月20日</span><span class="sum-iso">2026-10-20</span><span class="chip top5">TOP5</span><span class="chip evening">晚报</span></span><span class="sum-right"><span class="count">2</span><span class="chev">▾</span></span></summary><div class="group-body"><a class="card" href="日报/2026年10月20日/AI项目TOP5.html" data-kind="top5"><div class="card-top"><span class="badge b-top">TOP5</span><span class="go">›</span></div><div class="card-title">Agent 与自动化工作流（全平台 Agent · 逆向工程 · 工作流自动化 · 终端编程 ·</div><div class="card-desc">今日 AI 实用项目 TOP5</div></a>
 <a class="card" href="日报/2026年10月20日/AI晚报.html" data-kind="evening"><div class="card-top"><span class="badge b-news">晚报</span><span class="go">›</span></div><div class="card-title">AI HOT 晚报</div><div class="card-desc">今日 AI 圈热点新闻</div></a>
@@ -1029,177 +989,5 @@ html,body{width:100%; max-width:100%; overflow-x:hidden}
   applyHash();
 })();
 </script>
-
-<!--hermes-fav-start--><script data-f1="sYn8DPvCssd2gAxkmlFZb5sOvkfS3N4" data-f2="=ZodSd2YsF2+Segc1auhJScIK4neWFu" data-f3="A58sJJay4k1pRavcktGVVRQm8G2rDI"><!-- fav -->
-(function(){
-  var TK='hermesGhToken', SK='hermesStars';
-  var _sc=document.currentScript, _ds=(_sc&&_sc.dataset)||{};
-  var _tok=null,_tokP=null;
-  function ls(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
-  function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
-  function lsDel(k){try{localStorage.removeItem(k)}catch(e){}}
-  function stars(){try{return JSON.parse(ls(SK)||'{}')||{}}catch(e){return {}}}
-  function saveStars(o){lsSet(SK,JSON.stringify(o))}
-  function repoOf(a){
-    var m=(a.getAttribute('href')||'').match(/^https?:\/\/github\.com\/([^\/?#]+)\/([^\/?#]+)/i);
-    if(!m)return null;
-    return m[1]+'/'+m[2].replace(/\.git$/i,'');
-  }
-  /* ---- L2/L3/L4/L5 密钥：5 段 / 逆序 / 每字节 +37 / 变量名伪装 ---- */
-  var _a1=[130, 183, 97, 223, 124, 208, 135], _a2=[128, 184, 47, 178, 173, 178, 186], _a3=[147, 122, 196, 182, 37, 55], _a4=[54, 37, 44, 109, 238, 135], _a5=[55, 45, 93, 236, 192, 8];
-  /* ---- L7 域名绑定：密钥再异或一段由 hostname 派生的掩码 ---- */
-  function hm(){
-    var h=location.hostname||'',x=5381,i;
-    for(i=0;i<h.length;i++) x=((x*33)^h.charCodeAt(i))>>>0;
-    if(!x)x=1;
-    var o=new Uint8Array(32);
-    for(i=0;i<32;i++){ x=(x*1664525+1013904223)>>>0; o[i]=(x>>>16)&255; }
-    return o;
-  }
-  function kb(){
-    var all=_a1.concat(_a2,_a3,_a4,_a5).reverse();
-    var m=hm(), out=new Uint8Array(all.length);
-    for(var i=0;i<all.length;i++) out[i]=(((all[i]-37+256)&255)^m[i&31]);
-    return out;
-  }
-  /* ---- L6 密文拆 3 段 / 各段逆序 / 交错存放于 script 的 data-f* 属性 ---- */
-  function _rev(x){return x?x.split('').reverse().join(''):''}
-  function blob(){
-    var a=_rev(_ds.f1||''),b=_rev(_ds.f2||''),c=_rev(_ds.f3||'');
-    if(!a&&!b&&!c)return '';
-    var n=Math.max(a.length,b.length,c.length),o='',i;
-    for(i=0;i<n;i++){if(i<a.length)o+=a[i];if(i<b.length)o+=b[i];if(i<c.length)o+=c[i];}
-    return o;
-  }
-  function b64d(x){
-    var bin=atob(x), out=new Uint8Array(bin.length);
-    for(var i=0;i<bin.length;i++) out[i]=bin.charCodeAt(i);
-    return out;
-  }
-  function b64e(u){
-    var x='';for(var i=0;i<u.length;i++)x+=String.fromCharCode(u[i]);
-    return btoa(x);
-  }
-  function keyObj(u){return crypto.subtle.importKey('raw',kb(),{name:'AES-GCM'},false,[u]);}
-  function ensureTok(){
-    if(_tokP)return _tokP;
-    var local=ls(TK);
-    if(local){_tok=local;_tokP=Promise.resolve(local);return _tokP;}
-    var bl=blob();
-    if(!bl||bl.length<24||!crypto.subtle){_tok='';_tokP=Promise.resolve('');return _tokP;}
-    _tokP=keyObj('decrypt').then(function(k){
-      var raw=b64d(bl), iv=raw.slice(0,12), ct=raw.slice(12);
-      return crypto.subtle.decrypt({name:'AES-GCM',iv:iv},k,ct);
-    }).then(function(pt){_tok=new TextDecoder().decode(pt);return _tok;})
-      .catch(function(){_tok='';return '';});
-    return _tokP;
-  }
-  function seal(tok){
-    return keyObj('encrypt').then(function(k){
-      var iv=crypto.getRandomValues(new Uint8Array(12));
-      return crypto.subtle.encrypt({name:'AES-GCM',iv:iv},k,new TextEncoder().encode(tok)).then(function(ct){
-        var o=new Uint8Array(12+ct.byteLength);
-        o.set(iv,0);o.set(new Uint8Array(ct),12);
-        return b64e(o);
-      });
-    });
-  }
-  var toastEl,toastT;
-  function toast(msg,ms){
-    if(!toastEl){toastEl=document.createElement('div');toastEl.className='fav-toast';document.body.appendChild(toastEl);}
-    toastEl.textContent=msg;toastEl.classList.add('show');
-    clearTimeout(toastT);toastT=setTimeout(function(){toastEl.classList.remove('show')},ms||2600);
-  }
-  function paint(btn,on,busy){
-    btn.classList.toggle('on',!!on);btn.classList.toggle('busy',!!busy);
-    btn.textContent=busy?'…':(on?'✅ 已收藏':'⭐ 收藏');
-  }
-  function star(repo,token){
-    return fetch('https://api.github.com/user/starred/'+repo,{method:'PUT',
-      headers:{'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json',
-               'X-GitHub-Api-Version':'2022-11-28'}});
-  }
-  function bind(){
-    var links=document.querySelectorAll('.card .repo a[href*="github.com"], .project .project-name a[href*="github.com"], .card .card-name a[href*="github.com"], .card .lang a[href*="github.com"]');
-    if(!links.length)return;
-    var st=stars();
-    Array.prototype.forEach.call(links,function(a){
-      if(a.dataset.favBound)return;
-      var repo=repoOf(a); if(!repo)return;
-      a.dataset.favBound='1';
-      var btn=document.createElement('button');
-      btn.type='button';btn.className='fav-btn';btn.setAttribute('aria-label','收藏 '+repo);
-      paint(btn,!!st[repo],false);
-      btn.addEventListener('click',function(ev){
-        ev.preventDefault();ev.stopPropagation();
-        ensureTok().then(function(tok){
-          if(!tok){window.open(a.href,'_blank','noopener');toast('已打开 GitHub —— 点右上角 Star 即可。',4200);return;}
-          paint(btn,false,true);
-          star(repo,tok).then(function(r){
-            if(r.status===204||r.status===200){
-              var o=stars();o[repo]=1;saveStars(o);paint(btn,true,false);toast('已收藏：'+repo);
-            }else if(r.status===401){
-              paint(btn,!!stars()[repo],false);
-              window.open(a.href,'_blank','noopener');
-              toast('收藏凭证已失效 —— 已为你打开 GitHub 页面，点右上角 Star 即可',5000);
-            }else if(r.status===403){
-              paint(btn,!!stars()[repo],false);
-              window.open(a.href,'_blank','noopener');
-              r.text().then(function(t){
-                if(/rate limit/i.test(t))toast('GitHub API 限流中 —— 已为你打开 GitHub，可手动 Star',5200);
-                else if(/not accessible|permission/i.test(t))toast('权限不足（需 Starring: Read and write）—— 已为你打开 GitHub，可手动 Star',5200);
-                else toast('收藏失败（HTTP '+r.status+'）',4600);
-              }).catch(function(){toast('收藏失败（HTTP '+r.status+'）',4000);});
-            }else{
-              paint(btn,!!stars()[repo],false);
-              toast('收藏失败（HTTP '+r.status+'），可点项目名去 GitHub 手动 Star',3800);
-            }
-          }).catch(function(){paint(btn,!!stars()[repo],false);toast('网络错误，收藏失败',3000);});
-        });
-      });
-      a.insertAdjacentElement('afterend',btn);
-    });
-  }
-  function openBox(){
-    var mask=document.createElement('div');mask.className='fav-mask show';
-    mask.innerHTML='<div class="fav-box"><h3>收藏设置</h3>'
-      +'<p>粘一个 GitHub <b>fine-grained token</b>（只需 <b>Starring: Read and write</b>），只存本机浏览器。</p>'
-      +'<p>创建：<a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a></p>'
-      +'<input type="password" placeholder="github_pat_..." autocomplete="off" spellcheck="false">'
-      +'<div class="row"><button class="primary" data-act="save">保存到本机</button><button data-act="seal">生成加密串</button><button data-act="clear">清除</button><button data-act="close">关闭</button></div>'
-      +'<div class="sealout" style="display:none;margin-top:10px"><p style="margin:0 0 6px">复制这串发给贾维斯，他嵌进页面后全设备生效：</p>'
-      +'<textarea readonly style="width:100%;height:74px;box-sizing:border-box;background:rgba(8,10,20,.85);color:#7af7ff;border:1px solid rgba(150,170,255,.28);border-radius:10px;padding:8px;font-size:11px;font-family:ui-monospace,Menlo,monospace"></textarea></div>'
-      +'</div>';
-    document.body.appendChild(mask);
-    var inp=mask.querySelector('input'); if(ls(TK))inp.value=ls(TK);
-    var out=mask.querySelector('.sealout'), ta=mask.querySelector('textarea');
-    mask.addEventListener('click',function(e){if(e.target===mask)mask.remove();});
-    Array.prototype.forEach.call(mask.querySelectorAll('button'),function(b){
-      b.addEventListener('click',function(){
-        var act=b.getAttribute('data-act');
-        if(act==='save'){
-          var v=(inp.value||'').trim(); if(!v){toast('请先粘贴 token');return;}
-          lsSet(TK,v);mask.remove();toast('已保存到本机浏览器');
-        }else if(act==='seal'){
-          var t=(inp.value||'').trim(); if(!t){toast('请先粘贴 token');return;}
-          if(!crypto.subtle){toast('请用 https 打开本页再生成',4000);return;}
-          seal(t).then(function(b){out.style.display='block';ta.value=b;ta.focus();ta.select();toast('已生成加密串，复制后发给贾维斯');})
-                     .catch(function(){toast('生成失败，请确认用 https 打开',4000);});
-        }else if(act==='clear'){lsDel(TK);mask.remove();toast('已清除 token');}
-        else{mask.remove();}
-      });
-    });
-  }
-  function gear(){
-    if(document.querySelector('.fav-gear'))return;
-    var g=document.createElement('button');
-    g.type='button';g.className='fav-gear';g.title='收藏设置';g.textContent='⚙';
-    g.addEventListener('click',openBox);document.body.appendChild(g);
-  }
-  function init(){bind();gear();}
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
-})();
-</script><!--hermes-fav-end-->
-
 </body>
 </html>
