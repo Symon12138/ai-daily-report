@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
+<title>GitHub周榜 — 2026年第45周</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;min-height:100vh;padding:20px}
+.container{max-width:680px;margin:0 auto}.theme{font-size:22px;color:#fff;margin-bottom:5px}
+.date{color:#666;font-size:14px;margin-bottom:20px}
+.banner{background:#12122a;border:1px solid #2a2a4a;border-radius:10px;padding:12px 14px;font-size:13px;color:#9ab;margin-bottom:22px;line-height:1.7}
+.domain{margin-bottom:25px}.domain-title{font-size:16px;color:#fff;margin-bottom:12px;padding-left:10px;border-left:3px solid #6c5ce7}
+.project{background:#161b22;border-radius:12px;padding:16px 18px;margin-bottom:8px}
+.project-header{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.project-name a{font-size:16px;color:#fff;font-weight:500;text-decoration:none}
+.project-stars{font-size:14px;color:#f39c12;font-weight:600;white-space:nowrap}
+.project-usage{font-size:13px;line-height:1.8;color:#ccc;margin-top:10px}
+.project-meta{font-size:12px;color:#888;margin-top:4px}
+.insight{background:#1a1a2e;border-radius:12px;padding:16px 18px;margin-top:20px;font-size:14px;line-height:1.8;color:#ccc}
+.footer{text-align:center;color:#555;font-size:12px;margin-top:40px;padding-bottom:20px}
+
+/* hermes-nav */
+.hermes-nav{
+  position:sticky; top:0; z-index:100;
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px;
+  margin:0 0 16px; padding:10px 12px;
+  border-radius:16px;
+  border:1px solid rgba(150,170,255,.28);
+  background:linear-gradient(135deg, rgba(20,24,52,.95), rgba(36,22,64,.93));
+  backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+  box-shadow:0 12px 32px rgba(0,0,0,.32), 0 0 0 1px rgba(255,255,255,.03) inset;
+}
+.hermes-nav::before{
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(110deg, transparent 30%, rgba(255,255,255,.08) 48%, transparent 65%);
+  transform:translateX(-120%); animation:hermesNavShine 5.5s ease-in-out infinite;
+}
+@keyframes hermesNavShine{0%,60%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.hermes-nav{ position:sticky; overflow:hidden; }
+.hermes-nav a{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:36px; padding:8px 12px; border-radius:11px;
+  color:#e5eeff; text-decoration:none; font-size:13px; font-weight:800;
+  border:1px solid rgba(130,160,255,.22);
+  background:rgba(90,140,255,.12);
+  box-shadow:0 0 0 rgba(0,240,255,0);
+  transition: transform .12s ease, box-shadow .15s ease, background .15s ease;
+}
+.hermes-nav a:active{ background:rgba(90,168,255,.24); transform:scale(.97); }
+.hermes-nav .nav-home{
+  background:linear-gradient(135deg, rgba(0,240,255,.20), rgba(122,92,255,.22));
+  border-color:rgba(0,240,255,.35); color:#f2ffff;
+  box-shadow:0 0 16px rgba(0,240,255,.18);
+}
+.hermes-nav .nav-mid{
+  flex:1 1 auto; text-align:center;
+  font-size:12px; font-weight:800; color:#c3d0f5;
+  padding:6px 10px; border-radius:999px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(150,170,255,.16);
+}
+.hermes-nav .nav-side{ display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+.hermes-nav .disabled{
+  color:#667089; font-size:13px; font-weight:700; padding:8px 10px; pointer-events:none;
+}
+
+/* hermes-detail-theme + effects */
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  position:relative;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  padding-bottom:calc(28px + env(safe-area-inset-bottom)) !important;
+  line-height:1.65;
+}
+body::before{
+  content:""; pointer-events:none; position:fixed; inset:0; z-index:0; opacity:.55;
+  background:
+    radial-gradient(700px 360px at 12% -8%, rgba(109,92,255,.22), transparent 60%),
+    radial-gradient(560px 300px at 100% 0%, rgba(0,229,255,.14), transparent 55%),
+    radial-gradient(520px 280px at 70% 100%, rgba(255,78,205,.10), transparent 50%);
+}
+body > *{ position:relative; z-index:1; }
+img,video{ max-width:100%; height:auto; }
+a{ word-break:break-word; }
+.container, .main, .wrap{ max-width:860px; margin-left:auto; margin-right:auto; }
+
+/* cards / common */
+.project-card, .card, .project{
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, filter .16s ease;
+}
+.project-card, .card, .project{
+  border-radius:14px !important;
+  box-shadow:0 12px 30px rgba(0,0,0,.20);
+}
+.project-card:hover, .card:hover, .project:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 36px rgba(0,0,0,.26), 0 0 0 1px rgba(120,160,255,.14);
+}
+.project-card:active, .card:active, .project:active{ transform:translateY(0); }
+.theme-box, .banner, .insight{
+  border-radius:14px !important;
+  box-shadow:0 10px 26px rgba(0,0,0,.16);
+}
+.theme-box{
+  position:relative; overflow:hidden;
+}
+.theme-box::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(110deg, transparent 35%, rgba(255,255,255,.08) 50%, transparent 65%);
+  transform:translateX(-130%); animation:hermesSweep 6s ease-in-out infinite;
+}
+@keyframes hermesSweep{0%,55%{transform:translateX(-130%)}100%{transform:translateX(130%)}}
+.card-name, .card-title, .project-name, .theme, h1, h2{ letter-spacing:.2px; }
+.card-links a, .card-link, .project-name a{
+  border-radius:10px; padding:6px 10px; display:inline-block;
+  transition: background .15s ease, color .15s ease, box-shadow .15s ease;
+}
+.card-links a:hover, .card-link:hover{ box-shadow:0 0 14px rgba(90,168,255,.2); }
+
+/* 晚报 */
+.hero{
+  border-radius:0 0 22px 22px;
+  box-shadow:0 18px 44px rgba(0,0,0,.28);
+  position:relative; overflow:hidden;
+}
+.hero::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(500px 220px at 70% 0%, rgba(255,255,255,.14), transparent 60%);
+}
+.nav{ gap:8px !important; }
+.nav-pill{
+  min-height:34px !important; border-radius:999px !important;
+  transition: transform .12s ease, border-color .15s ease, background .15s ease;
+}
+.nav-pill:hover{ transform:translateY(-1px); }
+.card-grid{ gap:14px !important; }
+.card{ border-radius:14px !important; }
+.card-link{ min-height:34px !important; border-radius:10px !important; }
+
+/* 周榜 */
+.domain-title{
+  border-radius:0 10px 10px 0;
+  padding:6px 10px !important;
+  background:linear-gradient(90deg, rgba(108,92,231,.16), rgba(108,92,231,.04));
+  box-shadow:0 0 18px rgba(108,92,231,.08);
+}
+.project{
+  border:1px solid rgba(255,255,255,.07);
+  background:linear-gradient(180deg, rgba(255,255,255,.02), transparent);
+}
+.project-header{ gap:12px; }
+.project-stars{
+  background:rgba(243,156,18,.12);
+  border:1px solid rgba(243,156,18,.28);
+  border-radius:999px;
+  padding:4px 10px;
+  box-shadow:0 0 12px rgba(243,156,18,.12);
+}
+
+/* rank pulse */
+.card-rank, .card-idx, .rank-num{
+  text-shadow:0 0 12px rgba(255,180,80,.25);
+}
+
+@media (max-width:480px){
+  .hermes-nav{ padding:8px 10px; border-radius:14px; }
+  .hermes-nav a{ min-height:34px; padding:7px 10px; font-size:12px; }
+  .hermes-nav .nav-mid{ font-size:11px; width:100%; order:3; }
+  .card-grid{ grid-template-columns:1fr !important; }
+  .hero-title{ font-size:28px !important; }
+  body{ font-size:15px; }
+}
+@media (prefers-reduced-motion:reduce){
+  .hermes-nav::before, .theme-box::after{ animation:none !important; }
+  .project-card, .card, .project, .nav-pill{ transition:none !important; }
+}
+
+
+/* ===== hermes-neon-v3 全站统一主题 · 霓虹深空 ===== */
+body{background:#05060f !important;}
+body::before{
+  opacity:.85;
+  background:
+    radial-gradient(900px 480px at 8% -10%, rgba(122,92,255,.20), transparent 60%),
+    radial-gradient(700px 420px at 105% 5%, rgba(0,240,255,.14), transparent 55%),
+    radial-gradient(640px 380px at 50% 110%, rgba(255,60,172,.12), transparent 55%) !important;
+}
+
+/* 标题渐变字 */
+h1,.hero-title,.theme{
+  background:linear-gradient(92deg,#9db4ff 0%,#7af7ff 45%,#ff8fe0 100%);
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent !important;-webkit-text-fill-color:transparent;
+  letter-spacing:.3px;
+}
+h1{text-shadow:none;}
+
+/* ---- TOP5 页 ---- */
+.badge{
+  background:rgba(122,92,255,.15)!important;border:1px solid rgba(122,92,255,.45)!important;
+  color:#c3b2ff!important;border-radius:999px!important;padding:3px 12px!important;
+  box-shadow:0 0 12px rgba(122,92,255,.25);
+}
+.card{
+  background:linear-gradient(165deg,rgba(24,20,56,.94),rgba(10,12,30,.98))!important;
+  border:1px solid rgba(150,170,255,.16)!important;border-radius:18px!important;
+  box-shadow:0 14px 34px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04)!important;
+}
+.card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(122,180,255,.4)!important;
+  box-shadow:0 20px 44px rgba(0,0,0,.5), 0 0 24px rgba(90,140,255,.18)!important;
+}
+.name{color:#f2f5ff!important;text-shadow:0 0 14px rgba(140,170,255,.25);}
+.stars{
+  color:#ffc857!important;background:rgba(255,200,87,.08);
+  border:1px solid rgba(255,200,87,.3);border-radius:999px;padding:3px 10px;
+  text-shadow:0 0 10px rgba(255,200,87,.3);
+}
+.repo a{color:#7af7ff!important;}
+.desc{color:#c9d2f2!important;}
+.why{
+  background:rgba(10,14,34,.8)!important;border-left:3px solid #00e5ff!important;
+  border-radius:4px 12px 12px 4px!important;color:#aeb9e2!important;
+}
+.why b{color:#ffc857!important;}
+.medal{filter:drop-shadow(0 0 8px rgba(255,200,87,.5));}
+.sub,.meta,.date,.footer,.upd,.tip{color:#7d88ad!important;}
+.footer{border-top:none!important;}
+.nav a{
+  background:rgba(122,92,255,.12)!important;border:1px solid rgba(122,92,255,.35)!important;
+  color:#c3d0f5!important;border-radius:999px!important;
+}
+.nav a:hover{box-shadow:0 0 14px rgba(122,92,255,.35);}
+
+/* ---- 周榜页 ---- */
+.banner{
+  background:rgba(14,18,44,.8)!important;border:1px solid rgba(0,229,255,.28)!important;
+  color:#aebadf!important;box-shadow:inset 0 0 24px rgba(0,229,255,.05)!important;
+}
+.domain-title{
+  background:linear-gradient(90deg,rgba(122,92,255,.22),rgba(0,240,255,.06))!important;
+  border-left:3px solid #00e5ff!important;color:#fff!important;
+  text-shadow:0 0 14px rgba(0,229,255,.35);
+}
+.project{
+  background:linear-gradient(165deg,rgba(22,20,52,.95),rgba(10,12,30,.98))!important;
+  border:1px solid rgba(150,170,255,.15)!important;border-radius:16px!important;
+}
+.project:hover{
+  transform:translateY(-3px);
+  border-color:rgba(122,180,255,.38)!important;
+  box-shadow:0 20px 44px rgba(0,0,0,.5), 0 0 24px rgba(90,140,255,.16)!important;
+}
+.project-name a{color:#f2f5ff!important;}
+.project-name a:hover{text-shadow:0 0 10px rgba(122,247,255,.5);}
+.project-stars{
+  background:rgba(255,200,87,.1)!important;border:1px solid rgba(255,200,87,.32)!important;
+  color:#ffc857!important;text-shadow:0 0 10px rgba(255,200,87,.3);
+}
+.project-usage{color:#c2cbec!important;}
+.project-meta{color:#7d88ad!important;}
+.insight{
+  background:linear-gradient(165deg,rgba(24,20,56,.94),rgba(10,12,30,.98))!important;
+  border:1px solid rgba(122,92,255,.3)!important;color:#c2cbec!important;
+}
+
+/* ---- 晚报页：CSS 变量整体换肤为全站霓虹色 ---- */
+:root{
+  --bg:#06081a;--surface:#0f1330;--card:#141940;--card-hover:#1a2150;
+  --border:#2a3468;--text:#eef1ff;--text-dim:#aab4dd;
+  --accent:#00e5ff;--accent2:#7a5cff;
+  --gradient:linear-gradient(135deg,#7a5cff 0%,#00c8ff 60%,#00e5ff 100%);
+  --gradient-soft:linear-gradient(135deg,rgba(122,92,255,.18),rgba(0,229,255,.1));
+}
+.nav{background:rgba(6,8,26,.92)!important;}
+.section-badge{box-shadow:0 0 12px rgba(0,229,255,.35);}
+
+/* ---- 全站动态背景层（首页同款深空特效）---- */
+.hermes-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.hb-orb{position:absolute;border-radius:50%;filter:blur(46px);opacity:.55;will-change:transform;}
+.hb-o1{width:380px;height:380px;left:-100px;top:-80px;background:radial-gradient(circle,rgba(122,92,255,.85),transparent 70%);}
+.hb-o2{width:320px;height:320px;right:-90px;top:8%;background:radial-gradient(circle,rgba(0,240,255,.5),transparent 70%);}
+.hb-o3{width:300px;height:300px;left:15%;bottom:-100px;background:radial-gradient(circle,rgba(255,60,172,.4),transparent 70%);}
+.hb-grid{
+  position:absolute;inset:0;opacity:.18;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:34px 34px;
+  -webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 20%,transparent 72%);
+  mask-image:radial-gradient(ellipse at 50% 0%,#000 20%,transparent 72%);
+}
+.hb-stars{
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 10% 20%,rgba(255,255,255,.7),transparent),
+    radial-gradient(1.5px 1.5px at 30% 70%,rgba(255,255,255,.45),transparent),
+    radial-gradient(1px 1px at 70% 40%,rgba(255,255,255,.55),transparent),
+    radial-gradient(1.5px 1.5px at 85% 15%,rgba(255,255,255,.5),transparent),
+    radial-gradient(1px 1px at 55% 80%,rgba(255,255,255,.4),transparent),
+    radial-gradient(1.2px 1.2px at 42% 32%,rgba(160,220,255,.6),transparent),
+    radial-gradient(1px 1px at 22% 52%,rgba(255,200,240,.5),transparent);
+}
+.hb-scan{
+  position:absolute;left:0;right:0;height:140px;top:-140px;
+  background:linear-gradient(180deg,transparent,rgba(0,240,255,.09),transparent);
+}
+@media (prefers-reduced-motion:no-preference){
+  .hb-orb{animation:hbFloat 14s ease-in-out infinite;}
+  .hb-o2{animation-duration:17s;animation-delay:-4s;}
+  .hb-o3{animation-duration:19s;animation-delay:-7s;}
+  @keyframes hbFloat{
+    0%,100%{transform:translate(0,0) scale(1)}
+    33%{transform:translate(40px,-30px) scale(1.08)}
+    66%{transform:translate(-30px,25px) scale(.95)}
+  }
+  .hb-stars{animation:hbTwinkle 4s ease-in-out infinite alternate;}
+  @keyframes hbTwinkle{from{opacity:.45}to{opacity:1}}
+  .hb-scan{animation:hbScan 7.5s linear infinite;}
+  @keyframes hbScan{from{transform:translateY(0)}to{transform:translateY(calc(100vh + 280px))}}
+
+  /* 入场动画 + 顶部流光 */
+  @keyframes hermesFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .card,.project{animation:hermesFadeUp .55s ease backwards;}
+  .card:nth-child(1),.project:nth-child(1){animation-delay:.03s}
+  .card:nth-child(2),.project:nth-child(2){animation-delay:.08s}
+  .card:nth-child(3),.project:nth-child(3){animation-delay:.13s}
+  .card:nth-child(4),.project:nth-child(4){animation-delay:.18s}
+  .card:nth-child(5),.project:nth-child(5){animation-delay:.23s}
+  .card:nth-child(6),.project:nth-child(n+6){animation-delay:.28s}
+  @keyframes hermesBeam{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+  body::after{
+    content:"";position:fixed;top:0;left:0;right:0;height:2px;z-index:999;pointer-events:none;
+    background:linear-gradient(90deg,transparent,#00e5ff,#7a5cff,#ff3cac,transparent);
+    animation:hermesBeam 6s linear infinite;opacity:.8;
+  }
+}
+}
+
+/* ===== hermes-neon-v4 组件/布局精修 · Linear 设计语言 ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+body{font-family:'Inter',system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;font-feature-settings:'cv01','ss03';}
+
+/* --- 排版：负字距标题层级 --- */
+h1{letter-spacing:-.8px !important;font-weight:600;}
+.theme{font-size:24px !important;letter-spacing:-.6px !important;font-weight:600;}
+.hero-title{letter-spacing:-1px !important;}
+.sub{font-size:14px !important;letter-spacing:-.16px;}
+.name,.project-name a{letter-spacing:-.2px;font-weight:600;}
+.desc,.project-usage{letter-spacing:-.11px;line-height:1.65;}
+
+/* --- 卡片：半透明亮度分层（Linear elevation model）--- */
+.card,.project{
+  background:rgba(255,255,255,.028) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:12px !important;
+  box-shadow:none !important;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.card:hover,.project:hover{
+  background:rgba(255,255,255,.05) !important;
+  border-color:rgba(255,255,255,.14) !important;
+  transform:translateY(-2px);
+  box-shadow:0 8px 28px rgba(0,0,0,.35) !important;
+}
+.card,.project{padding:18px 20px;}
+
+/* --- 徽章/星数：药丸组件 --- */
+.stars,.project-stars{
+  background:transparent !important;
+  border:1px solid rgba(255,200,87,.35) !important;
+  border-radius:9999px !important;
+  font-size:12px !important;font-weight:500;
+  padding:3px 10px !important;white-space:nowrap;
+  text-shadow:none !important;
+}
+.badge{
+  background:transparent !important;border:1px solid rgba(122,92,255,.5) !important;
+  border-radius:9999px !important;font-size:11px !important;font-weight:500;
+  letter-spacing:.02em;padding:3px 11px !important;
+}
+.card-idx,.section-badge{border-radius:9999px !important;font-weight:500;}
+
+/* --- 用途说明块：内凹面板（inset sunken）--- */
+.why,.project-usage{
+  background:rgba(0,0,0,.25) !important;
+  box-shadow:rgba(0,0,0,.2) 0 0 12px 0 inset !important;
+  border-left:none !important;border-radius:8px !important;
+  padding:10px 12px !important;font-size:13px !important;
+}
+.why b{color:#ffc857 !important;}
+
+/* --- 周榜分组标题：药丸头 --- */
+.domain-title{
+  display:inline-block;background:rgba(122,92,255,.12) !important;
+  border:1px solid rgba(122,92,255,.3);border-radius:9999px !important;
+  font-size:13px !important;font-weight:600;letter-spacing:-.1px;
+  padding:6px 16px !important;margin-bottom:14px !important;
+  text-shadow:none !important;
+}
+.domain{margin-bottom:28px;}
+
+/* --- 导航栏：Linear 精修 --- */
+.hermes-nav{
+  background:rgba(10,11,22,.82) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+}
+.hermes-nav::before{display:none;}
+.hermes-nav a{
+  background:rgba(255,255,255,.04) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:6px !important;font-weight:500;color:#d0d6e0 !important;
+}
+.hermes-nav a:hover{color:#f7f8f8 !important;background:rgba(255,255,255,.08) !important;}
+.hermes-nav .nav-home{
+  background:linear-gradient(135deg,rgba(94,106,210,.85),rgba(113,112,255,.85)) !important;
+  border-color:transparent !important;color:#fff !important;
+}
+.hermes-nav .nav-mid{
+  background:transparent !important;border:none !important;
+  color:#8a8f98 !important;font-weight:500;
+}
+
+/* --- TOP5 页面布局节奏 --- */
+.rank{margin-bottom:10px;}
+.repo{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace !important;font-size:11.5px !important;}
+.meta{font-size:11px;letter-spacing:-.05px;}
+
+/* --- 链接交互 --- */
+.project-name a:hover{color:#828fff !important;text-shadow:none !important;}
+.repo a:hover{color:#828fff !important;}
+
+/* --- insight 汇总块 --- */
+.insight{
+  background:rgba(255,255,255,.03) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:12px !important;backdrop-filter:blur(6px);
+}
+
+@media (max-width:480px){
+  .card,.project{padding:15px 16px;}
+  h1{letter-spacing:-.5px !important;}
+}
+
+
+/* ===== hermes-neon-v5.5 晚报归一化 · 与日报/周榜同骨架 ===== */
+
+/* 1) 隐藏晚报自带的第二条药丸导航（hermes-nav 已提供导航） */
+body > nav.nav, nav.nav:not(.hermes-nav){display:none !important;}
+
+/* 2) 全宽渐变大 hero → V3 紧凑左对齐头部 */
+header.hero, .hero{
+  background:transparent !important;
+  background-image:none !important;
+  padding:6px 0 14px !important;
+  text-align:left !important;
+  border:0 !important;
+  overflow:visible !important;
+}
+.hero::before{display:none !important;content:none !important;}
+.hero-date{font-size:12.5px !important;opacity:.7 !important;letter-spacing:.06em !important;}
+.hero-title{
+  font-size:22px !important;font-weight:600 !important;letter-spacing:-.8px !important;
+  margin:6px 0 6px !important;
+}
+.hero-sub{font-size:13.5px !important;opacity:.6 !important;margin:0 0 12px !important;font-weight:400 !important;}
+.hero-stats{justify-content:flex-start !important;gap:8px !important;}
+.hero-stat{
+  background:rgba(255,255,255,.028) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:12px !important;
+  min-width:0 !important;padding:7px 12px !important;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.hero-stat-num{font-size:17px !important;font-weight:800 !important;}
+.hero-stat-label{font-size:10.5px !important;opacity:.65 !important;}
+
+/* 3) 容器宽度 1200 → 860（与日报 .wrap 对齐） */
+.main{max-width:860px !important;margin:0 auto !important;padding:8px 0 40px !important;}
+
+/* 4) 卡片网格 双列 → 单列（与日报一致）—— 作用域限定晚报（.main 内） */
+.main .card-grid{grid-template-columns:1fr !important;gap:14px !important;}
+
+/* 5) 分区标题节奏对齐日报 —— 仅晚报 */
+.main .section{margin-bottom:34px !important;}
+.main .section-title{
+  font-size:17px !important;font-weight:700 !important;
+  padding-bottom:10px !important;margin-bottom:16px !important;
+  border-bottom:1px solid rgba(150,170,255,.18) !important;
+}
+
+/* 6) 卡片内边距统一 —— 仅晚报（圆角不覆盖：晚报自身 --radius:12px 与日报一致） */
+.main .card{padding:18px 20px !important;}
+
+/* 7) 字体栈对齐日报 —— 仅晚报外壳（不写 body，避免波及日报） */
+.hero, .main{
+  font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif !important;
+}
+
+@media (max-width:480px){
+  .hero-title{font-size:21px !important;}
+  .main{padding:4px 0 28px !important;}
+  .main .card{padding:15px 16px !important;}
+}
+
+
+/* ===== hermes-fav 收藏按钮（⭐ star，一键）===== */
+.fav-btn{display:inline-flex;align-items:center;gap:4px;margin-left:8px;padding:2px 9px;border-radius:999px;
+  font-size:11.5px;line-height:1.7;font-family:inherit;border:1px solid rgba(150,170,255,.35);
+  background:rgba(120,140,255,.10);color:#c8d4ff;cursor:pointer;vertical-align:middle;
+  transition:background .18s,border-color .18s,color .18s;-webkit-tap-highlight-color:transparent;}
+.fav-btn:hover{background:rgba(120,140,255,.20);border-color:rgba(150,170,255,.6);}
+.fav-btn:active{transform:scale(.96);}
+.fav-btn.on{border-color:rgba(0,229,255,.55);background:rgba(0,229,255,.14);color:#7af7ff;}
+.fav-btn.busy{opacity:.55;pointer-events:none;}
+.fav-gear{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:99;
+  width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(150,170,255,.30);background:rgba(18,22,40,.86);color:#c8d4ff;font-size:16px;
+  cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 6px 22px rgba(0,0,0,.45);}
+.fav-gear:active{transform:scale(.94);}
+.fav-toast{position:fixed;left:50%;bottom:calc(64px + env(safe-area-inset-bottom));
+  transform:translateX(-50%) translateY(8px);z-index:100;max-width:86vw;padding:9px 14px;border-radius:12px;
+  background:rgba(18,22,40,.96);border:1px solid rgba(150,170,255,.28);color:#dbe4ff;font-size:13px;
+  line-height:1.5;text-align:center;opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;
+  box-shadow:0 8px 28px rgba(0,0,0,.5);}
+.fav-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.fav-mask{position:fixed;inset:0;z-index:101;background:rgba(4,6,14,.72);display:none;
+  align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);}
+.fav-mask.show{display:flex;}
+.fav-box{width:100%;max-width:420px;background:#12162a;border:1px solid rgba(150,170,255,.24);
+  border-radius:16px;padding:18px 18px 14px;color:#dbe4ff;font-size:13.5px;line-height:1.6;
+  box-shadow:0 18px 60px rgba(0,0,0,.6);}
+.fav-box h3{margin:0 0 8px;font-size:15px;color:#9db4ff;font-weight:700;}
+.fav-box p{margin:0 0 10px;color:#8b97b8;font-size:12.5px;}
+.fav-box input{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:10px;
+  border:1px solid rgba(150,170,255,.28);background:rgba(8,10,20,.85);color:#dbe4ff;font-size:13px;
+  font-family:ui-monospace,Menlo,monospace;}
+.fav-box .row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;}
+.fav-box button{flex:1;min-width:88px;padding:9px 12px;border-radius:10px;cursor:pointer;font-size:13px;
+  font-family:inherit;border:1px solid rgba(150,170,255,.30);background:rgba(120,140,255,.14);color:#c8d4ff;}
+.fav-box button.primary{background:rgba(0,229,255,.16);border-color:rgba(0,229,255,.45);color:#7af7ff;font-weight:600;}
+.fav-box a{color:#7af7ff;text-decoration:none;border-bottom:1px dashed rgba(122,247,255,.4);}
+@media (max-width:480px){.fav-btn{margin-left:6px;padding:2px 8px;font-size:11px;}
+  .fav-gear{width:34px;height:34px;font-size:15px;right:10px;}}
+</style></head><body>
+<div class="hermes-bg"><div class="hb-orb hb-o1"></div><div class="hb-orb hb-o2"></div><div class="hb-orb hb-o3"></div><div class="hb-grid"></div><div class="hb-stars"></div><div class="hb-scan"></div></div>
+<div class="container">
+<!--hermes-nav-start--><nav class="hermes-nav" aria-label="页面导航"><div class="nav-side"><a class="nav-home" href="../../首页.html">🏠 首页</a></div><div class="nav-mid">2026年第45周 · 周榜</div><div class="nav-side"><a href="../2026年第44周/GitHub周榜.html">← 上篇</a><span class="disabled">下篇 →</span></div></nav><!--hermes-nav-end-->
+
+<div class="theme">📊 GitHub 周榜</div>
+<div class="date">2026年第45周 · 2026-11-08 20:04 CST · 数据源：GitHub Trending 周榜（官方「本周涨星」）+ GitHub API 实时实测</div>
+<div class="banner">📡 数据源在线。本周涨星取自 GitHub 官方 Trending 周榜的「stars this week」实时统计（滚动 7 天星标增量），覆盖总榜与 Python / TypeScript / JavaScript / Rust / Go / Java / C / C++ / Shell / Notebook / HTML / Vue / C# 各语言周榜，去重后共 205 个候选仓库；入榜 40 个仓库的总星数、语言、许可证、创建时间与最近推送时间由 GitHub API 逐个实时拉取，全部本次实测，无离线凑数。</div>
+<div class="domain"><div class="domain-title">🔥 本周涨星总榜</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/pingdotgg/t3code" target="_blank" rel="noopener">Agent 遥控控制台</a></div>
+    <div class="project-stars">+17,100⭐</div>
+  </div>
+  <div class="project-meta">pingdotgg/t3code · TypeScript · MIT · 创建 2026-02-08 · 最近推送 2026-11-08 · 总 51,794⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>把本机的 Claude Code、Codex、Cursor、Grok、OpenCode 统一接到手机、网页与桌面端遥控。<br><b>用途：</b>出门在外用手机接管电脑上的编码 Agent，随时看进度、批准操作、接着聊；订阅仍走自己已有的账号，不用另买。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/vercel-labs/agent-desktop" target="_blank" rel="noopener">Agent 的桌面操作层</a></div>
+    <div class="project-stars">+13,858⭐</div>
+  </div>
+  <div class="project-meta">vercel-labs/agent-desktop · Rust · Apache-2.0 · 创建 2026-02-19 · 最近推送 2026-11-08 · 总 19,260⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>给 AI Agent 一套命令行接口，直接操作本机桌面应用，不靠截图猜坐标。<br><b>用途：</b>让 Agent 处理浏览器之外的老式桌面软件——填表、导数据、跑报表，替代人工点鼠标。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener">多阶段安全审计技能</a></div>
+    <div class="project-stars">+10,405⭐</div>
+  </div>
+  <div class="project-meta">cloudflare/security-audit-skill · JavaScript · MIT · 创建 2026-06-18 · 最近推送 2026-09-14 · 总 66,314⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>把安全审计拆成多个阶段，每阶段独立验证，给编码 Agent 装上可复现的审计流程。<br><b>用途：</b>上线前自查注入、越权、密钥泄露；结论分阶段留痕，方便复核与整改闭环。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">工程师的 Agent 技能集</a></div>
+    <div class="project-stars">+9,664⭐</div>
+  </div>
+  <div class="project-meta">mattpocock/skills · Shell · MIT · 创建 2026-02-03 · 最近推送 2026-11-05 · 总 318,135⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>作者从自己 .agents 目录直接公开的实战技能包，不写花活，只留真能用的。<br><b>用途：</b>给 Claude Code、Codex 补齐代码审查、重构、测试等日常动作的标准流程，省掉自己写提示词。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/NVIDIA/auto-ontology" target="_blank" rel="noopener">自动本体构建框架</a></div>
+    <div class="project-stars">+9,044⭐</div>
+  </div>
+  <div class="project-meta">NVIDIA/auto-ontology · Python · Apache-2.0 · 创建 2026-04-27 · 最近推送 2026-11-07 · 总 9,956⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>从文档和数据里自动长出语义图谱，节点关系带类型约束，而不是靠向量相似度硬凑。<br><b>用途：</b>企业内部知识库、设备台账、合规条款这类必须讲清关系的场景；可接 RAG 提升召回准确率。</div>
+</div>
+</div>
+<div class="domain"><div class="domain-title">🤖 编码 Agent 与技能生态</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener">给 Agent 的设计词汇表</a></div>
+    <div class="project-stars">+7,623⭐</div>
+  </div>
+  <div class="project-meta">pbakaus/impeccable · Rust · Apache-2.0 · 创建 2025-11-16 · 最近推送 2026-11-08 · 总 105,872⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>用 polish / critique / audit 三条指令，把 AI 生成的页面从能用推到耐看。<br><b>用途：</b>前端交付前统一视觉细节；团队把自己的设计评审标准沉淀成 Agent 能执行的语言。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener">跨会话的 Agent 记忆</a></div>
+    <div class="project-stars">+7,482⭐</div>
+  </div>
+  <div class="project-meta">thedotmack/claude-mem · TypeScript · Apache-2.0 · 创建 2025-08-31 · 最近推送 2026-11-08 · 总 114,679⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>把每次会话的关键上下文存下来，下次开新会话自动带回去。<br><b>用途：</b>长期项目不用反复交代背景；多人协作时让 Agent 记得上次改到哪、为什么这么改。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/Nutlope/hallmark" target="_blank" rel="noopener">反 AI 味的界面技能</a></div>
+    <div class="project-stars">+6,624⭐</div>
+  </div>
+  <div class="project-meta">Nutlope/hallmark · CSS · MIT · 创建 2026-04-27 · 最近推送 2026-11-05 · 总 50,583⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>专治 AI 生成页面的那股模板味——间距、字号、配色都给了硬规则。<br><b>用途：</b>让 Agent 产出的页面看着像人做的；快速统一后台与落地页的视觉基线。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">Agent 技能框架与方法论</a></div>
+    <div class="project-stars">+4,466⭐</div>
+  </div>
+  <div class="project-meta">obra/superpowers · Shell · MIT · 创建 2025-10-09 · 最近推送 2026-11-03 · 总 314,360⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>把软件开发流程固化成 Agent 可执行的技能与阶段，形成一套可复用方法论。<br><b>用途：</b>从需求到提交整条链路交给 Agent 跑；团队统一怎么用 Agent 的规范，而不是各写各的提示词。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/garrytan/gstack" target="_blank" rel="noopener">一套完整的编码 Agent 配置</a></div>
+    <div class="project-stars">+2,300⭐</div>
+  </div>
+  <div class="project-meta">garrytan/gstack · TypeScript · MIT · 创建 2026-03-11 · 最近推送 2026-11-08 · 总 140,719⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>23 个有主见的工具，公开作者的完整 Claude Code 工作台。<br><b>用途：</b>新手直接抄一套能跑的配置；老手对照看自己缺哪一块，省下几个月试错。</div>
+</div>
+</div>
+<div class="domain"><div class="domain-title">🖥️ 本地 Agent 桌面与团队</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/milind-soni/OpenMausBot" target="_blank" rel="noopener">自带虚拟机的开源 Bot</a></div>
+    <div class="project-stars">+7,077⭐</div>
+  </div>
+  <div class="project-meta">milind-soni/OpenMausBot · TypeScript · Apache-2.0 · 创建 2026-08-11 · 最近推送 2026-11-08 · 总 17,622⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>每个 Bot 拿到一台自己的虚拟机，可以开浏览器、写文件、装软件。<br><b>用途：</b>把重复的网页操作、数据搬运交给 Bot 自己折腾，不怕搞坏本机；任务环境用完即弃。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/Donchitos/Claude-Code-Game-Studios" target="_blank" rel="noopener">游戏工作室版编码 Agent</a></div>
+    <div class="project-stars">+5,719⭐</div>
+  </div>
+  <div class="project-meta">Donchitos/Claude-Code-Game-Studios · Shell · MIT · 创建 2026-02-12 · 最近推送 2026-10-19 · 总 36,787⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>49 个 Agent、72 套工作流，把 Claude Code 改造成完整的游戏开发团队。<br><b>用途：</b>独立开发者按角色分工推进原型、关卡、美术与测试，一个人撑起小工作室的产能。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/Orkas-AI/Orkas" target="_blank" rel="noopener">本地优先的 AI 团队</a></div>
+    <div class="project-stars">+2,088⭐</div>
+  </div>
+  <div class="project-meta">Orkas-AI/Orkas · JavaScript · MIT · 创建 2026-04-29 · 最近推送 2026-11-08 · 总 9,100⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>桌面上的一支 AI 小队，任务在本地跑，数据不出机器。<br><b>用途：</b>敏感资料处理与合规场景；断网环境下也能多 Agent 分工协作。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/nightly-labs/openbot" target="_blank" rel="noopener">常驻 AI 队友工作台</a></div>
+    <div class="project-stars">+1,890⭐</div>
+  </div>
+  <div class="project-meta">nightly-labs/openbot · TypeScript · NOASSERTION · 创建 2026-08-12 · 最近推送 2026-11-08 · 总 6,330⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>本地优先的桌面工作区，Codex 等 Agent 常驻后台持续干活。<br><b>用途：</b>长时间任务挂着不用守——爬数据、跑测试、盯构建，回来直接看结果。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/CopilotKit/OpenBot" target="_blank" rel="noopener">每人一台电脑的 AI 同事</a></div>
+    <div class="project-stars">+1,312⭐</div>
+  </div>
+  <div class="project-meta">CopilotKit/OpenBot · TypeScript · MIT · 创建 2026-08-17 · 最近推送 2026-11-08 · 总 10,432⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>每个 AI 同事配浏览器、文件系统与终端，各自独立干活。<br><b>用途：</b>小团队里替代重复岗位；多个任务之间互不污染，出问题只影响那一台。</div>
+</div>
+</div>
+<div class="domain"><div class="domain-title">🧠 模型推理与模型通道</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/JustVugg/colibri" target="_blank" rel="noopener">MoE 分层推理引擎</a></div>
+    <div class="project-stars">+3,394⭐</div>
+  </div>
+  <div class="project-meta">JustVugg/colibri · C · Apache-2.0 · 创建 2026-07-01 · 最近推送 2026-11-08 · 总 48,878⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>把 MoE 专家的热冷分层放在不同存储上，小内存机器也能跑前沿大模型。<br><b>用途：</b>单机与边缘设备部署大 MoE；省显存又不砍模型规模，成本比堆卡低一个量级。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/FareedKhan-dev/kimi-k3-in-c" target="_blank" rel="noopener">单 CPU 跑万亿参数模型</a></div>
+    <div class="project-stars">+1,920⭐</div>
+  </div>
+  <div class="project-meta">FareedKhan-dev/kimi-k3-in-c · C · Apache-2.0 · 创建 2026-08-01 · 最近推送 2026-10-02 · 总 11,278⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>用 C 手写推理路径，把 2.78 万亿参数模型塞进一颗 CPU 的内存里跑。<br><b>用途：</b>学习推理引擎到底怎么实现；没有 GPU 时也能验证超大模型的行为。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/shiyu-coder/Kronos" target="_blank" rel="noopener">金融市场的语言基础模型</a></div>
+    <div class="project-stars">+2,937⭐</div>
+  </div>
+  <div class="project-meta">shiyu-coder/Kronos · Python · MIT · 创建 2025-07-01 · 最近推送 2026-04-13 · 总 47,308⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>把 K 线当成一种语言来预训练，专门读行情序列。<br><b>用途：</b>量化研究里的走势建模与因子探索；给交易策略做可微调的预训练底座。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/HKUDS/DeepTutor" target="_blank" rel="noopener">终身个性化 AI 家教</a></div>
+    <div class="project-stars">+3,873⭐</div>
+  </div>
+  <div class="project-meta">HKUDS/DeepTutor · Python · Apache-2.0 · 创建 2025-12-28 · 最近推送 2026-11-07 · 总 56,618⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>按你的历史表现持续调整讲解方式，不是一次性问答。<br><b>用途：</b>长期备考与技能学习；把错题和薄弱点沉淀成个人知识图谱，越用越懂你。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/tashfeenahmed/freellmapi" target="_blank" rel="noopener">免费模型额度聚合网关</a></div>
+    <div class="project-stars">+3,780⭐</div>
+  </div>
+  <div class="project-meta">tashfeenahmed/freellmapi · TypeScript · MIT · 创建 2026-04-21 · 最近推送 2026-11-08 · 总 49,055⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>把 34 家免费额度汇成一个 OpenAI 兼容接口，月配额约 74 亿 token、635 个模型。<br><b>用途：</b>个人项目与原型零成本跑起来；多通道自动切换，避免单家限流卡住。</div>
+</div>
+</div>
+<div class="domain"><div class="domain-title">🔍 检索、抓取与知识库</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/D4Vinci/Scrapling" target="_blank" rel="noopener">自适应网页抓取框架</a></div>
+    <div class="project-stars">+8,712⭐</div>
+  </div>
+  <div class="project-meta">D4Vinci/Scrapling · Python · BSD-3-Clause · 创建 2024-10-13 · 最近推送 2026-11-05 · 总 99,557⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>从单次请求到全站爬取一条路走完，页面改版后选择器能自己修。<br><b>用途：</b>竞品监控、价格采集、训练数据清洗；反爬与动态渲染场景下的稳定抓取。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/Graphify-Labs/graphify" target="_blank" rel="noopener">代码库变知识图谱</a></div>
+    <div class="project-stars">+4,147⭐</div>
+  </div>
+  <div class="project-meta">Graphify-Labs/graphify · Python · Apache-2.0 · 创建 2026-04-03 · 最近推送 2026-11-08 · 总 144,213⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>把代码、文档、SQL 表结构和 PDF 一起抽成一张可查询的图。<br><b>用途：</b>接手陌生项目时快速摸清调用关系；给 Agent 提供结构化上下文，少读无用文件。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/infiniflow/ragflow" target="_blank" rel="noopener">Agent 原生的 RAG 数据库</a></div>
+    <div class="project-stars">+527⭐</div>
+  </div>
+  <div class="project-meta">infiniflow/ragflow · Go · Apache-2.0 · 创建 2023-12-12 · 最近推送 2026-11-06 · 总 93,759⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>深度文档解析加检索增强，直接给 Agent 当数据底座用。<br><b>用途：</b>企业内部文档问答；复杂 PDF 与表格的准确引用，回答能落到原文页码。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/Crosstalk-Solutions/project-nomad" target="_blank" rel="noopener">离线优先的知识服务器</a></div>
+    <div class="project-stars">+1,064⭐</div>
+  </div>
+  <div class="project-meta">Crosstalk-Solutions/project-nomad · TypeScript · Apache-2.0 · 创建 2025-06-24 · 最近推送 2026-11-06 · 总 42,700⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>把维基百科、课程和地图装进一台小机器，断网也能查。<br><b>用途：</b>船上、野外、灾备场景；给学校或家庭做本地知识站，不依赖公网。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/patchy631/ai-engineering-hub" target="_blank" rel="noopener">LLM 与 Agent 实战教程集</a></div>
+    <div class="project-stars">+2,392⭐</div>
+  </div>
+  <div class="project-meta">patchy631/ai-engineering-hub · Jupyter Notebook · MIT · 创建 2024-10-21 · 最近推送 2026-11-01 · 总 41,468⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>RAG、Agent、微调的完整可跑示例，偏工程不偏论文。<br><b>用途：</b>照着搭第一个生产级 RAG；当团队内部培训材料，省掉从零试错。</div>
+</div>
+</div>
+<div class="domain"><div class="domain-title">🎨 创作与多媒体</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener">一句话生成短视频</a></div>
+    <div class="project-stars">+3,987⭐</div>
+  </div>
+  <div class="project-meta">harry0703/MoneyPrinterTurbo · Python · MIT · 创建 2024-03-11 · 最近推送 2026-11-07 · 总 140,889⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>给个主题就自动写文案、配音、配画面、出成片。<br><b>用途：</b>批量做口播与知识类短视频；自媒体日更素材，一条流程出多条版本。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/Vincentwei1021/video-shotcraft" target="_blank" rel="noopener">AI 产品视频技能</a></div>
+    <div class="project-stars">+2,260⭐</div>
+  </div>
+  <div class="project-meta">Vincentwei1021/video-shotcraft · TypeScript · Apache-2.0 · 创建 2026-07-19 · 最近推送 2026-10-29 · 总 17,764⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>给 Claude Code、Codex 用的分镜技能，产出电影感又可二次编辑的产品片。<br><b>用途：</b>新品发布视频；把截图和录屏变成有节奏的宣传片，改文案不用重做全片。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/cjpais/Handy" target="_blank" rel="noopener">离线语音转文字</a></div>
+    <div class="project-stars">+2,169⭐</div>
+  </div>
+  <div class="project-meta">cjpais/Handy · Rust · MIT · 创建 2025-02-13 · 最近推送 2026-11-07 · 总 38,000⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>本地跑的听写工具，按快捷键说话就出文字，全程不联网。<br><b>用途：</b>会议记录、写作口述；隐私敏感场景替代云端转写，音频不出机器。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/guillaumemeyer/watermarks-remover" target="_blank" rel="noopener">清除自有内容的 AI 水印</a></div>
+    <div class="project-stars">+877⭐</div>
+  </div>
+  <div class="project-meta">guillaumemeyer/watermarks-remover · Python · MIT · 创建 2026-08-11 · 最近推送 2026-11-02 · 总 26,671⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>只处理你拥有版权的内容，本地完成水印去除。<br><b>用途：</b>整理自己生成的素材再发布；避免平台把正常作品误判成 AI 生成。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/bradautomates/claude-video" target="_blank" rel="noopener">让 Agent 看懂视频</a></div>
+    <div class="project-stars">+546⭐</div>
+  </div>
+  <div class="project-meta">bradautomates/claude-video · Python · MIT · 创建 2026-04-24 · 最近推送 2026-09-25 · 总 20,184⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>watch 指令自动下载、抽帧、转写，把视频变成 Agent 能读的上下文。<br><b>用途：</b>长视频总结、教程拆解、竞品分析；不用自己边看边记时间点。</div>
+</div>
+</div>
+<div class="domain"><div class="domain-title">🧰 开发工具与基础设施</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/floci-io/floci" target="_blank" rel="noopener">本地 AWS 模拟器</a></div>
+    <div class="project-stars">+3,590⭐</div>
+  </div>
+  <div class="project-meta">floci-io/floci · Java · MIT · 创建 2026-02-18 · 最近推送 2026-11-08 · 总 31,045⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>在笔记本上模拟 AWS 服务，不烧云账单。<br><b>用途：</b>离线开发与 CI 测试；教学生云服务而不用发真账号，随便折腾不乱扣费。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/max-sixty/worktrunk" target="_blank" rel="noopener">并行 Git 工作树 CLI</a></div>
+    <div class="project-stars">+2,292⭐</div>
+  </div>
+  <div class="project-meta">max-sixty/worktrunk · Rust · NOASSERTION · 创建 2025-10-17 · 最近推送 2026-11-08 · 总 12,026⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>一条命令管理多个 worktree，多个分支或 Agent 同时改代码互不打架。<br><b>用途：</b>多任务并行开发；让几个 Agent 各占一个目录同时干活，合并前再收口。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/astral-sh/ruff" target="_blank" rel="noopener">极快的 Python 检查器</a></div>
+    <div class="project-stars">+625⭐</div>
+  </div>
+  <div class="project-meta">astral-sh/ruff · Rust · MIT · 创建 2022-08-09 · 最近推送 2026-11-08 · 总 51,083⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>lint 加格式化一个二进制搞定，比传统工具快一个数量级。<br><b>用途：</b>CI 里秒级完成代码检查；替代 flake8、black、isort 三件套，配置还更少。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/openai/codex" target="_blank" rel="noopener">终端里的编码 Agent</a></div>
+    <div class="project-stars">+1,298⭐</div>
+  </div>
+  <div class="project-meta">openai/codex · Rust · Apache-2.0 · 创建 2025-04-13 · 最近推送 2026-11-08 · 总 133,633⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>轻量 CLI，在终端里直接读写仓库、跑命令、改代码。<br><b>用途：</b>服务器上没 IDE 时改代码；脚本化批量重构，可塞进流水线自动跑。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/herdrdev/herdr" target="_blank" rel="noopener">Agent 常驻运行时</a></div>
+    <div class="project-stars">+1,963⭐</div>
+  </div>
+  <div class="project-meta">herdrdev/herdr · Rust · Apache-2.0 · 创建 2026-03-27 · 最近推送 2026-11-07 · 总 49,262⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>给编码 Agent 一套常驻的运行环境，会话断了任务还在跑。<br><b>用途：</b>长任务托管；多 Agent 并发时的资源与状态管理，不用一直守着终端。</div>
+</div>
+</div>
+<div class="domain"><div class="domain-title">🌏 中文生态与系统桌面</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/Renhuai123/ziwei-doushu" target="_blank" rel="noopener">紫微斗数开源排盘引擎</a></div>
+    <div class="project-stars">+4,906⭐</div>
+  </div>
+  <div class="project-meta">Renhuai123/ziwei-doushu · TypeScript · MIT · 创建 2026-05-01 · 最近推送 2026-11-03 · 总 16,836⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>完整排盘算法、四化系统与格局知识库，附古籍原文数据。<br><b>用途：</b>命理类 App 的排盘内核；传统文化数字化研究与内容创作。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/DeanChensj/jiangshan-map" target="_blank" rel="noopener">中国历史交互地图</a></div>
+    <div class="project-stars">+2,531⭐</div>
+  </div>
+  <div class="project-meta">DeanChensj/jiangshan-map · JavaScript · GPL-3.0 · 创建 2026-07-23 · 最近推送 2026-11-08 · 总 4,628⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>公元前 403 年至今的疆域时间轴，可拖动查看朝代变迁。<br><b>用途：</b>历史教学演示；内容创作者做地图动画素材，不用自己描边界。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/zed-industries/zed" target="_blank" rel="noopener">高性能多人协作编辑器</a></div>
+    <div class="project-stars">+1,867⭐</div>
+  </div>
+  <div class="project-meta">zed-industries/zed · Rust · NOASSERTION · 创建 2021-02-20 · 最近推送 2026-11-08 · 总 94,424⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>Rust 写的原生编辑器，多人同时编辑同一文件也不卡。<br><b>用途：</b>结对编程与远程团队共享工作区；大仓库打开速度快，适合当主力 IDE。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/hyprwm/Hyprland" target="_blank" rel="noopener">动态平铺 Wayland 合成器</a></div>
+    <div class="project-stars">+1,436⭐</div>
+  </div>
+  <div class="project-meta">hyprwm/Hyprland · C++ · BSD-3-Clause · 创建 2022-03-16 · 最近推送 2026-11-06 · 总 40,522⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>动画流畅、配置自由的 Wayland 桌面，窗口自动排布。<br><b>用途：</b>Linux 桌面美化与效率提升；多屏开发环境，快捷键切工作区。</div>
+</div>
+<div class="project">
+  <div class="project-header">
+    <div class="project-name"><a href="https://github.com/omacom/omarchy" target="_blank" rel="noopener">开箱即用的 Arch 桌面</a></div>
+    <div class="project-stars">+563⭐</div>
+  </div>
+  <div class="project-meta">omacom/omarchy · Shell · MIT · 创建 2025-06-01 · 最近推送 2026-11-08 · 总 46,537⭐</div>
+  <div class="project-usage"><b>一句话简介：</b>一套有主见的 Arch 加 Hyprland 配置，装完就能用。<br><b>用途：</b>新机器十分钟配好开发环境；不想折腾 dotfiles 的人直接上手。</div>
+</div>
+</div>
+<div class="insight"><b>本周观察：</b>榜单被「Agent 编排与技能」整片占领——遥控层（T3 Code）、桌面操作层（agent-desktop）、技能层（impeccable、hallmark、superpowers、gstack）连成一条完整链路，说明竞争已从「谁的模型强」转到「谁的 Agent 好用」。另一条线是本地化：MoE 分层推理、单 CPU 跑万亿参数、离线语音与离线知识服务器，都在把能力往本机搬。中文项目里紫微斗数排盘与中国历史地图同时上榜，传统文化数字化是今年少见的稳定增长点。</div>
+<div class="footer">2026年第45周 · 由 Hermes Agent 自动生成 · 数据实测于 2026-11-08 20:04 CST</div>
+</div>
+
+<!--hermes-fav-start--><script data-f1="sYn8DPvCssd2gAxkmlFZb5sOvkfS3N4" data-f2="=ZodSd2YsF2+Segc1auhJScIK4neWFu" data-f3="A58sJJay4k1pRavcktGVVRQm8G2rDI"><!-- fav -->
+(function(){
+  var TK='hermesGhToken', SK='hermesStars';
+  var _sc=document.currentScript, _ds=(_sc&&_sc.dataset)||{};
+  var _tok=null,_tokP=null;
+  function ls(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
+  function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  function lsDel(k){try{localStorage.removeItem(k)}catch(e){}}
+  function stars(){try{return JSON.parse(ls(SK)||'{}')||{}}catch(e){return {}}}
+  function saveStars(o){lsSet(SK,JSON.stringify(o))}
+  function repoOf(a){
+    var m=(a.getAttribute('href')||'').match(/^https?:\/\/github\.com\/([^\/?#]+)\/([^\/?#]+)/i);
+    if(!m)return null;
+    return m[1]+'/'+m[2].replace(/\.git$/i,'');
+  }
+  /* ---- L2/L3/L4/L5 密钥：5 段 / 逆序 / 每字节 +37 / 变量名伪装 ---- */
+  var _a1=[130, 183, 97, 223, 124, 208, 135], _a2=[128, 184, 47, 178, 173, 178, 186], _a3=[147, 122, 196, 182, 37, 55], _a4=[54, 37, 44, 109, 238, 135], _a5=[55, 45, 93, 236, 192, 8];
+  /* ---- L7 域名绑定：密钥再异或一段由 hostname 派生的掩码 ---- */
+  function hm(){
+    var h=location.hostname||'',x=5381,i;
+    for(i=0;i<h.length;i++) x=((x*33)^h.charCodeAt(i))>>>0;
+    if(!x)x=1;
+    var o=new Uint8Array(32);
+    for(i=0;i<32;i++){ x=(x*1664525+1013904223)>>>0; o[i]=(x>>>16)&255; }
+    return o;
+  }
+  function kb(){
+    var all=_a1.concat(_a2,_a3,_a4,_a5).reverse();
+    var m=hm(), out=new Uint8Array(all.length);
+    for(var i=0;i<all.length;i++) out[i]=(((all[i]-37+256)&255)^m[i&31]);
+    return out;
+  }
+  /* ---- L6 密文拆 3 段 / 各段逆序 / 交错存放于 script 的 data-f* 属性 ---- */
+  function _rev(x){return x?x.split('').reverse().join(''):''}
+  function blob(){
+    var a=_rev(_ds.f1||''),b=_rev(_ds.f2||''),c=_rev(_ds.f3||'');
+    if(!a&&!b&&!c)return '';
+    var n=Math.max(a.length,b.length,c.length),o='',i;
+    for(i=0;i<n;i++){if(i<a.length)o+=a[i];if(i<b.length)o+=b[i];if(i<c.length)o+=c[i];}
+    return o;
+  }
+  function b64d(x){
+    var bin=atob(x), out=new Uint8Array(bin.length);
+    for(var i=0;i<bin.length;i++) out[i]=bin.charCodeAt(i);
+    return out;
+  }
+  function b64e(u){
+    var x='';for(var i=0;i<u.length;i++)x+=String.fromCharCode(u[i]);
+    return btoa(x);
+  }
+  function keyObj(u){return crypto.subtle.importKey('raw',kb(),{name:'AES-GCM'},false,[u]);}
+  function ensureTok(){
+    if(_tokP)return _tokP;
+    var local=ls(TK);
+    if(local){_tok=local;_tokP=Promise.resolve(local);return _tokP;}
+    var bl=blob();
+    if(!bl||bl.length<24||!crypto.subtle){_tok='';_tokP=Promise.resolve('');return _tokP;}
+    _tokP=keyObj('decrypt').then(function(k){
+      var raw=b64d(bl), iv=raw.slice(0,12), ct=raw.slice(12);
+      return crypto.subtle.decrypt({name:'AES-GCM',iv:iv},k,ct);
+    }).then(function(pt){_tok=new TextDecoder().decode(pt);return _tok;})
+      .catch(function(){_tok='';return '';});
+    return _tokP;
+  }
+  function seal(tok){
+    return keyObj('encrypt').then(function(k){
+      var iv=crypto.getRandomValues(new Uint8Array(12));
+      return crypto.subtle.encrypt({name:'AES-GCM',iv:iv},k,new TextEncoder().encode(tok)).then(function(ct){
+        var o=new Uint8Array(12+ct.byteLength);
+        o.set(iv,0);o.set(new Uint8Array(ct),12);
+        return b64e(o);
+      });
+    });
+  }
+  var toastEl,toastT;
+  function toast(msg,ms){
+    if(!toastEl){toastEl=document.createElement('div');toastEl.className='fav-toast';document.body.appendChild(toastEl);}
+    toastEl.textContent=msg;toastEl.classList.add('show');
+    clearTimeout(toastT);toastT=setTimeout(function(){toastEl.classList.remove('show')},ms||2600);
+  }
+  function paint(btn,on,busy){
+    btn.classList.toggle('on',!!on);btn.classList.toggle('busy',!!busy);
+    btn.textContent=busy?'…':(on?'✅ 已收藏':'⭐ 收藏');
+  }
+  function star(repo,token){
+    return fetch('https://api.github.com/user/starred/'+repo,{method:'PUT',
+      headers:{'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json',
+               'X-GitHub-Api-Version':'2022-11-28'}});
+  }
+  function bind(){
+    var links=document.querySelectorAll('.card .repo a[href*="github.com"], .project .project-name a[href*="github.com"], .card .card-name a[href*="github.com"], .card .lang a[href*="github.com"]');
+    if(!links.length)return;
+    var st=stars();
+    Array.prototype.forEach.call(links,function(a){
+      if(a.dataset.favBound)return;
+      var repo=repoOf(a); if(!repo)return;
+      a.dataset.favBound='1';
+      var btn=document.createElement('button');
+      btn.type='button';btn.className='fav-btn';btn.setAttribute('aria-label','收藏 '+repo);
+      paint(btn,!!st[repo],false);
+      btn.addEventListener('click',function(ev){
+        ev.preventDefault();ev.stopPropagation();
+        ensureTok().then(function(tok){
+          if(!tok){window.open(a.href,'_blank','noopener');toast('已打开 GitHub —— 点右上角 Star 即可。',4200);return;}
+          paint(btn,false,true);
+          star(repo,tok).then(function(r){
+            if(r.status===204||r.status===200){
+              var o=stars();o[repo]=1;saveStars(o);paint(btn,true,false);toast('已收藏：'+repo);
+            }else if(r.status===401){
+              paint(btn,!!stars()[repo],false);
+              window.open(a.href,'_blank','noopener');
+              toast('收藏凭证已失效 —— 已为你打开 GitHub 页面，点右上角 Star 即可',5000);
+            }else if(r.status===403){
+              paint(btn,!!stars()[repo],false);
+              window.open(a.href,'_blank','noopener');
+              r.text().then(function(t){
+                if(/rate limit/i.test(t))toast('GitHub API 限流中 —— 已为你打开 GitHub，可手动 Star',5200);
+                else if(/not accessible|permission/i.test(t))toast('权限不足（需 Starring: Read and write）—— 已为你打开 GitHub，可手动 Star',5200);
+                else toast('收藏失败（HTTP '+r.status+'）',4600);
+              }).catch(function(){toast('收藏失败（HTTP '+r.status+'）',4000);});
+            }else{
+              paint(btn,!!stars()[repo],false);
+              toast('收藏失败（HTTP '+r.status+'），可点项目名去 GitHub 手动 Star',3800);
+            }
+          }).catch(function(){paint(btn,!!stars()[repo],false);toast('网络错误，收藏失败',3000);});
+        });
+      });
+      a.insertAdjacentElement('afterend',btn);
+    });
+  }
+  function openBox(){
+    var mask=document.createElement('div');mask.className='fav-mask show';
+    mask.innerHTML='<div class="fav-box"><h3>收藏设置</h3>'
+      +'<p>粘一个 GitHub <b>fine-grained token</b>（只需 <b>Starring: Read and write</b>），只存本机浏览器。</p>'
+      +'<p>创建：<a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a></p>'
+      +'<input type="password" placeholder="github_pat_..." autocomplete="off" spellcheck="false">'
+      +'<div class="row"><button class="primary" data-act="save">保存到本机</button><button data-act="seal">生成加密串</button><button data-act="clear">清除</button><button data-act="close">关闭</button></div>'
+      +'<div class="sealout" style="display:none;margin-top:10px"><p style="margin:0 0 6px">复制这串发给贾维斯，他嵌进页面后全设备生效：</p>'
+      +'<textarea readonly style="width:100%;height:74px;box-sizing:border-box;background:rgba(8,10,20,.85);color:#7af7ff;border:1px solid rgba(150,170,255,.28);border-radius:10px;padding:8px;font-size:11px;font-family:ui-monospace,Menlo,monospace"></textarea></div>'
+      +'</div>';
+    document.body.appendChild(mask);
+    var inp=mask.querySelector('input'); if(ls(TK))inp.value=ls(TK);
+    var out=mask.querySelector('.sealout'), ta=mask.querySelector('textarea');
+    mask.addEventListener('click',function(e){if(e.target===mask)mask.remove();});
+    Array.prototype.forEach.call(mask.querySelectorAll('button'),function(b){
+      b.addEventListener('click',function(){
+        var act=b.getAttribute('data-act');
+        if(act==='save'){
+          var v=(inp.value||'').trim(); if(!v){toast('请先粘贴 token');return;}
+          lsSet(TK,v);mask.remove();toast('已保存到本机浏览器');
+        }else if(act==='seal'){
+          var t=(inp.value||'').trim(); if(!t){toast('请先粘贴 token');return;}
+          if(!crypto.subtle){toast('请用 https 打开本页再生成',4000);return;}
+          seal(t).then(function(b){out.style.display='block';ta.value=b;ta.focus();ta.select();toast('已生成加密串，复制后发给贾维斯');})
+                     .catch(function(){toast('生成失败，请确认用 https 打开',4000);});
+        }else if(act==='clear'){lsDel(TK);mask.remove();toast('已清除 token');}
+        else{mask.remove();}
+      });
+    });
+  }
+  function gear(){
+    if(document.querySelector('.fav-gear'))return;
+    var g=document.createElement('button');
+    g.type='button';g.className='fav-gear';g.title='收藏设置';g.textContent='⚙';
+    g.addEventListener('click',openBox);document.body.appendChild(g);
+  }
+  function init(){bind();gear();}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script><!--hermes-fav-end-->
+
+</body></html>
